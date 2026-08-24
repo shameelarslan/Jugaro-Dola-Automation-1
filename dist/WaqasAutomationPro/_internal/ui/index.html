@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waqas Automation Pro v2.0.7 - Commercial SaaS Control Center</title>
+    <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Chart.js for High-End SaaS Analytics Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Dynamic Ambient Background Mesh Aura -->
+    <div class="ambient-bg"></div>
+
+    <div id="app" class="app-container">
+        
+        <!-- ── HEADER BAR ────────────────────────────────────────────────────── -->
+        <header class="top-header">
+            <div class="brand-badge">
+                <div class="brand-icon">⚡</div>
+                <div class="brand-text">
+                    <h1>Waqas Automation Pro <span class="version-tag">v2.0.7</span></h1>
+                    <p class="subtitle">Multi-Session Dola AI & Facebook Automation SaaS</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="live-pill" id="system-status-pill">
+                    <span class="pulse-dot green"></span>
+                    <span id="system-status-text">System Ready</span>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="btn-global-start">
+                        <span>🚀</span> Run Automation
+                    </button>
+                    <button class="btn btn-danger hidden" id="btn-global-stop">
+                        <span>⏹️</span> Stop Queue
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── MAIN BODY CONTAINER (SIDEBAR + STACKED VIEWS) ────────────────── -->
+        <div class="app-body">
+            
+            <!-- LEFT SIDEBAR NAVIGATION -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <div class="nav-section-title">WORKSPACE</div>
+                    <button class="nav-item active" data-tab="dashboard">
+                        <span class="icon">📊</span> <span class="label">User Dashboard</span>
+                    </button>
+                    <button class="nav-item" data-tab="sessions">
+                        <span class="icon">🔑</span> <span class="label">Sessions</span>
+                    </button>
+                    <button class="nav-item" data-tab="prompts">
+                        <span class="icon">⚡</span>
+                        <span class="label">
+                            <span>Seedance 15 sec</span>
+                            <span class="nav-sub-label">Automation</span>
+                        </span>
+                    </button>
+                    <button class="nav-item" data-tab="viral-prompts">
+                        <span class="icon">🔥</span> <span class="label">Viral Prompts</span>
+                    </button>
+
+                    <div class="nav-section-title admin-tab">ADMINISTRATOR</div>
+                    <button class="nav-item admin-tab" data-tab="super-admin">
+                        <span class="icon">👑</span> <span class="label">Super Admin</span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-user-card" id="user-card-trigger">
+                    <div class="avatar-circle" id="user-avatar-text">WA</div>
+                    <div class="user-info">
+                        <h4 id="user-display-name">Admin Waqas</h4>
+                        <span class="license-badge" id="user-license-badge">🟢 License Active</span>
+                    </div>
+                    <span class="user-menu-chevron">▲</span>
+
+                    <!-- FLOATING CONTEXT MENU -->
+                    <div class="user-popover-menu hidden" id="user-popover-menu">
+                        <div class="popover-user-details">
+                            <div class="popover-name" id="pop-user-name">Admin Waqas</div>
+                            <div class="popover-email" id="pop-user-email">waqasshoukat2193@gmail.com</div>
+                        </div>
+                        <div class="popover-divider"></div>
+                        <button class="popover-item" id="btn-popover-switch">
+                            <span class="icon">🔄</span> <span>Switch Account</span>
+                        </button>
+                        <button class="popover-item danger" id="btn-popover-logout">
+                            <span class="icon">🚪</span> <span>Log Out</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN VIEW CONTAINER -->
+            <main class="content-area">
+                
+                <!-- 1. DASHBOARD VIEW -->
+                <section id="view-dashboard" class="view-panel active">
+                    <div class="view-header">
+                        <h2>📊 User Dashboard</h2>
+                        <p>Personalized telemetry, active workers status, and queue performance</p>
+                    </div>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card purple">
+                            <div class="kpi-icon">📝</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-pending-prompts">0</span>
+                                <span class="kpi-label">Pending Prompts in Queue</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card blue">
+                            <div class="kpi-icon">🔑</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-avail-sessions">0</span>
+                                <span class="kpi-label">Active Available Sessions</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-icon">🎬</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-completed-prompts">0</span>
+                                <span class="kpi-label">Videos Completed Today</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card gold">
+                            <div class="kpi-icon">📁</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-local-lifetime">0</span>
+                                <span class="kpi-label">Total Videos Generated</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modern User Workspace Analytics Charts Section -->
+                    <div class="dashboard-analytics-grid">
+                        <!-- Chart 1: Local Video Generation & Queue Activity -->
+                        <div class="glass-card chart-card-lg">
+                            <div class="card-header-flex flex-between">
+                                <div>
+                                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                                        <span>📈</span> Video Generation & Queue Activity
+                                    </h3>
+                                    <p class="card-desc" style="margin-bottom: 8px;">Daily output velocity and pending queue load</p>
+                                </div>
+                                <div class="chart-badges" style="display: flex; gap: 8px;">
+                                    <span class="badge badge-green" id="dash-chart-speed-badge">⚡ Seedance 2.0 Engine</span>
+                                    <span class="badge badge-cyan" id="dash-chart-total-badge">0 Videos Generated</span>
+                                </div>
+                            </div>
+                            <div class="chart-container" style="height: 220px; position: relative; margin-top: 10px;">
+                                <canvas id="dash-chart-production"></canvas>
+                            </div>
+                        </div>
+
+                        <!-- Chart 2: Session Health & Daily Quota -->
+                        <div class="glass-card chart-card-sm">
+                            <div class="card-header-flex flex-between">
+                                <div>
+                                    <h3 style="display: flex; align-items: center; gap: 8px;">
+                                        <span>🎯</span> Session Pool & Quota
+                                    </h3>
+                                    <p class="card-desc" style="margin-bottom: 8px;">Live status & 24h rolling capacity</p>
+                                </div>
+                            </div>
+                            <div class="chart-container" style="height: 170px; position: relative; margin-top: 5px;">
+                                <canvas id="dash-chart-sessions"></canvas>
+                            </div>
+                            <div class="chart-legend-row" id="dash-session-legend" style="display: flex; justify-content: space-around; font-size: 11px; margin-top: 12px; color: var(--text-muted);">
+                                <span><strong style="color: #10b981;">●</strong> Available: <b id="stat-avail-count" style="color: #ffffff;">0</b></span>
+                                <span><strong style="color: #f59e0b;">●</strong> In-Use: <b id="stat-running-count" style="color: #ffffff;">0</b></span>
+                                <span><strong style="color: #f43f5e;">●</strong> Expired: <b id="stat-expired-count" style="color: #ffffff;">0</b></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Quick Stats Row -->
+                    <div class="dashboard-metrics-subgrid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px;">
+                        <div class="glass-card metric-pill-card">
+                            <div class="flex-between">
+                                <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Success Rate</span>
+                                <span style="font-size: 16px;">🏆</span>
+                            </div>
+                            <div style="font-size: 22px; font-weight: 800; color: #10b981; margin-top: 4px;" id="dash-stat-success-rate">100%</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Zero watermark errors</div>
+                        </div>
+                        <div class="glass-card metric-pill-card">
+                            <div class="flex-between">
+                                <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Avg. Rendering Speed</span>
+                                <span style="font-size: 16px;">⏱️</span>
+                            </div>
+                            <div style="font-size: 22px; font-weight: 800; color: #06b6d4; margin-top: 4px;">~45s</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Seedance 2.0 Fast Engine</div>
+                        </div>
+                        <div class="glass-card metric-pill-card">
+                            <div class="flex-between">
+                                <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Viral Prompts Vault</span>
+                                <span style="font-size: 16px;">🔥</span>
+                            </div>
+                            <div style="font-size: 22px; font-weight: 800; color: #a855f7; margin-top: 4px;">223 Ready</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">1-Click batch generation</div>
+                        </div>
+                        <div class="glass-card metric-pill-card">
+                            <div class="flex-between">
+                                <span style="font-size: 12px; color: var(--text-muted); font-weight: 600;">Engine Status</span>
+                                <span style="font-size: 16px;">⚡</span>
+                            </div>
+                            <div style="font-size: 22px; font-weight: 800; color: #10b981; margin-top: 4px;" id="dash-stat-engine-status">System Ready</div>
+                            <div style="font-size: 11px; color: var(--text-muted); margin-top: 2px;">Multi-tab rolling pool</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. SESSIONS VIEW -->
+                <section id="view-sessions" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <div style="display: flex; align-items: center; gap: 14px;">
+                                <h2>🔑 Session Management</h2>
+                                <span id="sess-summary-count" class="badge badge-purple" style="font-size: 13px; font-weight: 700; padding: 5px 12px;">0 Available | 0 Expired (0 Total)</span>
+                            </div>
+                            <p>Manage authenticated browser profiles, cookies, and credit pools</p>
+                        </div>
+                        <div class="header-button-group">
+                            <input type="file" id="bulk-cookie-file-input" multiple accept=".json,.txt" style="display: none;">
+                            <button class="btn btn-success" id="btn-open-add-session">➕ Add Session</button>
+                            <button class="btn btn-secondary" id="btn-import-cookie-files">📥 Import JSON</button>
+                            <button class="btn btn-secondary" id="btn-refresh-sessions">🔄 Refresh</button>
+                        </div>
+                    </div>
+
+                    <!-- Session Management Toolbar -->
+                    <div class="session-toolbar glass-card" style="padding: 12px 18px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                            <button class="btn btn-secondary btn-sm" id="btn-sess-select-all-avail">Select All Available</button>
+                            <button class="btn btn-secondary btn-sm" id="btn-sess-deselect-all">Deselect All</button>
+                            <button class="btn btn-danger btn-sm" id="btn-sess-delete-selected">🗑️ Delete Selected</button>
+                        </div>
+                        <div style="color: var(--text-muted); font-size: 12px; font-style: italic;">
+                            💡 Tip: Click <b>🔍 OPEN</b> to launch an isolated browser or toggle status between Available / Expired.
+                        </div>
+                    </div>
+
+                    <!-- 🟢 Available Sessions Group -->
+                    <div class="glass-card" style="margin-bottom: 20px; border-left: 4px solid #10b981;">
+                        <div class="flex-between" style="margin-bottom: 12px;">
+                            <h3 id="heading-available-sessions" style="color: #10b981; font-size: 16px; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                🟢 Available Sessions (0)
+                            </h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="table-available-sessions">
+                                <thead>
+                                    <tr>
+                                        <th width="40" style="text-align: center;"><input type="checkbox" id="chk-head-avail" title="Select/Deselect All Available"></th>
+                                        <th width="50" style="text-align: center;">#</th>
+                                        <th width="110" style="text-align: center;">Session ID</th>
+                                        <th>Session Name</th>
+                                        <th width="140" style="text-align: center;">Videos Left</th>
+                                        <th width="130" style="text-align: center;">Status</th>
+                                        <th width="260" style="text-align: right;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-available-sessions">
+                                    <tr><td colspan="7" style="text-align:center; color: var(--text-muted); padding: 24px;">No available sessions registered. Click "➕ Add Session" or "📥 Import JSON" to add.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 🔴 Expired Sessions Group -->
+                    <div class="glass-card" style="border-left: 4px solid #ef4444;">
+                        <div class="flex-between" style="margin-bottom: 12px;">
+                            <h3 id="heading-expired-sessions" style="color: #ef4444; font-size: 16px; margin: 0; display: flex; align-items: center; gap: 8px;">
+                                🔴 Expired Sessions (0)
+                            </h3>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="data-table" id="table-expired-sessions">
+                                <thead>
+                                    <tr>
+                                        <th width="40" style="text-align: center;"><input type="checkbox" id="chk-head-exp" title="Select/Deselect All Expired"></th>
+                                        <th width="50" style="text-align: center;">#</th>
+                                        <th width="110" style="text-align: center;">Session ID</th>
+                                        <th>Session Name</th>
+                                        <th width="140" style="text-align: center;">Videos Left</th>
+                                        <th width="130" style="text-align: center;">Status</th>
+                                        <th width="260" style="text-align: right;">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tbody-expired-sessions">
+                                    <tr><td colspan="7" style="text-align:center; color: var(--text-muted); padding: 24px;">No expired sessions.</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3. SEEDANCE 15 SEC AUTOMATION SUITE -->
+                <section id="view-prompts" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>⚡ Seedance 15 sec Automation</h2>
+                            <p>Unified studio for prompt queue management, worker engine orchestration, and downloaded media</p>
+                        </div>
+                        <div class="header-button-group" id="seedance-queue-actions">
+                            <button class="btn btn-secondary" id="btn-import-prompts-file">📥 Import Excel / CSV / TXT</button>
+                            <button class="btn btn-secondary" id="btn-clear-completed-prompts">🧹 Clear Completed</button>
+                            <button class="btn btn-danger" id="btn-clear-all-prompts">🗑️ Clear All Prompts</button>
+                            <button class="btn btn-primary" id="btn-open-add-prompt">➕ Add Prompts</button>
+                        </div>
+                    </div>
+
+                    <!-- Modern Sub-Tabs Navigation for Seedance Panel -->
+                    <div class="subtab-bar" style="margin-bottom: 20px;">
+                        <button class="subtab-btn active" data-subtab="seedance-queue">📝 Prompt Queue & Launch</button>
+                        <button class="subtab-btn" data-subtab="seedance-engine">⚡ Workers Engine</button>
+                        <button class="subtab-btn" data-subtab="seedance-downloads">📥 Downloads Gallery</button>
+                    </div>
+
+                    <!-- SUB-TAB 1: PROMPT QUEUE & QUICK LAUNCH -->
+                    <div id="subtab-seedance-queue" class="subtab-panel active">
+                        <div class="dashboard-split" style="margin-bottom: 20px;">
+                            <div class="glass-card">
+                                <h3>⚡ Quick Automation Launch</h3>
+                                <p class="card-desc">Configure concurrent session rolling pool and start batch video generation</p>
+                                
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label>Sessions Concurrency</label>
+                                        <input type="number" id="cfg-sessions-at-a-time-prompts" class="cfg-sessions-input" value="3" min="1" max="20">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Videos Per Session</label>
+                                        <input type="number" id="cfg-videos-per-session-prompts" class="cfg-videos-input" value="15" min="1" max="50">
+                                    </div>
+                                    <div class="form-group full-width">
+                                        <label>Default Output Storage</label>
+                                        <div class="input-with-button">
+                                            <input type="text" id="cfg-download-dir-prompts" class="cfg-dir-input" readonly>
+                                            <button class="btn btn-secondary btn-open-downloads-dir" id="btn-open-dir-prompts">📁 Open Folder</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="card-footer-actions">
+                                    <button class="btn btn-accent btn-save-config" id="btn-save-prompts-config">Save Settings</button>
+                                    <button class="btn btn-primary btn-large btn-start-automation-run" id="btn-prompts-start-run">🚀 Start Batch Automation</button>
+                                </div>
+                            </div>
+
+                            <div class="glass-card">
+                                <div class="card-header-flex flex-between">
+                                    <div>
+                                        <h3>📜 Live Telemetry Stream</h3>
+                                        <p class="card-desc">Real-time worker execution logs & task status</p>
+                                    </div>
+                                    <button class="btn btn-sm btn-outline-cyan btn-expand-logs" id="btn-open-logs-modal-prompts" title="Open Big Screen Diagnostic Console">
+                                        <span>⛶</span> Expand Console
+                                    </button>
+                                </div>
+                                <div class="mini-logs-box clickable-logs" id="mini-logs-console-prompts" title="Click to open Fullscreen Console">
+                                    <div class="log-line info">System ready. Select prompts and sessions to start.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card full-height">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th width="80">ID</th>
+                                        <th>Prompt Description</th>
+                                        <th width="150">Category</th>
+                                        <th width="120">Status</th>
+                                        <th width="120">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="prompts-table-body">
+                                    <!-- Dynamic prompt rows -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- SUB-TAB 2: WORKERS ENGINE -->
+                    <div id="subtab-seedance-engine" class="subtab-panel">
+                        <div class="glass-card" style="margin-bottom: 20px;">
+                            <div class="automation-status-banner" id="automation-banner">
+                                <div class="status-indicator">
+                                    <span class="pulse-ring" id="auto-pulse"></span>
+                                    <h3 id="auto-status-title">Automation Engine Idle</h3>
+                                </div>
+                                <div class="banner-actions">
+                                    <button class="btn btn-primary btn-large" id="btn-auto-start">🚀 Launch Automation</button>
+                                    <button class="btn btn-danger btn-large hidden" id="btn-auto-stop">⏹️ Stop Queue</button>
+                                </div>
+                            </div>
+
+                            <div class="settings-strip">
+                                <div class="strip-item">
+                                    <label class="checkbox-container">
+                                        <input type="checkbox" id="chk-watermark-remover" checked>
+                                        <span>🧼 Built-in Watermark Blur Remover Active</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-card full-height">
+                            <div class="card-header-flex flex-between">
+                                <div>
+                                    <h3>💻 Dedicated Workers & Diagnostics Console</h3>
+                                    <p class="card-desc">Deep execution traces, session allocations, and browser runtime logs</p>
+                                </div>
+                                <button class="btn btn-secondary btn-sm" id="btn-clear-main-logs">🧹 Clear Console</button>
+                            </div>
+                            <div class="logs-console-large" style="margin-top: 14px;">
+                                <div class="logs-terminal" id="logs-container" style="max-height: 380px; min-height: 250px;">
+                                    <div class="log-line info">Workers engine standby... Ready for queue execution.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-TAB 3: DOWNLOADS GALLERY -->
+                    <div id="subtab-seedance-downloads" class="subtab-panel">
+                        <div class="glass-card full-height">
+                            <div class="card-header-flex flex-between" style="margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
+                                <div>
+                                    <div style="display: flex; align-items: center; gap: 12px;">
+                                        <h3 style="margin: 0;">🎬 Verified MP4 Video Gallery</h3>
+                                        <span id="downloads-count-badge" class="badge badge-cyan" style="font-size: 12px; font-weight: 700; padding: 4px 10px;">0 Videos</span>
+                                    </div>
+                                    <p class="card-desc" style="margin: 4px 0 0 0;">Click any video card or thumbnail to play directly in-app</p>
+                                </div>
+                                <div class="header-button-group" style="display: flex; gap: 10px; align-items: center;">
+                                    <div class="view-toggle-group" style="display: inline-flex; background: rgba(255,255,255,0.06); padding: 3px; border-radius: var(--radius-sm); border: 1px solid var(--border-subtle);">
+                                        <button class="btn btn-sm view-toggle-btn active" id="btn-view-gallery" data-mode="grid" title="Visual Video Cards Grid" style="padding: 6px 12px; font-size: 12px;">🖼️ Grid Gallery</button>
+                                        <button class="btn btn-sm view-toggle-btn" id="btn-view-table" data-mode="table" title="Compact Table List" style="padding: 6px 12px; font-size: 12px;">📋 Table List</button>
+                                    </div>
+                                    <button class="btn btn-secondary btn-open-downloads-dir" id="btn-open-downloads-dir-tab">📁 Open Folder</button>
+                                    <button class="btn btn-secondary" id="btn-refresh-downloads">🔄 Refresh</button>
+                                </div>
+                            </div>
+
+                            <!-- Visual Video Gallery Grid View -->
+                            <div id="downloads-gallery-grid" class="video-gallery-grid">
+                                <!-- Dynamic Video Cards -->
+                            </div>
+
+                            <!-- Compact Table List View (Alternative) -->
+                            <div id="downloads-table-container" class="table-responsive hidden" style="margin-top: 10px;">
+                                <table class="data-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Video File Name</th>
+                                            <th width="140">File Size</th>
+                                            <th width="180">Last Modified</th>
+                                            <th width="200" style="text-align: right;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="downloads-table-body">
+                                        <!-- Dynamic downloads -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4. VIRAL PROMPTS LIBRARY VIEW -->
+                <section id="view-viral-prompts" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>🔥 Viral Prompts Vault (223 Pre-Loaded)</h2>
+                            <p>High-converting AI video prompts ready for 1-click batch generation</p>
+                        </div>
+                        <div class="header-button-group">
+                            <button class="btn btn-secondary" id="btn-copy-all-viral">📋 Copy All Visible</button>
+                            <div class="search-box">
+                                <input type="text" id="input-viral-search" placeholder="🔍 Search viral prompts...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Chips Filter -->
+                    <div class="category-chips" id="viral-category-chips">
+                        <button class="chip active" data-category="ALL">All Prompts</button>
+                        <button class="chip" data-category="E-Commerce">E-Commerce</button>
+                        <button class="chip" data-category="Storytelling">Storytelling</button>
+                        <button class="chip" data-category="Ads">High-Converting Ads</button>
+                        <button class="chip" data-category="Faceless">Faceless Reels</button>
+                        <button class="chip" data-category="Motivational">Motivational</button>
+                    </div>
+
+                    <div class="viral-grid" id="viral-prompts-container">
+                        <!-- Dynamic Viral Cards -->
+                    </div>
+                </section>
+
+                <!-- 7. SUPER ADMIN VIEW -->
+                <section id="view-super-admin" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>👑 Super Admin SaaS Control Center</h2>
+                            <p>Multi-user creator approvals, license status, and cloud analytics</p>
+                        </div>
+                        <button class="btn btn-primary" id="btn-refresh-super">🔄 Sync Cloud Data</button>
+                    </div>
+
+                    <!-- Sub-Tab Navigation Bar -->
+                    <div class="flex-between" style="margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+                        <div class="subtab-bar" style="margin-bottom: 0;">
+                            <button class="subtab-btn active" data-subtab="sa-analytics">📊 Visual Analytics & Graphs</button>
+                            <button class="subtab-btn" data-subtab="sa-directory">👥 Creators Directory & Leads</button>
+                        </div>
+
+                        <!-- 📅 DAILY ACTIVITY CALENDAR BAR -->
+                        <div class="date-picker-bar">
+                            <div class="date-picker-group">
+                                <span class="date-picker-label">📅 Activity Date:</span>
+                                <input type="date" id="sa-date-picker" class="date-picker-input">
+                            </div>
+                            <div class="date-shortcuts">
+                                <button class="btn-date-chip active" data-dateshortcut="today">Today</button>
+                                <button class="btn-date-chip" data-dateshortcut="yesterday">Yesterday</button>
+                                <button class="btn-date-chip" data-dateshortcut="last7">Last 7 Days</button>
+                                <button class="btn-date-chip" data-dateshortcut="all">All Time</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-TAB 1: VISUAL ANALYTICS & GRAPHS -->
+                    <div id="subtab-sa-analytics" class="subtab-panel active">
+                        <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
+                            <div class="kpi-card green">
+                                <div class="kpi-icon">🔥</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-active-users-date">0</span>
+                                    <span class="kpi-label" id="sa-active-label">Active Users on Date</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card cyan">
+                                <div class="kpi-icon">🎬</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-videos-date">0</span>
+                                    <span class="kpi-label" id="sa-videos-date-label">Videos on Date</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card purple">
+                                <div class="kpi-icon">👥</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-total-users">0</span>
+                                    <span class="kpi-label">Total Cloud Creators</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card gold">
+                                <div class="kpi-icon">⌛</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-pending-users">0</span>
+                                    <span class="kpi-label">Pending Approval Requests</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card blue">
+                                <div class="kpi-icon">⚡</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-total-videos">0</span>
+                                    <span class="kpi-label">All-Time Video Generations</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Daily Active Users & Velocity Trend Chart -->
+                        <div class="glass-card" style="margin-top: 20px;">
+                            <div class="flex-between" style="margin-bottom: 12px;">
+                                <div>
+                                    <h3>📅 Daily Active Users & Production Trend</h3>
+                                    <p class="card-desc" style="margin-bottom: 0;">Daily active creator volume and generated video throughput over time</p>
+                                </div>
+                                <span class="badge badge-cyan" id="sa-chart-date-range">Last 14 Days</span>
+                            </div>
+                            <div style="height: 280px; position: relative;">
+                                <canvas id="chart-daily-active-trend"></canvas>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-split" style="margin-top: 20px;">
+                            <!-- Top 10 Creators Bar Chart -->
+                            <div class="glass-card">
+                                <h3>📊 Top 10 Creator Video Producers</h3>
+                                <p class="card-desc">Highest volume video generation creators across cloud network</p>
+                                <div style="height: 300px; position: relative;">
+                                    <canvas id="chart-top-creators"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Account Status Distribution Donut Chart -->
+                            <div class="glass-card">
+                                <h3>🍩 Account Status Distribution</h3>
+                                <p class="card-desc">Active vs Pending vs Blocked creator ratio</p>
+                                <div style="height: 300px; position: relative; display: flex; align-items: center; justify-content: center;">
+                                    <canvas id="chart-status-donut"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-TAB 2: CREATORS DIRECTORY & TABLE -->
+                    <div id="subtab-sa-directory" class="subtab-panel">
+                        <div class="glass-card full-height">
+                            <div class="flex-between" style="margin-bottom: 14px; flex-wrap: wrap; gap: 12px;">
+                                <div>
+                                    <h3>Creators Directory & Leads Extraction</h3>
+                                    <p class="card-desc" style="margin-bottom: 0;">Filter daily active creators, top producers, inactive leads, and export to Excel</p>
+                                </div>
+                                <div class="header-button-group" style="display: flex; align-items: center; gap: 10px;">
+                                    <div class="search-box" style="min-width: 280px;">
+                                        <input type="text" id="input-sa-search" placeholder="🔍 Search email, name or WhatsApp...">
+                                    </div>
+                                    <button class="btn btn-success" id="btn-export-excel" title="Export all creator data to Excel (.csv / .xlsx compatible)">
+                                        <span>📊</span> Export to Excel
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- LEAD & ACTIVITY FILTER CHIPS BAR -->
+                            <div class="filter-chips-bar" id="lead-filter-chips">
+                                <button class="lead-filter-chip active" data-filter="all">🏷️ All Creators <span class="chip-count" id="chip-cnt-all">0</span></button>
+                                <button class="lead-filter-chip" data-filter="active-date">🔥 Active on Selected Date <span class="chip-count" id="chip-cnt-active">0</span></button>
+                                <button class="lead-filter-chip" data-filter="high-producer">⚡ High Producers (50+) <span class="chip-count" id="chip-cnt-high">0</span></button>
+                                <button class="lead-filter-chip" data-filter="paid">⭐ Paid Users <span class="chip-count" id="chip-cnt-paid">0</span></button>
+                                <button class="lead-filter-chip" data-filter="free">🟢 Free Users <span class="chip-count" id="chip-cnt-free">0</span></button>
+                                <button class="lead-filter-chip" data-filter="pending">⏳ Pending Requests <span class="chip-count" id="chip-cnt-pending">0</span></button>
+                                <button class="lead-filter-chip" data-filter="inactive">💤 Inactive Leads (0 Vids) <span class="chip-count" id="chip-cnt-inactive">0</span></button>
+                            </div>
+                            
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Creator Email</th>
+                                        <th>Full Name</th>
+                                        <th style="min-width: 175px; white-space: nowrap;">📱 WhatsApp Number</th>
+                                        <th width="145">Activity Tag</th>
+                                        <th width="110">Total Videos</th>
+                                        <th width="115" id="th-date-videos">Date Videos</th>
+                                        <th width="105">Status</th>
+                                        <th width="135">Role</th>
+                                        <th width="130">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="super-admin-table-body">
+                                    <!-- Dynamic creators list -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- ── MODALS ─────────────────────────────────────────────────────────── -->
+    <!-- ADD SESSION MODAL -->
+    <div class="modal-backdrop hidden" id="modal-add-session">
+        <div class="modal-card">
+            <h3>🔑 Add New Session Profile</h3>
+            <p class="modal-desc">Create a new session profile with cookie file or paste cookie JSON</p>
+            
+            <div class="form-group">
+                <label>Session Profile Name</label>
+                <input type="text" id="modal-session-name" placeholder="e.g. Dola_Account_01">
+            </div>
+            
+            <div class="form-group">
+                <label>Cookie JSON Data / File (Optional)</label>
+                <div class="cookie-file-uploader-box">
+                    <input type="file" id="modal-session-cookie-file" accept=".json,.txt" style="display: none;">
+                    <button type="button" class="btn btn-sm btn-outline-purple" id="btn-browse-cookie-file">
+                        📁 Upload Cookie File (.json / .txt)
+                    </button>
+                    <span class="file-name-preview" id="cookie-file-name-preview">No file selected</span>
+                </div>
+                <textarea id="modal-session-cookie" rows="4" placeholder="Paste cookie JSON here or upload cookie file above..."></textarea>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="btn-close-session-modal">Cancel</button>
+                <button class="btn btn-primary" id="btn-save-session">Create Session Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD / BATCH IMPORT PROMPTS MODAL -->
+    <div class="modal-backdrop hidden" id="modal-add-prompt">
+        <div class="modal-card prompt-modal-card" style="width: 580px; max-width: 95vw;">
+            <div class="flex-between">
+                <div>
+                    <h3 style="margin: 0;">📝 Add / Import Video Prompts</h3>
+                    <p class="modal-desc" style="margin-top: 2px;">Batch paste, import Excel/CSV/TXT file, or add single prompt</p>
+                </div>
+            </div>
+
+            <!-- Modal Sub-Tabs -->
+            <div class="auth-tabs" id="prompt-modal-tabs">
+                <button type="button" class="auth-tab-btn active" data-ptab="paste">⚡ Quick Paste (1 Per Line)</button>
+                <button type="button" class="auth-tab-btn" data-ptab="file">📁 Excel / CSV / TXT</button>
+                <button type="button" class="auth-tab-btn" data-ptab="single">✏️ Single Prompt</button>
+            </div>
+
+            <!-- 1. Quick Paste Panel -->
+            <div class="prompt-tab-panel active" id="ptab-panel-paste">
+                <div class="form-group">
+                    <div class="flex-between" style="margin-bottom: 4px;">
+                        <label>Paste Multiple Prompts (One Prompt Per Line)</label>
+                        <span id="paste-prompt-count-badge" class="badge badge-cyan">0 prompts detected</span>
+                    </div>
+                    <textarea id="modal-bulk-prompts-text" rows="7" placeholder="Cinematic drone flying over mountains in sunset 4k&#10;Macro close-up of raindrop on neon cyberpunk leaf&#10;Futuristic flying sports car racing in rain at night&#10;..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category Tag</label>
+                    <input type="text" id="modal-bulk-prompt-category" value="General">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary btn-close-prompt-modal">Cancel</button>
+                    <button class="btn btn-primary" id="btn-save-bulk-prompts">⚡ Add to Queue</button>
+                </div>
+            </div>
+
+            <!-- 2. File Upload Panel -->
+            <div class="prompt-tab-panel" id="ptab-panel-file" style="display: none;">
+                <div class="file-dropzone" id="prompt-file-dropzone" style="border: 2px dashed rgba(6, 182, 212, 0.4); border-radius: var(--radius-md); padding: 28px 20px; text-align: center; background: rgba(6, 182, 212, 0.04); cursor: pointer; transition: all 0.2s ease;">
+                    <div style="font-size: 32px; margin-bottom: 8px;">📊</div>
+                    <h4 style="margin-bottom: 4px; color: #ffffff;">Click to browse or drag & drop file</h4>
+                    <p style="font-size: 12px; color: var(--text-muted); margin: 0;">Supports Excel (<strong>.xlsx</strong>, <strong>.xls</strong>), CSV (<strong>.csv</strong>), and Text (<strong>.txt</strong>)</p>
+                    <input type="file" id="modal-input-file" accept=".txt,.csv,.xlsx,.xls" style="display: none;">
+                </div>
+                <div id="file-upload-preview" style="display: none; padding: 12px; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: var(--radius-sm); font-size: 13px; color: #10b981;">
+                    📄 <span id="file-upload-name" style="font-weight: 600;"></span> — <span id="file-upload-count">0 prompts parsed</span>
+                </div>
+                <div class="form-group">
+                    <label>Category Tag</label>
+                    <input type="text" id="modal-file-prompt-category" value="General">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary btn-close-prompt-modal">Cancel</button>
+                    <button class="btn btn-primary" id="btn-save-file-prompts" disabled>📥 Import from File</button>
+                </div>
+            </div>
+
+            <!-- 3. Single Prompt Panel -->
+            <div class="prompt-tab-panel" id="ptab-panel-single" style="display: none;">
+                <div class="form-group">
+                    <label>Prompt Description</label>
+                    <textarea id="modal-prompt-text" rows="4" placeholder="Describe the AI video to generate..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Category Tag</label>
+                    <input type="text" id="modal-prompt-category" value="General">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary btn-close-prompt-modal">Cancel</button>
+                    <button class="btn btn-primary" id="btn-save-prompt">Add to Queue</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTH MODAL (SIGN IN / SIGN UP / SWITCH ACCOUNT) -->
+    <div class="modal-backdrop hidden" id="modal-auth">
+        <div class="modal-card auth-modal-card">
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="auth-tab-signin" data-authtab="signin">🔐 Sign In</button>
+                <button class="auth-tab-btn" id="auth-tab-signup" data-authtab="signup">📝 Create Account</button>
+            </div>
+
+            <!-- Sign In Panel -->
+            <div class="auth-panel active" id="auth-panel-signin">
+                <h3>Welcome Back</h3>
+                <p class="modal-desc">Sign in to access your Dola AI & Facebook Automation SaaS</p>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" id="auth-signin-email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="auth-signin-password" placeholder="••••••••" autocomplete="current-password">
+                        <button type="button" class="btn-toggle-password" data-target="auth-signin-password" title="Toggle password visibility">
+                            <svg class="eye-icon eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <svg class="eye-icon eye-closed hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="btn-close-auth-modal">Cancel</button>
+                    <button class="btn btn-primary" id="btn-submit-signin">🚀 Sign In</button>
+                </div>
+            </div>
+
+            <!-- Sign Up Panel -->
+            <div class="auth-panel" id="auth-panel-signup">
+                <h3>Register New Account</h3>
+                <p class="modal-desc">Create your creator account for automated video generation</p>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="auth-signup-name" placeholder="Muhammad Ali">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="auth-signup-email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <div class="password-input-wrapper">
+                        <input type="password" id="auth-signup-password" placeholder="••••••••" autocomplete="new-password">
+                        <button type="button" class="btn-toggle-password" data-target="auth-signup-password" title="Toggle password visibility">
+                            <svg class="eye-icon eye-open" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                            <svg class="eye-icon eye-closed hidden" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number (Optional)</label>
+                    <input type="text" id="auth-signup-whatsapp" placeholder="+923001234567">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="btn-close-auth-signup-modal">Cancel</button>
+                    <button class="btn btn-accent" id="btn-submit-signup">🎉 Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FULLSCREEN / BIG SCREEN LOGS CONSOLE MODAL -->
+    <div class="modal-backdrop hidden" id="modal-logs-console">
+        <div class="modal-card logs-modal-card">
+            <div class="modal-header-flex flex-between">
+                <div class="modal-title-group">
+                    <div class="title-with-badge">
+                        <h3>📄 Diagnostic Logs Console</h3>
+                        <span class="badge badge-cyan pulse-live">● LIVE STREAM</span>
+                    </div>
+                    <p class="modal-desc">Real-time sanitized logging output stream & worker execution telemetry</p>
+                </div>
+                <div class="modal-header-actions">
+                    <button class="btn btn-secondary btn-sm" id="btn-clear-logs-modal" title="Clear console output">
+                        <span>🧹</span> Clear Logs
+                    </button>
+                    <button class="btn btn-secondary btn-sm" id="btn-copy-logs-modal" title="Copy logs to clipboard">
+                        <span>📋</span> Copy Logs
+                    </button>
+                    <button class="btn-close-circle" id="btn-close-logs-modal" title="Close Console">✕</button>
+                </div>
+            </div>
+
+            <div class="modal-console-card">
+                <div class="console-body" id="full-logs-console">
+                    <div class="log-line info">System booted. Ready for operation.</div>
+                </div>
+            </div>
+
+            <div class="modal-footer-info flex-between">
+                <div class="footer-status-indicator">
+                    <span class="pulse-dot green"></span>
+                    <span class="text-muted text-xs">⚡ Live logging active — auto-scrolling to newest entry</span>
+                </div>
+                <button class="btn btn-primary btn-sm" id="btn-close-logs-modal-footer">Close Console</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- IN-APP HD VIDEO PLAYER MODAL -->
+    <div class="modal-backdrop hidden" id="modal-video-player">
+        <div class="modal-card video-player-modal-card">
+            <div class="modal-header-flex flex-between">
+                <div class="modal-title-group" style="display: flex; align-items: center; gap: 10px; overflow: hidden; max-width: 80%;">
+                    <span style="font-size: 20px;">🎬</span>
+                    <div>
+                        <h3 id="video-modal-title" style="font-size: 16px; margin: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Video Playback</h3>
+                        <p id="video-modal-meta" class="modal-desc" style="font-size: 12px; margin: 0;">MP4 Video • Verified Local Storage</p>
+                    </div>
+                </div>
+                <div class="modal-header-actions" style="display: flex; gap: 8px; align-items: center;">
+                    <button class="btn btn-secondary btn-sm" id="btn-video-open-folder" title="Show in File Explorer">📁 Show in Folder</button>
+                    <button class="btn btn-danger btn-sm" id="btn-close-video-modal" title="Close Player (Esc)">✕</button>
+                </div>
+            </div>
+
+            <!-- Video Player Screen -->
+            <div class="video-player-container">
+                <video id="in-app-video-element" controls preload="metadata" playsinline>
+                    Your browser does not support HTML5 video playback.
+                </video>
+            </div>
+
+            <!-- Video Player Footer Info -->
+            <div class="video-player-footer flex-between">
+                <span id="video-modal-filepath" class="text-muted text-xs" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 75%;">Path: ...</span>
+                <button class="btn btn-primary btn-sm" id="btn-video-close-footer">Done Watching</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOM SAAS CENTERED DIALOG MODAL (CONFIRM & ALERT) -->
+    <div class="modal-backdrop hidden" id="modal-saas-dialog">
+        <div class="modal-card dialog-modal-card">
+            <div class="dialog-icon-circle" id="dialog-icon">❓</div>
+            <h3 id="dialog-title" style="text-align: center;">Confirmation Required</h3>
+            <p class="modal-desc" id="dialog-message" style="text-align: center; font-size: 14px; line-height: 1.6;">Are you sure you want to proceed?</p>
+            <div class="modal-actions" id="dialog-actions" style="justify-content: center; margin-top: 10px;">
+                <button class="btn btn-secondary" id="dialog-btn-cancel">Cancel</button>
+                <button class="btn btn-primary" id="dialog-btn-confirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION CONTAINER -->
+    <div class="toast-container" id="toast-container"></div>
+
+    <!-- AUTO-UPDATE NOTIFICATION MODAL -->
+    <div id="update-modal-overlay" class="update-modal-overlay hidden">
+        <div class="update-modal">
+            <div class="update-modal-icon">🚀</div>
+            <h2 class="update-modal-title">New Update Available!</h2>
+            <div class="update-modal-version">
+                <span class="update-old-ver" id="update-current-ver">v2.0.7</span>
+                <span class="update-arrow">→</span>
+                <span class="update-new-ver" id="update-new-ver">v2.0.8</span>
+            </div>
+            <div class="update-modal-notes" id="update-release-notes">
+                <h4>📋 What's New:</h4>
+                <p>Loading...</p>
+            </div>
+            <div class="update-modal-actions" id="update-modal-actions">
+                <button id="update-download-btn" class="update-btn-download" onclick="applyAppUpdate()">
+                    ⚡ Update Now (1-Click Auto Update)
+                </button>
+                <button id="update-skip-btn" class="update-btn-skip" onclick="document.getElementById('update-modal-overlay').classList.add('hidden')">
+                    Skip for Now
+                </button>
+            </div>
+            <div class="update-modal-progress hidden" id="update-progress">
+                <div class="update-progress-bar"><div class="update-progress-fill" id="update-progress-fill" style="width: 10%;"></div></div>
+                <p id="update-progress-text" style="color: #4ade80; font-weight: 600; margin-top: 12px; font-size: 14px;">⏳ Downloading & Installing Update...</p>
+            </div>
+        </div>
+    </div>
+    <style>
+        .update-modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);backdrop-filter:blur(8px);z-index:99999;display:flex;align-items:center;justify-content:center;animation:fadeIn .3s ease}
+        .update-modal-overlay.hidden{display:none}
+        .update-modal{background:linear-gradient(145deg,#1a1a2e,#16213e);border:1px solid rgba(123,97,255,0.3);border-radius:20px;padding:40px;max-width:480px;width:90%;text-align:center;box-shadow:0 25px 80px rgba(123,97,255,0.25),0 0 60px rgba(123,97,255,0.08);animation:slideUp .4s ease}
+        .update-modal-icon{font-size:56px;margin-bottom:12px;animation:bounce 1s infinite}
+        .update-modal-title{font-family:'Outfit',sans-serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:16px}
+        .update-modal-version{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:20px;font-family:'JetBrains Mono',monospace;font-size:16px}
+        .update-old-ver{color:#ff6b6b;background:rgba(255,107,107,0.12);padding:6px 14px;border-radius:8px;text-decoration:line-through}
+        .update-arrow{color:#7b61ff;font-size:22px;font-weight:bold}
+        .update-new-ver{color:#4ade80;background:rgba(74,222,128,0.12);padding:6px 14px;border-radius:8px;font-weight:700}
+        .update-modal-notes{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-bottom:24px;text-align:left;max-height:180px;overflow-y:auto;color:#ccc;font-size:13px;line-height:1.6}
+        .update-modal-notes h4{color:#7b61ff;margin-bottom:8px;font-size:14px}
+        .update-modal-actions{display:flex;flex-direction:column;gap:10px}
+        .update-btn-download{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#7b61ff,#5a3fd4);color:#fff;font-weight:700;font-size:16px;border-radius:12px;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+        .update-btn-download:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(123,97,255,0.4)}
+        .update-btn-skip{padding:10px;background:transparent;color:#888;border:1px solid rgba(255,255,255,0.1);border-radius:10px;cursor:pointer;font-size:13px;transition:all .2s}
+        .update-btn-skip:hover{color:#fff;border-color:rgba(255,255,255,0.25)}
+        .update-modal-progress .update-progress-bar{width:100%;height:6px;background:rgba(255,255,255,0.08);border-radius:4px;overflow:hidden}
+        .update-modal-progress .update-progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#7b61ff,#4ade80);border-radius:4px;transition:width .3s}
+        @keyframes slideUp{from{transform:translateY(40px);opacity:0}to{transform:translateY(0);opacity:1}}
+        @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    </style>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

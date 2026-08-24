@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waqas Automation Pro v2.0.6 - Commercial SaaS Control Center</title>
+    <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Chart.js for High-End SaaS Analytics Graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Dynamic Ambient Background Mesh Aura -->
+    <div class="ambient-bg"></div>
+
+    <div id="app" class="app-container">
+        
+        <!-- ── HEADER BAR ────────────────────────────────────────────────────── -->
+        <header class="top-header">
+            <div class="brand-badge">
+                <div class="brand-icon">⚡</div>
+                <div class="brand-text">
+                    <h1>Waqas Automation Pro <span class="version-tag">v2.0.6</span></h1>
+                    <p class="subtitle">Multi-Session Dola AI & Facebook Automation SaaS</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <div class="live-pill" id="system-status-pill">
+                    <span class="pulse-dot green"></span>
+                    <span id="system-status-text">System Ready</span>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="btn btn-primary" id="btn-global-start">
+                        <span>🚀</span> Run Automation
+                    </button>
+                    <button class="btn btn-danger hidden" id="btn-global-stop">
+                        <span>⏹️</span> Stop Queue
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- ── MAIN BODY CONTAINER (SIDEBAR + STACKED VIEWS) ────────────────── -->
+        <div class="app-body">
+            
+            <!-- LEFT SIDEBAR NAVIGATION -->
+            <aside class="sidebar">
+                <nav class="nav-menu">
+                    <div class="nav-section-title">WORKSPACE</div>
+                    <button class="nav-item active" data-tab="dashboard">
+                        <span class="icon">📊</span> <span class="label">Dashboard</span>
+                    </button>
+                    <button class="nav-item" data-tab="sessions">
+                        <span class="icon">🔑</span> <span class="label">Sessions</span>
+                    </button>
+                    <button class="nav-item" data-tab="prompts">
+                        <span class="icon">📝</span> <span class="label">Prompts</span>
+                    </button>
+                    <button class="nav-item" data-tab="viral-prompts">
+                        <span class="icon">🔥</span> <span class="label">Viral Prompts</span>
+                    </button>
+
+                    <div class="nav-section-title">AUTOMATION</div>
+                    <button class="nav-item" data-tab="automation">
+                        <span class="icon">⚡</span> <span class="label">Workers Engine</span>
+                    </button>
+                    <button class="nav-item" data-tab="downloads">
+                        <span class="icon">📥</span> <span class="label">Downloads</span>
+                    </button>
+                    <button class="nav-item" data-tab="logs">
+                        <span class="icon">📄</span> <span class="label">Activity Logs</span>
+                    </button>
+
+                    <div class="nav-section-title admin-tab">ADMINISTRATOR</div>
+                    <button class="nav-item admin-tab" data-tab="super-admin">
+                        <span class="icon">👑</span> <span class="label">Super Admin</span>
+                    </button>
+                </nav>
+
+                <div class="sidebar-user-card" id="user-card-trigger">
+                    <div class="avatar-circle" id="user-avatar-text">WA</div>
+                    <div class="user-info">
+                        <h4 id="user-display-name">Admin Waqas</h4>
+                        <span class="license-badge" id="user-license-badge">🟢 License Active</span>
+                    </div>
+                    <span class="user-menu-chevron">▲</span>
+
+                    <!-- FLOATING CONTEXT MENU -->
+                    <div class="user-popover-menu hidden" id="user-popover-menu">
+                        <div class="popover-user-details">
+                            <div class="popover-name" id="pop-user-name">Admin Waqas</div>
+                            <div class="popover-email" id="pop-user-email">waqasshoukat2193@gmail.com</div>
+                        </div>
+                        <div class="popover-divider"></div>
+                        <button class="popover-item" id="btn-popover-switch">
+                            <span class="icon">🔄</span> <span>Switch Account</span>
+                        </button>
+                        <button class="popover-item danger" id="btn-popover-logout">
+                            <span class="icon">🚪</span> <span>Log Out</span>
+                        </button>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- MAIN VIEW CONTAINER -->
+            <main class="content-area">
+                
+                <!-- 1. DASHBOARD VIEW -->
+                <section id="view-dashboard" class="view-panel active">
+                    <div class="view-header">
+                        <h2>📊 Executive Command Center</h2>
+                        <p>Real-time telemetry, active workers status, and queue performance</p>
+                    </div>
+
+                    <div class="kpi-grid">
+                        <div class="kpi-card purple">
+                            <div class="kpi-icon">📝</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-pending-prompts">0</span>
+                                <span class="kpi-label">Pending Prompts in Queue</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card blue">
+                            <div class="kpi-icon">🔑</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-avail-sessions">0</span>
+                                <span class="kpi-label">Active Available Sessions</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card green">
+                            <div class="kpi-icon">🎬</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-completed-prompts">0</span>
+                                <span class="kpi-label">Videos Completed Today</span>
+                            </div>
+                        </div>
+                        <div class="kpi-card gold">
+                            <div class="kpi-icon">👑</div>
+                            <div class="kpi-data">
+                                <span class="kpi-value" id="dash-cloud-users">0</span>
+                                <span class="kpi-label">Multi-User SaaS Creators</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-split">
+                        <div class="glass-card">
+                            <h3>⚡ Quick Automation Launch</h3>
+                            <p class="card-desc">Configure concurrent session rolling pool and start batch video generation</p>
+                            
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Sessions Concurrency</label>
+                                    <input type="number" id="cfg-sessions-at-a-time" value="3" min="1" max="20">
+                                </div>
+                                <div class="form-group">
+                                    <label>Videos Per Session</label>
+                                    <input type="number" id="cfg-videos-per-session" value="15" min="1" max="50">
+                                </div>
+                                <div class="form-group full-width">
+                                    <label>Default Output Storage</label>
+                                    <div class="input-with-button">
+                                        <input type="text" id="cfg-download-dir" readonly>
+                                        <button class="btn btn-secondary" id="btn-open-dir-dash">📁 Open Folder</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card-footer-actions">
+                                <button class="btn btn-accent" id="btn-save-dash-config">Save Settings</button>
+                                <button class="btn btn-primary btn-large" id="btn-dash-start-run">🚀 Start Batch Automation</button>
+                            </div>
+                        </div>
+
+                        <div class="glass-card">
+                            <h3>📜 Live Telemetry Stream</h3>
+                            <p class="card-desc">Real-time worker execution logs & task status</p>
+                            <div class="mini-logs-box" id="mini-logs-console">
+                                <div class="log-line info">System ready. Select prompts and sessions to start.</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 2. SESSIONS VIEW -->
+                <section id="view-sessions" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>🔑 Browser Profiles & Sessions</h2>
+                            <p>Manage authenticated browser profiles, cookies, and credit pools</p>
+                        </div>
+                        <button class="btn btn-primary" id="btn-open-add-session">➕ Add New Session</button>
+                    </div>
+
+                    <div class="sessions-grid" id="sessions-container">
+                        <!-- Dynamic Session Cards rendered here -->
+                    </div>
+                </section>
+
+                <!-- 3. PROMPTS VIEW -->
+                <section id="view-prompts" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>📝 Prompt Queue Manager</h2>
+                            <p>Add, edit, or remove prompts queued for video generation</p>
+                        </div>
+                        <div class="header-button-group">
+                            <button class="btn btn-secondary" id="btn-clear-completed-prompts">🧹 Clear Completed</button>
+                            <button class="btn btn-primary" id="btn-open-add-prompt">➕ Add Prompt</button>
+                        </div>
+                    </div>
+
+                    <div class="glass-card full-height">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th width="80">ID</th>
+                                    <th>Prompt Description</th>
+                                    <th width="150">Category</th>
+                                    <th width="120">Status</th>
+                                    <th width="120">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="prompts-table-body">
+                                <!-- Dynamic prompt rows -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 4. VIRAL PROMPTS LIBRARY VIEW -->
+                <section id="view-viral-prompts" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>🔥 Viral Prompts Vault (223 Pre-Loaded)</h2>
+                            <p>High-converting AI video prompts ready for 1-click batch generation</p>
+                        </div>
+                        <div class="header-button-group">
+                            <button class="btn btn-secondary" id="btn-copy-all-viral">📋 Copy All Visible</button>
+                            <div class="search-box">
+                                <input type="text" id="input-viral-search" placeholder="🔍 Search viral prompts...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Category Chips Filter -->
+                    <div class="category-chips" id="viral-category-chips">
+                        <button class="chip active" data-category="ALL">All Prompts</button>
+                        <button class="chip" data-category="E-Commerce">E-Commerce</button>
+                        <button class="chip" data-category="Storytelling">Storytelling</button>
+                        <button class="chip" data-category="Ads">High-Converting Ads</button>
+                        <button class="chip" data-category="Faceless">Faceless Reels</button>
+                        <button class="chip" data-category="Motivational">Motivational</button>
+                    </div>
+
+                    <div class="viral-grid" id="viral-prompts-container">
+                        <!-- Dynamic Viral Cards -->
+                    </div>
+                </section>
+
+                <!-- 5. AUTOMATION VIEW -->
+                <section id="view-automation" class="view-panel">
+                    <div class="view-header">
+                        <div>
+                            <h2>⚡ Automation Worker Command Center</h2>
+                            <p>Live execution progress, Playwright browser tabs, and watermark remover</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-card">
+                        <div class="automation-status-banner" id="automation-banner">
+                            <div class="status-indicator">
+                                <span class="pulse-ring" id="auto-pulse"></span>
+                                <h3 id="auto-status-title">Automation Engine Idle</h3>
+                            </div>
+                            <div class="banner-actions">
+                                <button class="btn btn-primary btn-large" id="btn-auto-start">🚀 Launch Automation</button>
+                                <button class="btn btn-danger btn-large hidden" id="btn-auto-stop">⏹️ Stop Queue</button>
+                            </div>
+                        </div>
+
+                        <div class="settings-strip">
+                            <div class="strip-item">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" id="chk-watermark-remover" checked>
+                                    <span>🧼 Built-in Watermark Blur Remover Active</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 6. DOWNLOADS VIEW -->
+                <section id="view-downloads" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>📥 Generated Media Gallery</h2>
+                            <p>Verified MP4 files saved to your local storage folder</p>
+                        </div>
+                        <button class="btn btn-secondary" id="btn-open-downloads-dir">📁 Open Folder</button>
+                    </div>
+
+                    <div class="glass-card full-height">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Video File Name</th>
+                                    <th width="140">File Size</th>
+                                    <th width="180">Last Modified</th>
+                                    <th width="120">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="downloads-table-body">
+                                <!-- Dynamic downloads -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- 7. LOGS VIEW -->
+                <section id="view-logs" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>📄 Diagnostic Logs Console</h2>
+                            <p>Real-time sanitized logging output stream</p>
+                        </div>
+                        <button class="btn btn-secondary" id="btn-clear-logs">Clear Logs</button>
+                    </div>
+
+                    <div class="log-console-card">
+                        <div class="console-header">
+                            <span class="console-title">TERMINAL OUTPUT STREAM</span>
+                            <span class="badge badge-cyan">● LIVE</span>
+                        </div>
+                        <div class="console-body" id="full-logs-console">
+                            <div class="log-line info">System booted. Ready for operation.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 8. SUPER ADMIN VIEW -->
+                <section id="view-super-admin" class="view-panel">
+                    <div class="view-header flex-between">
+                        <div>
+                            <h2>👑 Super Admin SaaS Control Center</h2>
+                            <p>Multi-user creator approvals, license status, and cloud analytics</p>
+                        </div>
+                        <button class="btn btn-primary" id="btn-refresh-super">🔄 Sync Cloud Data</button>
+                    </div>
+
+                    <!-- Sub-Tab Navigation Bar -->
+                    <div class="subtab-bar">
+                        <button class="subtab-btn active" data-subtab="sa-analytics">📊 Visual Analytics & Graphs</button>
+                        <button class="subtab-btn" data-subtab="sa-directory">👥 Creators Directory & Table</button>
+                    </div>
+
+                    <!-- SUB-TAB 1: VISUAL ANALYTICS & GRAPHS -->
+                    <div id="subtab-sa-analytics" class="subtab-panel active">
+                        <div class="kpi-grid">
+                            <div class="kpi-card purple">
+                                <div class="kpi-icon">👥</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-total-users">0</span>
+                                    <span class="kpi-label">Total Creator Accounts</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card gold">
+                                <div class="kpi-icon">⌛</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-pending-users">0</span>
+                                    <span class="kpi-label">Pending Approval Requests</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card green">
+                                <div class="kpi-icon">🎬</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-total-videos">0</span>
+                                    <span class="kpi-label">Total Videos Generated All-Time</span>
+                                </div>
+                            </div>
+                            <div class="kpi-card blue">
+                                <div class="kpi-icon">⚡</div>
+                                <div class="kpi-data">
+                                    <span class="kpi-value" id="sa-avg-videos">0</span>
+                                    <span class="kpi-label">Avg Videos / Creator</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard-split" style="margin-top: 20px;">
+                            <!-- Top 10 Creators Bar Chart -->
+                            <div class="glass-card">
+                                <h3>📊 Top 10 Creator Video Producers</h3>
+                                <p class="card-desc">Highest volume video generation creators across cloud network</p>
+                                <div style="height: 320px; position: relative;">
+                                    <canvas id="chart-top-creators"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- Account Status Distribution Donut Chart -->
+                            <div class="glass-card">
+                                <h3>🍩 Account Status Distribution</h3>
+                                <p class="card-desc">Active vs Pending vs Blocked creator ratio</p>
+                                <div style="height: 320px; position: relative; display: flex; align-items: center; justify-content: center;">
+                                    <canvas id="chart-status-donut"></canvas>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Production Velocity Line Chart -->
+                        <div class="glass-card" style="margin-top: 20px;">
+                            <h3>📈 Cloud Generation Production Velocity</h3>
+                            <p class="card-desc">Videos generation capacity & system throughput analytics</p>
+                            <div style="height: 280px; position: relative;">
+                                <canvas id="chart-production-velocity"></canvas>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SUB-TAB 2: CREATORS DIRECTORY & TABLE -->
+                    <div id="subtab-sa-directory" class="subtab-panel">
+                        <div class="glass-card full-height">
+                            <div class="flex-between" style="margin-bottom: 16px;">
+                                <div>
+                                    <h3>Creators Directory & License Gate</h3>
+                                    <p class="card-desc" style="margin-bottom: 0;">Approve, block, or manage creator access</p>
+                                </div>
+                                <div class="search-box">
+                                    <input type="text" id="input-sa-search" placeholder="🔍 Search creator by email or name...">
+                                </div>
+                            </div>
+                            
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Creator Email</th>
+                                        <th>Full Name</th>
+                                        <th width="110">Total Videos</th>
+                                        <th width="110">Status</th>
+                                        <th width="140">Assigned Role</th>
+                                        <th width="140">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="super-admin-table-body">
+                                    <!-- Dynamic creators list -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+            </main>
+        </div>
+    </div>
+
+    <!-- ── MODALS ─────────────────────────────────────────────────────────── -->
+    <!-- ADD SESSION MODAL -->
+    <div class="modal-backdrop hidden" id="modal-add-session">
+        <div class="modal-card">
+            <h3>🔑 Add New Session Profile</h3>
+            <p class="modal-desc">Create a new session profile with cookies or credentials</p>
+            
+            <div class="form-group">
+                <label>Session Profile Name</label>
+                <input type="text" id="modal-session-name" placeholder="e.g. Dola_Account_01">
+            </div>
+            
+            <div class="form-group">
+                <label>Cookie JSON Data (Optional)</label>
+                <textarea id="modal-session-cookie" rows="4" placeholder="Paste cookie JSON here if applicable..."></textarea>
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="btn-close-session-modal">Cancel</button>
+                <button class="btn btn-primary" id="btn-save-session">Create Session Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD PROMPT MODAL -->
+    <div class="modal-backdrop hidden" id="modal-add-prompt">
+        <div class="modal-card">
+            <h3>📝 Add New Video Prompt</h3>
+            <p class="modal-desc">Enter prompt description for AI video generation</p>
+            
+            <div class="form-group">
+                <label>Prompt Description</label>
+                <textarea id="modal-prompt-text" rows="4" placeholder="Describe the AI video to generate..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label>Category Tag</label>
+                <input type="text" id="modal-prompt-category" value="General">
+            </div>
+            
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="btn-close-prompt-modal">Cancel</button>
+                <button class="btn btn-primary" id="btn-save-prompt">Add to Queue</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- AUTH MODAL (SIGN IN / SIGN UP / SWITCH ACCOUNT) -->
+    <div class="modal-backdrop hidden" id="modal-auth">
+        <div class="modal-card auth-modal-card">
+            <div class="auth-tabs">
+                <button class="auth-tab-btn active" id="auth-tab-signin" data-authtab="signin">🔐 Sign In</button>
+                <button class="auth-tab-btn" id="auth-tab-signup" data-authtab="signup">📝 Create Account</button>
+            </div>
+
+            <!-- Sign In Panel -->
+            <div class="auth-panel active" id="auth-panel-signin">
+                <h3>Welcome Back</h3>
+                <p class="modal-desc">Sign in to access your Dola AI & Facebook Automation SaaS</p>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" id="auth-signin-email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="auth-signin-password" placeholder="••••••••">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="btn-close-auth-modal">Cancel</button>
+                    <button class="btn btn-primary" id="btn-submit-signin">🚀 Sign In</button>
+                </div>
+            </div>
+
+            <!-- Sign Up Panel -->
+            <div class="auth-panel" id="auth-panel-signup">
+                <h3>Register New Account</h3>
+                <p class="modal-desc">Create your creator account for automated video generation</p>
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="auth-signup-name" placeholder="Muhammad Ali">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="text" id="auth-signup-email" placeholder="name@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="auth-signup-password" placeholder="••••••••">
+                </div>
+                <div class="form-group">
+                    <label>WhatsApp Number (Optional)</label>
+                    <input type="text" id="auth-signup-whatsapp" placeholder="+923001234567">
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary" id="btn-close-auth-signup-modal">Cancel</button>
+                    <button class="btn btn-accent" id="btn-submit-signup">🎉 Create Account</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

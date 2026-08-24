@@ -1,0 +1,3329 @@
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 00:17:56
+Origin: Worker 1 Job 'JOB_RUN_1786475842_001' (Session '1')
+Exception: Failed to open Dola.com
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 84, in run_job
+    raise RuntimeError("Failed to open Dola.com")
+RuntimeError: Failed to open Dola.com
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 00:47:04
+Origin: Worker 1 Job 'JOB_RUN_1786477341_001' (Session 'Dola Session 1')
+Exception: Download verification failed. File was not downloaded by extension.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 192, in run_job
+    raise RuntimeError("Download verification failed. File was not downloaded by extension.")
+RuntimeError: Download verification failed. File was not downloaded by extension.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 00:48:00
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 00:57:54
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 1')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 159, in run_job
+    # Periodic page refresh every REFRESH_INTERVAL_SEC
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 01:01:45
+Origin: Worker 1 Job 'JOB_RUN_1786478435_002' (Session 'Dola Session 1')
+Exception: Failed to submit prompt text to Dola input field.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 103, in run_job
+    raise RuntimeError("Failed to submit prompt text to Dola input field.")
+RuntimeError: Failed to submit prompt text to Dola input field.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 01:08:46
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 1')
+Exception: Download failed: extension did not deliver file and direct URL download also failed.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 229, in run_job
+    raise RuntimeError("Download failed: extension did not deliver file and direct URL download also failed.")
+RuntimeError: Download failed: extension did not deliver file and direct URL download also failed.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 01:28:03
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 2')
+Exception: Failed to submit prompt text to Dola input field.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 103, in run_job
+    raise RuntimeError("Failed to submit prompt text to Dola input field.")
+RuntimeError: Failed to submit prompt text to Dola input field.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 02:04:17
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 3')
+Exception: Download failed: could not retrieve video via direct URL or extension.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 237, in run_job
+    raise RuntimeError("Download failed: could not retrieve video via direct URL or extension.")
+RuntimeError: Download failed: could not retrieve video via direct URL or extension.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 02:20:21
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 4')
+Exception: Download failed: could not retrieve video via direct URL or extension.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 245, in run_job
+    raise RuntimeError("Download failed: could not retrieve video via direct URL or extension.")
+RuntimeError: Download failed: could not retrieve video via direct URL or extension.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 09:29:11
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 5')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 178, in run_job
+    raise TimeoutError(f"Video generation timed out after {self.config.generation_timeout_sec}s.")
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 09:56:26
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 5')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 170, in run_job
+    raise TimeoutError(f"Video generation timed out after {self.config.generation_timeout_sec}s.")
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 10:03:21
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 5')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 197, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 10:19:05
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 5')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 170, in run_job
+    raise TimeoutError(f"Video generation timed out after {self.config.generation_timeout_sec}s.")
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 10:30:19
+Origin: Worker 1 Job 'JOB_E2E_TEST_RUN_001' (Session 'Dola Session 5')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 176, in run_job
+    raise TimeoutError(f"Video generation timed out after {self.config.generation_timeout_sec}s.")
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 11:23:08
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786515373_001' (Session 'add by me')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 176, in run_job
+    raise TimeoutError(f"Video generation timed out after {self.config.generation_timeout_sec}s.")
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 11:41:12
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786516478_001' (Session 'Dola Session 7')
+Exception: Video generation timed out after 300s.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 204, in run_job
+    raise TimeoutError(f"Video generation timed out after {self.config.generation_timeout_sec}s.")
+TimeoutError: Video generation timed out after 300s.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 11:53:21
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786517129_001' (Session 'Dola Session 8')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 292, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:05:40
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786517832_001' (Session 'Dola Session 9')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 296, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:23:18
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786518812_001' (Session 'Dola Session 10')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 301, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:29:13
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786519523_001' (Session 'Dola Session 11')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 294, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:35:38
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786519441_001' (Session 'Dola Session 10')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 301, in run_job
+    # Step 10: Mark COMPLETED
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:36:17
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786519965_001' (Session 'Dola Session 13')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 294, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:51:13
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786520830_001' (Session 'Dola Session 15')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 309, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 12:55:27
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786521102_001' (Session 'Dola Session 15')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 330, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 13:10:46
+Origin: Worker 1 Job 'JOB_E2E_TEST_1786521607_001' (Session 'Dola Session 16')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "c:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 312, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 13:44:55
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 14:33:21
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:15:58
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 63, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 32, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 109, in _init_ui
+    self.view_sessions = SessionsView()
+                         ~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\sessions_view.py", line 77, in __init__
+    self.load_sessions()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\sessions_view.py", line 486, in load_sessions
+    item_credits.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:16:24
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 63, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 32, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 109, in _init_ui
+    self.view_sessions = SessionsView()
+                         ~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\sessions_view.py", line 77, in __init__
+    self.load_sessions()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\sessions_view.py", line 486, in load_sessions
+    item_credits.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:16:51
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 63, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 32, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 109, in _init_ui
+    self.view_sessions = SessionsView()
+                         ~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\sessions_view.py", line 77, in __init__
+    self.load_sessions()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\sessions_view.py", line 486, in load_sessions
+    item_credits.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:32:30
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 299, in _on_start_click
+    dlg = SessionSelectionDialog(live_sessions, len(pending_prompts), self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 27, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 79, in _init_ui
+    item_cred.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:32:48
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 299, in _on_start_click
+    dlg = SessionSelectionDialog(live_sessions, len(pending_prompts), self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 27, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 79, in _init_ui
+    item_cred.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:33:00
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 299, in _on_start_click
+    dlg = SessionSelectionDialog(live_sessions, len(pending_prompts), self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 27, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 79, in _init_ui
+    item_cred.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:33:25
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 299, in _on_start_click
+    dlg = SessionSelectionDialog(live_sessions, len(pending_prompts), self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 27, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 79, in _init_ui
+    item_cred.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 15:34:09
+Origin: sys.excepthook (Main App Thread)
+Exception: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 299, in _on_start_click
+    dlg = SessionSelectionDialog(live_sessions, len(pending_prompts), self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 27, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 79, in _init_ui
+    item_cred.setStyleSheet("color: #4ade80; font-weight: bold;")
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'QTableWidgetItem' object has no attribute 'setStyleSheet'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 19:37:50
+Origin: Worker 1 Job 'JOB_RUN_1786545172_001' (Session '19')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 318, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 19:37:50
+Origin: Worker 4 Job 'JOB_RUN_1786545172_004' (Session '22')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 318, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 19:37:51
+Origin: Worker 2 Job 'JOB_RUN_1786545172_002' (Session '20')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 318, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 19:37:52
+Origin: Worker 5 Job 'JOB_RUN_1786545172_005' (Session '27')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 318, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 19:40:48
+Origin: worker_wrapper Worker 5 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 20:21:32
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 20:30:43
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 21:01:34
+Origin: Worker 1 Job 'JOB_RUN_1786549118_003' (Session '27')
+Exception: Download failed: No MP4 appeared in output folder after page refresh.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 318, in run_job
+    raise RuntimeError("Download failed: No MP4 appeared in output folder after page refresh.")
+RuntimeError: Download failed: No MP4 appeared in output folder after page refresh.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 21:37:47
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 22:25:31
+Origin: Worker 1 Job 'JOB_RUN_1786554849_001' (Session '44')
+Exception: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 244, in run_job
+    new_file = DownloadVerifier.wait_for_new_file(self.output_folder, baseline_files, baseline_time, timeout_sec=4)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 22:25:42
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 22:41:55
+Origin: Worker 2 Job 'JOB_RUN_1786556171_002' (Session '53')
+Exception: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 265, in run_job
+    new_file = DownloadVerifier.wait_for_new_file(self.output_folder, baseline_files, baseline_time, timeout_sec=4)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 22:49:09
+Origin: Worker 1 Job 'JOB_RUN_1786556171_001' (Session '52')
+Exception: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 265, in run_job
+    new_file = DownloadVerifier.wait_for_new_file(self.output_folder, baseline_files, baseline_time, timeout_sec=4)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 22:56:20
+Origin: Worker 1 Job 'JOB_RUN_1786557086_001' (Session '52')
+Exception: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 265, in run_job
+    new_file = DownloadVerifier.wait_for_new_file(self.output_folder, baseline_files, baseline_time, timeout_sec=4)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 23:05:47
+Origin: worker_wrapper Worker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 23:23:45
+Origin: Worker 1 Job 'JOB_RUN_1786558680_001' (Session '54')
+Exception: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 260, in run_job
+    new_file = DownloadVerifier.wait_for_new_file(self.output_folder, baseline_files, baseline_time, timeout_sec=4)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'DownloadVerifier' has no attribute 'wait_for_new_file'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 23:27:50
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-12 23:37:26
+Origin: Worker 1 Job 'JOB_RUN_1786559473_001' (Session '55')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 303, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 00:00:58
+Origin: Worker 1 Job 'JOB_RUN_1786560900_001' (Session '56')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 303, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 00:19:51
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 00:32:27
+Origin: Worker 1 Job 'JOB_RUN_1786562873_001' (Session 'Dola Session 4')
+Exception: name 'time' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 220, in run_job
+    await driver.wait_for_video_element_or_source(timeout_sec=30.0)
+  File "C:\Users\I_T Computer\Antigravity\app\automation\dola_driver.py", line 975, in wait_for_video_element_or_source
+    start_t = time.time()
+              ^^^^
+NameError: name 'time' is not defined. Did you forget to import 'time'?
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 00:50:45
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 00:51:27
+Origin: Worker 1 Job 'JOB_RUN_1786563940_001' (Session 'Dola Session 5')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 305, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:08:12
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:08:12
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:14:03
+Origin: Worker 1 Job 'JOB_RUN_1786565282_001' (Session 'Dola Session 7')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 305, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:22:01
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:31:13
+Origin: Worker 1 Job 'JOB_RUN_1786566284_001' (Session 'Dola Session 8')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 313, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:33:41
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:40:53
+Origin: Worker 1 Job 'JOB_RUN_1786566909_001' (Session 'Dola Session 9')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 324, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 01:43:04
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:11:34
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:11:34
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:38:55
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:38:55
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:44:36
+Origin: Worker 1 Job 'JOB_RUN_1786621107_001' (Session 'Dola Session 15')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 324, in run_job
+    db.update_job_status(job_id, "Completed", file_path=file_path, file_size=file_size)
+        ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:52:12
+Origin: Worker 1 Job 'JOB_RUN_1786621928_001' (Session 'Dola Session 16')
+Exception: name 'asyncio' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\dola_driver.py", line 80, in open_dola
+    await self.page.goto(target_url, timeout=45000, wait_until="domcontentloaded")
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 9869, in goto
+    await self._impl_obj.goto(
+    ...<4 lines>...
+    )
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_page.py", line 560, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_frame.py", line 156, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: Page.goto: net::ERR_NAME_NOT_RESOLVED at https://www.dola.com/chat
+Call log:
+  - navigating to "https://www.dola.com/chat", waiting until "domcontentloaded"
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 85, in run_job
+    if not await driver.open_dola():
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\automation\dola_driver.py", line 87, in open_dola
+    await asyncio.sleep(1.0)
+          ^^^^^^^
+NameError: name 'asyncio' is not defined. Did you forget to import 'asyncio'?
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 16:53:20
+Origin: Worker 1 Job 'JOB_RUN_1786621995_001' (Session 'Dola Session 16')
+Exception: Session expired or not logged in.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 90, in run_job
+    raise RuntimeError("Session expired or not logged in.")
+RuntimeError: Session expired or not logged in.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 17:00:38
+Origin: Worker 1 Job 'JOB_RUN_1786622109_001' (Session 'Dola Session 17')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 312, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 17:24:56
+Origin: Worker 1 Job 'JOB_RUN_1786623565_001' (Session '20')
+Exception: Download failed: Video appeared on page but could not be saved to disk.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 331, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 17:30:12
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 17:30:12
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 17:42:41
+Origin: Worker 1 Job 'JOB_RUN_1786624658_001' (Session '21')
+Exception: Download failed: Video appeared on page but could not be saved to disk after viewport scroll sequences.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 322, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk after viewport scroll sequences.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk after viewport scroll sequences.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 17:56:45
+Origin: Worker 1 Job 'JOB_RUN_1786625459_001' (Session '22')
+Exception: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 321, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 18:12:17
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 20:56:39
+Origin: worker_wrapper Worker 3 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 20:56:39
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 20:56:39
+Origin: worker_wrapper Worker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 21:01:29
+Origin: worker_wrapper Worker 3 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 21:01:29
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 21:01:29
+Origin: worker_wrapper Worker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 21:07:33
+Origin: Worker 1 Job 'JOB_RUN_1786636824_001' (Session '52')
+Exception: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 354, in run_job
+    raise RuntimeError("Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.")
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 21:47:55
+Origin: Worker 3 Job 'JOB_RUN_1786639293_003' (Session '56')
+Exception: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 354, in run_job
+    break
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 21:48:08
+Origin: Worker 1 Job 'JOB_RUN_1786639293_001' (Session '52')
+Exception: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 354, in run_job
+    break
+RuntimeError: Download failed: Video appeared on page but could not be saved to disk after 5 scroll cycles.
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 22:11:33
+Origin: Worker 3 Job 'JOB_RUN_1786640941_003' (Session '61')
+Exception: DOLA_UNEXPECTED_ERROR: Currently generating videos longer than 10 seconds is not supported, do you want to continue generating for you?
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 148, in run_job
+    raise RuntimeError(f"DOLA_UNEXPECTED_ERROR: {err_text}")
+RuntimeError: DOLA_UNEXPECTED_ERROR: Currently generating videos longer than 10 seconds is not supported, do you want to continue generating for you?
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 22:11:37
+Origin: Worker 2 Job 'JOB_RUN_1786640941_002' (Session '60')
+Exception: DOLA_UNEXPECTED_ERROR: Currently generating videos longer than 10 seconds is not supported, do you want to continue generating for you?
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 148, in run_job
+    raise RuntimeError(f"DOLA_UNEXPECTED_ERROR: {err_text}")
+RuntimeError: DOLA_UNEXPECTED_ERROR: Currently generating videos longer than 10 seconds is not supported, do you want to continue generating for you?
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-13 23:27:31
+Origin: worker_wrapper Worker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 01:52:55
+Origin: sys.excepthook (Main App Thread)
+Exception: 'AppLogger' object has no attribute 'register_callback'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 68, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 36, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 150, in _init_ui
+    self.view_dashboard = DashboardView(self.queue_manager)
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 27, in __init__
+    logger.register_callback(self._on_new_log)
+    ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppLogger' object has no attribute 'register_callback'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 02:07:19
+Origin: sys.excepthook (Main App Thread)
+Exception: 'DatabaseManager' object has no attribute 'get_prompt'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\prompts_view.py", line 280, in _on_table_double_clicked
+    prompt_record = db.get_prompt(pid)
+                    ^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'get_prompt'. Did you mean: 'add_prompt'?
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 02:08:07
+Origin: sys.excepthook (Main App Thread)
+Exception: 'DatabaseManager' object has no attribute 'get_pending_prompts'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\automation_view.py", line 224, in _on_start_automation
+    if not self._validate_before_start():
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\automation_view.py", line 215, in _validate_before_start
+    pending_prompts = db.get_pending_prompts()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'get_pending_prompts'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 02:08:28
+Origin: sys.excepthook (Main App Thread)
+Exception: 'DatabaseManager' object has no attribute 'get_pending_prompts'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\automation_view.py", line 224, in _on_start_automation
+    if not self._validate_before_start():
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\automation_view.py", line 215, in _validate_before_start
+    pending_prompts = db.get_pending_prompts()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'get_pending_prompts'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 02:08:53
+Origin: sys.excepthook (Main App Thread)
+Exception: 'DatabaseManager' object has no attribute 'get_pending_prompts'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\automation_view.py", line 224, in _on_start_automation
+    if not self._validate_before_start():
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\automation_view.py", line 215, in _validate_before_start
+    pending_prompts = db.get_pending_prompts()
+                      ^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'DatabaseManager' object has no attribute 'get_pending_prompts'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 10:51:16
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 11:13:30
+Origin: SessionWorker 1 Session 'Dola Session 5'
+Exception: name 'session_jobs' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 159, in run_session_batch
+    sess_jobs = [db.get_job(j["id"]) for j in session_jobs]
+                                              ^^^^^^^^^^^^
+NameError: name 'session_jobs' is not defined. Did you mean: 'session_id'?
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 11:15:15
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 11:33:39
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 12:11:40
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 12:48:51
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 13:40:25
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 14:55:56
+Origin: SessionWorker 1 Session 'Dola Session 5'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 124, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 15:47:32
+Origin: SessionWorker 1 Session 'add by me'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 124, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 15:50:29
+Origin: SessionWorker 1 Session 'Dola Session 7'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 124, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 16:40:04
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 17:01:53
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 17:30:22
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 17:30:22
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 17:41:17
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:15:10
+Origin: SessionWorker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:15:11
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:26:36
+Origin: SessionWorker 1 Session '60'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:33:08
+Origin: SessionWorker 1 Session '56'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:33:35
+Origin: SessionWorker 1 Session '56'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:33:37
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:34:29
+Origin: SessionWorker 1 Session '56'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:35:21
+Origin: SessionWorker 1 Session '56'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:36:19
+Origin: SessionWorker 1 Session '56'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-14 18:37:17
+Origin: SessionWorker 1 Session '56'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:20:37
+Origin: SessionWorker 1 Session 'Dola Session 12'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:20:41
+Origin: SessionWorker 2 Session 'Dola Session 14'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:21:09
+Origin: SessionWorker 3 Session 'Dola Session 13'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:21:29
+Origin: SessionWorker 1 Session 'Dola Session 12'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:21:36
+Origin: SessionWorker 3 Session 'Dola Session 13'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:22:04
+Origin: SessionWorker 3 Session 'Dola Session 13'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 09:22:32
+Origin: SessionWorker 3 Session 'Dola Session 13'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 10:22:02
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 11:30:52
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 195, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 11:35:15
+Origin: SessionWorker 1 Session 'Dola Session 7'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 11:35:53
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 11:36:50
+Origin: SessionWorker 1 Session 'Dola Session 12'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 11:37:49
+Origin: SessionWorker 1 Session 'Dola Session 14'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 141, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 11:57:53
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 195, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 14:31:18
+Origin: SessionWorker 2 Session 'Dola Session 15'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 143, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 16:54:34
+Origin: SessionWorker 1 Session 'Dola Session 17'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 144, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 18:47:54
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 21:27:26
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:35:48
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:35:50
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:35:54
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:35:56
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:35:59
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:02
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:05
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:08
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:11
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:14
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:17
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:20
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:24
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:27
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:36:30
+Origin: SessionWorker 1 Session '27'
+Exception: 'AppConfig' object has no attribute 'extension_path'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 104, in run_session_batch
+    extension_path=self.config.extension_path,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AppConfig' object has no attribute 'extension_path'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:41:50
+Origin: SessionWorker 1 Session '39'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 144, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 22:45:06
+Origin: SessionWorker 1 Session '42'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 144, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-15 23:18:13
+Origin: SessionWorker 1 Session '42'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 00:09:34
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 01:01:25
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 01:15:21
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 01:15:23
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 02:57:42
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 02:57:45
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:11:48
+Origin: sys.excepthook (Main App Thread)
+Exception: 'CloudManager' object has no attribute 'is_blocked'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 73, in main
+    if cloud_manager.is_blocked():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CloudManager' object has no attribute 'is_blocked'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:12:25
+Origin: sys.excepthook (Main App Thread)
+Exception: 'CloudManager' object has no attribute 'is_blocked'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 73, in main
+    if cloud_manager.is_blocked():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CloudManager' object has no attribute 'is_blocked'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:12:32
+Origin: sys.excepthook (Main App Thread)
+Exception: 'CloudManager' object has no attribute 'is_blocked'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 73, in main
+    if cloud_manager.is_blocked():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CloudManager' object has no attribute 'is_blocked'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:12:37
+Origin: sys.excepthook (Main App Thread)
+Exception: 'CloudManager' object has no attribute 'is_blocked'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 73, in main
+    if cloud_manager.is_blocked():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CloudManager' object has no attribute 'is_blocked'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:12:45
+Origin: sys.excepthook (Main App Thread)
+Exception: 'CloudManager' object has no attribute 'is_blocked'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 73, in main
+    if cloud_manager.is_blocked():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CloudManager' object has no attribute 'is_blocked'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:12:49
+Origin: sys.excepthook (Main App Thread)
+Exception: 'CloudManager' object has no attribute 'is_blocked'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 73, in main
+    if cloud_manager.is_blocked():
+       ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'CloudManager' object has no attribute 'is_blocked'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:30:33
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 294, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 19, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 106, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:30:36
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 294, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 19, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 106, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:30:37
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 294, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 19, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 106, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:30:41
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 294, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 19, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 106, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 03:31:07
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 294, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 19, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 106, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:33:28
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:13
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:16
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:18
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:24
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:25
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:28
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:35
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:45
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:45
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:35:45
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QWidget' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 340, in _open_about_dialog
+    dlg = AboutDialog(self)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 20, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\dialogs\about_dialog.py", line 107, in _init_ui
+    content_widget = QWidget()
+                     ^^^^^^^
+NameError: name 'QWidget' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:37:43
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:59:17
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 09:59:25
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:28:13
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:28:15
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:28:46
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:28:46
+Origin: SessionWorker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:28:46
+Origin: SessionWorker 3 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:31:44
+Origin: SessionWorker 1 Session '84'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:32:51
+Origin: SessionWorker 1 Session '84'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:34:01
+Origin: SessionWorker 1 Session '84'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 10:35:14
+Origin: SessionWorker 1 Session '84'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 11:09:04
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 11:09:07
+Origin: sys.excepthook (Main App Thread)
+Exception: name 'QMessageBox' is not defined
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 224, in _on_clear_dashboard
+    reply = QMessageBox.question(
+            ^^^^^^^^^^^
+NameError: name 'QMessageBox' is not defined
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 11:09:21
+Origin: SessionWorker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 11:09:21
+Origin: SessionWorker 3 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 11:09:21
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 12:59:03
+Origin: sys.excepthook (Main App Thread)
+Exception: 'AdminManager' object has no attribute 'mode_changed'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 90, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 55, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 330, in _init_ui
+    self.view_dashboard = DashboardView(self.queue_manager)
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 36, in __init__
+    admin_manager.mode_changed.connect(self._on_mode_changed)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AdminManager' object has no attribute 'mode_changed'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 13:15:56
+Origin: sys.excepthook (Main App Thread)
+Exception: 'AdminManager' object has no attribute 'mode_changed'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 90, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 55, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 330, in _init_ui
+    self.view_dashboard = DashboardView(self.queue_manager)
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 36, in __init__
+    admin_manager.mode_changed.connect(self._on_mode_changed)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AdminManager' object has no attribute 'mode_changed'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-16 13:36:17
+Origin: sys.excepthook (Main App Thread)
+Exception: 'AdminManager' object has no attribute 'mode_changed'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\main.py", line 10, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\main.py", line 90, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 55, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\main_window.py", line 330, in _init_ui
+    self.view_dashboard = DashboardView(self.queue_manager)
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\gui\views\dashboard_view.py", line 36, in __init__
+    admin_manager.mode_changed.connect(self._on_mode_changed)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AdminManager' object has no attribute 'mode_changed'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:05:24
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:36:04
+Origin: SessionWorker 1 Session 'www.dola.com_cookies (8)'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:36:46
+Origin: SessionWorker 4 Session 'www.dola.com_cookies (5)'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:47:32
+Origin: SessionWorker 1 Session 'www.dola.com_cookies (3)'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:48:05
+Origin: SessionWorker 2 Session 'www.dola.com_cookies (2)'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:48:08
+Origin: SessionWorker 3 Session 'www.dola.com_cookies (1)'
+Exception: BrowserContext.new_page: Target page, context or browser has been closed
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\worker.py", line 157, in run_session_batch
+    page = await context.new_page()
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 14537, in new_page
+    return mapping.from_impl(await self._impl_obj.new_page())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_context.py", line 347, in new_page
+    return from_channel(await self._channel.send("newPage", None))
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: BrowserContext.new_page: Target page, context or browser has been closed
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:50:19
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:50:19
+Origin: SessionWorker 4 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:50:20
+Origin: SessionWorker 2 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:50:20
+Origin: SessionWorker 3 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-17 13:50:20
+Origin: SessionWorker 5 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-19 17:52:44
+Origin: sys.excepthook (Main App Thread)
+Exception: 
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\gui\dialogs\auth_dialog.py", line 285, in _handle_submit
+    def _handle_submit(self):
+    
+KeyboardInterrupt
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-19 17:52:58
+Origin: sys.excepthook (Main App Thread)
+Exception: [WinError 5] Access is denied: 'C:\\Users\\I_T Computer'
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\I_T Computer\\Desktop\\test_1_dolA'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+FileNotFoundError: [WinError 3] The system cannot find the path specified: 'C:\\Users\\I_T Computer\\Desktop'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\main.py", line 34, in <module>
+    main()
+    ~~~~^^
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\main.py", line 91, in main
+    window = MainWindow(queue_manager)
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\gui\main_window.py", line 63, in __init__
+    self._init_ui()
+    ~~~~~~~~~~~~~^^
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\gui\main_window.py", line 382, in _init_ui
+    self.view_downloads = DownloadsView(self.queue_manager)
+                          ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\gui\views\downloads_view.py", line 26, in __init__
+    self._refresh_downloads()
+    ~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\gui\views\downloads_view.py", line 94, in _refresh_downloads
+    out_dir.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1015, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1015, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\pathlib\__init__.py", line 1011, in mkdir
+    os.mkdir(self, mode)
+    ~~~~~~~~^^^^^^^^^^^^
+PermissionError: [WinError 5] Access is denied: 'C:\\Users\\I_T Computer'
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-19 19:39:23
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-20 02:03:27
+Origin: SessionWorker 1 Session '12'
+Exception: BrowserType.launch_persistent_context: Opening in existing browser session. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\msham\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --no-sandbox --disable-setuid-sandbox --disable-blink-features=AutomationControlled --start-maximized --renderer-process-limit=2 --js-flags=--max-old-space-size=256 --disable-dev-shm-usage --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-breakpad --disable-component-update --disable-default-apps --disable-domain-reliability --disable-sync --disable-translate --no-first-run --no-default-browser-check --memory-pressure-off --user-data-dir=C:\Users\msham\.dola_automation\profiles\session_1036 --remote-debugging-pipe about:blank
+  - <launched> pid=14860
+  - [pid=14860][out] Opening in existing browser session.
+  - [pid=14860] <gracefully close start>
+  - [pid=14860] <kill>
+  - [pid=14860] <will force kill>
+  - [pid=14860] taskkill stderr: ERROR: The process "14860" not found.
+  - [pid=14860] <process did exit: exitCode=0, signal=null>
+  - [pid=14860] starting temporary directories cleanup
+  - [pid=14860] finished temporary directories cleanup
+  - [pid=14860] <gracefully close end>
+
+Traceback:
+Traceback (most recent call last):
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\automation\worker.py", line 136, in run_session_batch
+    context, first_page = await BrowserFactory.create_browser_context(
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\msham\Downloads\Antigravity\Jugaro Dola Automation\app\automation\browser_factory.py", line 175, in create_browser_context
+    context = await playwright.chromium.launch_persistent_context(**launch_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\async_api\_generated.py", line 16606, in launch_persistent_context
+    await self._impl_obj.launch_persistent_context(
+    ...<51 lines>...
+    )
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_type.py", line 166, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "launchPersistentContext", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 83, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\msham\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 559, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Opening in existing browser session. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\msham\AppData\Local\ms-playwright\chromium-1223\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --no-sandbox --disable-setuid-sandbox --disable-blink-features=AutomationControlled --start-maximized --renderer-process-limit=2 --js-flags=--max-old-space-size=256 --disable-dev-shm-usage --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-breakpad --disable-component-update --disable-default-apps --disable-domain-reliability --disable-sync --disable-translate --no-first-run --no-default-browser-check --memory-pressure-off --user-data-dir=C:\Users\msham\.dola_automation\profiles\session_1036 --remote-debugging-pipe about:blank
+  - <launched> pid=14860
+  - [pid=14860][out] Opening in existing browser session.
+  - [pid=14860] <gracefully close start>
+  - [pid=14860] <kill>
+  - [pid=14860] <will force kill>
+  - [pid=14860] taskkill stderr: ERROR: The process "14860" not found.
+  - [pid=14860] <process did exit: exitCode=0, signal=null>
+  - [pid=14860] starting temporary directories cleanup
+  - [pid=14860] finished temporary directories cleanup
+  - [pid=14860] <gracefully close end>
+
+
+========================================================
+
+========================================================
+CRASH / UNHANDLED EXCEPTION DETECTED AT 2026-08-20 02:24:30
+Origin: SessionWorker 1 (BaseException)
+Exception: 
+Traceback:
+
+========================================================
+

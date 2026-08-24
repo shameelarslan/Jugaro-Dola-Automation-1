@@ -1,0 +1,2262 @@
+[DATABASE] 13:28:37 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 13:28:37 - Testing SQLite database metrics query...
+[TEST_DB] 13:28:37 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 13:28:37 - Database test passed cleanly.
+[TEST] 13:28:41 - --- STARTING INDEPENDENT BROWSER LAUNCH TEST ---
+[BROWSER] 13:28:41 - Launching Chromium Browser [Account: test_account_01 | Debug: True | Headless: False | Window: 400x400]
+[BROWSER] 13:28:48 - Chromium Browser launched successfully.
+[TEST] 13:28:48 - Browser launched. Navigating to Facebook Desktop...
+[BROWSER] 13:28:48 - Navigating to https://www.facebook.com...
+[BROWSER] 13:28:50 - Navigated to: https://www.facebook.com/
+[TEST] 13:28:50 - Checking Facebook session state...
+[SESSION] 13:28:50 - Checking Facebook session state...
+[SESSION] 13:28:55 - [SESSION] Login required.
+[TEST] 13:28:55 - Session Status: LOGIN REQUIRED
+[SCREENSHOT] 13:28:55 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\browser_launch_test_20260808_132855.png
+[TEST] 13:28:55 - Verification screenshot captured: C:\Users\I_T Computer\Antigravity\data\screenshots\browser_launch_test_20260808_132855.png
+[BROWSER] 13:28:57 - Closing browser session...
+[BROWSER] 13:28:58 - Browser session closed cleanly.
+[TEST] 13:28:58 - --- INDEPENDENT BROWSER LAUNCH TEST COMPLETED SUCCESSFULLY ---
+[SESSION_TEST] 13:38:41 - --- STARTING SESSION PERSISTENCE TEST [ACCOUNT: test_account_01] ---
+[SESSION_TEST] 13:38:41 - === RUN 1: Launching initial browser profile ===
+[BROWSER] 13:38:41 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 400x400
+[BROWSER] 13:38:45 - [SESSION] Browser profile loaded
+[ACCOUNT] 13:38:45 - [ACCOUNT] test_account_01
+[SESSION] 13:38:45 - [SESSION] Browser profile loaded
+[SESSION] 13:38:45 - [SESSION] Opening Facebook...
+[SESSION] 13:38:50 - [SESSION] State inspection signals -> Authenticated: 0, Unauthenticated: 2, URL: https://www.facebook.com/
+[SESSION] 13:38:50 - [SESSION] Login required
+[SESSION_TEST] 13:38:50 - [SESSION TEST] Login required for test_account_01 profile.
+[BROWSER] 13:38:50 - Closing browser session...
+[BROWSER] 13:38:51 - Browser session closed cleanly.
+[SESSION_TEST] 13:38:51 - === RUN 1 completed cleanly. Closing browser context. ===
+[SESSION_TEST] 13:38:53 - === RUN 2: Reopening using the SAME browser profile ===
+[BROWSER] 13:38:53 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 400x400
+[BROWSER] 13:38:56 - [SESSION] Browser profile loaded
+[ACCOUNT] 13:38:56 - [ACCOUNT] test_account_01
+[SESSION] 13:38:56 - [SESSION] Browser profile loaded
+[SESSION] 13:38:56 - [SESSION] Opening Facebook...
+[SESSION] 13:39:00 - [SESSION] State inspection signals -> Authenticated: 0, Unauthenticated: 2, URL: https://www.facebook.com/
+[SESSION] 13:39:00 - [SESSION] Login required
+[SESSION_TEST] 13:39:00 - [SESSION TEST] Session state consistent: LOGIN REQUIRED persistent across restarts.
+[SESSION_TEST] 13:39:00 - [SESSION TEST] Profile isolation and persistence structure verified.
+[BROWSER] 13:39:00 - Closing browser session...
+[BROWSER] 13:39:01 - Browser session closed cleanly.
+[SESSION_TEST] 13:39:01 - === RUN 2 completed cleanly. Browser closed. ===
+[SESSION_TEST] 13:39:01 - --- SESSION PERSISTENCE TEST COMPLETED SUCCESSFULLY ---
+[SESSION_TEST] 13:43:07 - --- STARTING REAL SESSION PERSISTENCE TEST [ACCOUNT: test_account_01] ---
+[SESSION_TEST] 13:43:07 - === RUN 1: Initializing Debug Browser Session ===
+[BROWSER] 13:43:07 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 13:43:11 - [SESSION] Browser profile loaded
+[ACCOUNT] 13:43:11 - [ACCOUNT] test_account_01
+[SESSION] 13:43:11 - [SESSION] Browser profile loaded
+[SESSION] 13:43:11 - [SESSION] Opening Facebook...
+[SESSION] 13:43:16 - [SESSION] Login required
+[SESSION] 13:43:16 - [SESSION] Login required
+[SESSION] 13:43:16 - [SESSION] Waiting for manual Facebook login...
+[SESSION] 13:43:16 - [SESSION] Please complete login in the visible browser.
+[SESSION] 13:43:16 - [SESSION] Login required
+[SESSION] 13:43:16 - [SESSION] Waiting for manual Facebook login...
+[SESSION] 13:43:16 - [SESSION] Please complete login in the visible browser.
+[SESSION] 13:43:16 - [SESSION] Login required
+[SESSION] 13:43:19 - [SESSION] Login required
+[SESSION] 13:43:22 - [SESSION] Login required
+[SESSION] 13:43:25 - [SESSION] Login required
+[SESSION] 13:43:28 - [SESSION] Login required
+[SESSION] 13:43:31 - [SESSION] Login required
+[SESSION] 13:43:34 - [SESSION] Login required
+[SESSION] 13:43:37 - [SESSION] Login required
+[SESSION] 13:43:41 - [SESSION] Login required
+[SESSION] 13:43:44 - [SESSION] Login required
+[SESSION] 13:43:47 - [SESSION] Login required
+[SESSION] 13:43:50 - [SESSION] Login required
+[SESSION] 13:43:53 - [SESSION] Login required
+[SESSION] 13:43:56 - [SESSION] Login required
+[SESSION] 13:43:59 - [SESSION] Login required
+[SESSION] 13:44:02 - [SESSION] Login required
+[SESSION] 13:44:05 - [SESSION] Login required
+[SESSION] 13:44:08 - [SESSION] Login required
+[SESSION] 13:44:11 - [SESSION] Login required
+[SESSION] 13:44:14 - [SESSION] Login required
+[SESSION] 13:44:17 - [SESSION] Login required
+[SESSION] 13:44:20 - [SESSION] Login required
+[SESSION] 13:44:23 - [SESSION] Login required
+[SESSION] 13:44:27 - [SESSION] Login required
+[SESSION] 13:44:30 - [SESSION] Login required
+[SESSION] 13:44:33 - [SESSION] Login required
+[SESSION] 13:44:36 - [SESSION] Login required
+[SESSION] 13:44:39 - [SESSION] Login required
+[SESSION] 13:44:42 - [SESSION] Login required
+[SESSION] 13:44:45 - [SESSION] Login required
+[SESSION] 13:44:48 - [SESSION] Login required
+[SESSION] 13:44:51 - [SESSION] Login required
+[SESSION] 13:44:54 - [SESSION] Login required
+[SESSION] 13:44:57 - [SESSION] Login required
+[SESSION] 13:45:00 - [SESSION] Login required
+[SESSION] 13:45:03 - [SESSION] Login required
+[SESSION] 13:45:06 - [SESSION] Login required
+[SESSION] 13:45:10 - [SESSION] Login required
+[SESSION] 13:45:13 - [SESSION] Login required
+[SESSION] 13:45:16 - [SESSION] Login required
+[SESSION] 13:45:19 - [SESSION] Login required
+[SESSION] 13:45:22 - [SESSION] Login required
+[SESSION] 13:45:25 - [SESSION] Login required
+[SESSION] 13:45:28 - [SESSION] Login required
+[SESSION] 13:45:31 - [SESSION] Login required
+[SESSION] 13:45:34 - [SESSION] Login required
+[SESSION] 13:45:37 - [SESSION] Login required
+[SESSION] 13:45:40 - [SESSION] Login required
+[SESSION] 13:45:43 - [SESSION] Login required
+[SESSION] 13:45:46 - [SESSION] Login required
+[SESSION] 13:45:49 - [SESSION] Login required
+[SESSION] 13:45:52 - [SESSION] Login required
+[SESSION] 13:45:56 - [SESSION] Login required
+[SESSION] 13:45:59 - [SESSION] Login required
+[SESSION] 13:46:02 - [SESSION] Login required
+[SESSION] 13:46:05 - [SESSION] Login required
+[SESSION] 13:46:08 - [SESSION] Login required
+[SESSION] 13:46:11 - [SESSION] Login required
+[SESSION] 13:46:14 - [SESSION] Login required
+[SESSION] 13:46:17 - [SESSION] Login required
+[SESSION] 13:46:20 - [SESSION] Login required
+[SESSION] 13:46:23 - [SESSION] Login required
+[SESSION] 13:46:26 - [SESSION] Login required
+[SESSION] 13:46:29 - [SESSION] Login required
+[SESSION] 13:46:32 - [SESSION] Login required
+[SESSION] 13:46:36 - [SESSION] Login required
+[SESSION] 13:46:39 - [SESSION] Login required
+[SESSION] 13:46:42 - [SESSION] Login required
+[SESSION] 13:46:45 - [SESSION] Login required
+[SESSION] 13:46:48 - [SESSION] Login required
+[SESSION] 13:46:51 - [SESSION] Login required
+[SESSION] 13:46:54 - [SESSION] Login required
+[SESSION] 13:46:57 - [SESSION] Login required
+[SESSION] 13:47:00 - [SESSION] Login required
+[SESSION] 13:47:03 - [SESSION] Login required
+[SESSION] 13:47:06 - [SESSION] Login required
+[SESSION] 13:47:09 - [SESSION] Login required
+[SESSION] 13:47:12 - [SESSION] Login required
+[SESSION] 13:47:15 - [SESSION] Login required
+[SESSION] 13:47:18 - [SESSION] Login required
+[SESSION] 13:47:22 - [SESSION] Login required
+[SESSION] 13:47:25 - [SESSION] Login required
+[SESSION] 13:47:28 - [SESSION] Login required
+[SESSION] 13:47:31 - [SESSION] Login required
+[SESSION] 13:47:34 - [SESSION] Login required
+[SESSION] 13:47:37 - [SESSION] Login required
+[SESSION] 13:47:40 - [SESSION] Login required
+[SESSION] 13:47:43 - [SESSION] Login required
+[SESSION] 13:47:46 - [SESSION] Login required
+[SESSION] 13:47:49 - [SESSION] Login required
+[SESSION] 13:47:52 - [SESSION] Login required
+[SESSION] 13:47:55 - [SESSION] Login required
+[SESSION] 13:47:58 - [SESSION] Login required
+[SESSION] 13:48:01 - [SESSION] Login required
+[SESSION] 13:48:04 - [SESSION] Login required
+[SESSION_TEST] 13:48:07 - --- STARTING BROWSER VISIBILITY & SESSION DIAGNOSTIC TEST [ACCOUNT: test_account_01] ---
+[SESSION_TEST] 13:48:07 - === RUN 1: Launching Visible Chromium Browser ===
+[BROWSER] 13:48:07 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 13:48:07 - [BROWSER DEBUG] headless=False
+[BROWSER] 13:48:07 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 500x600
+[SESSION] 13:48:08 - [SESSION] Login required
+[BROWSER] 13:48:09 - [BROWSER ERROR] Visible Chromium window could not be created.
+[BROWSER] 13:48:09 - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 77, in launch
+    self.context = self.playwright.chromium.launch_persistent_context(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_data_dir=str(self.profile_dir),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        accept_downloads=True,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 17003, in launch_persistent_context
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.launch_persistent_context(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_type.py", line 165, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "launchPersistentContext", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 103, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Failed to create a ProcessSingleton for your profile directory. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=6496
+  - [pid=6496][err] [6496:13400:0808/134808.943:ERROR:chrome\browser\process_singleton_win.cc:414] Lock file can not be created: The process cannot access the file because it is being used by another process. (0x20)
+  - [pid=6496][err] [6496:13400:0808/134808.959:ERROR:chrome\app\chrome_main_delegate.cc:520] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.
+  - [pid=6496] <gracefully close start>
+  - [pid=6496] <kill>
+  - [pid=6496] <will force kill>
+  - [pid=6496] taskkill stderr: ERROR: The process "6496" not found.
+  - [pid=6496] <process did exit: exitCode=21, signal=null>
+  - [pid=6496] starting temporary directories cleanup
+  - [pid=6496] finished temporary directories cleanup
+  - [pid=6496] <gracefully close end>
+
+
+[BROWSER] 13:48:09 - Closing browser session...
+[BROWSER] 13:48:09 - Browser session closed cleanly.
+[SESSION_TEST] 13:48:09 - [BROWSER ERROR] Visible Chromium window could not be created.
+[SESSION_TEST] 13:48:09 - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\tests\test_session.py", line 40, in test_visible_browser_launch_and_session
+    page1 = bm1.launch()
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 121, in launch
+    raise e
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 77, in launch
+    self.context = self.playwright.chromium.launch_persistent_context(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_data_dir=str(self.profile_dir),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        accept_downloads=True,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 17003, in launch_persistent_context
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.launch_persistent_context(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_type.py", line 165, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "launchPersistentContext", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 103, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Failed to create a ProcessSingleton for your profile directory. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=6496
+  - [pid=6496][err] [6496:13400:0808/134808.943:ERROR:chrome\browser\process_singleton_win.cc:414] Lock file can not be created: The process cannot access the file because it is being used by another process. (0x20)
+  - [pid=6496][err] [6496:13400:0808/134808.959:ERROR:chrome\app\chrome_main_delegate.cc:520] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.
+  - [pid=6496] <gracefully close start>
+  - [pid=6496] <kill>
+  - [pid=6496] <will force kill>
+  - [pid=6496] taskkill stderr: ERROR: The process "6496" not found.
+  - [pid=6496] <process did exit: exitCode=21, signal=null>
+  - [pid=6496] starting temporary directories cleanup
+  - [pid=6496] finished temporary directories cleanup
+  - [pid=6496] <gracefully close end>
+
+
+[BROWSER] 13:48:09 - Closing browser session...
+[BROWSER] 13:48:09 - Browser session closed cleanly.
+[SESSION] 13:48:11 - [SESSION] Login required
+[SESSION] 13:48:14 - [SESSION] Login required
+[SESSION_TEST] 13:48:14 - [SESSION ERROR] RUN 1 Execution failed: Page.wait_for_timeout: Target page, context or browser has been closed
+[BROWSER] 13:48:14 - Closing browser session...
+[DATABASE] 13:48:40 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 13:48:40 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 13:48:42 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[BROWSER] 13:59:32 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 13:59:32 - [BROWSER DEBUG] headless=False
+[BROWSER] 13:59:32 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 13:59:36 - [BROWSER DEBUG] context created=True
+[BROWSER] 13:59:36 - [BROWSER DEBUG] page created=True
+[BROWSER] 13:59:36 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 13:59:36 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 13:59:36 - [SESSION] Browser profile loaded
+[BROWSER] 13:59:36 - Navigating to https://www.facebook.com/...
+[BROWSER] 13:59:37 - [BROWSER DEBUG] page URL=https://www.facebook.com/
+[BROWSER] 14:00:03 - Closing browser session...
+[BROWSER] 14:13:45 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:13:45 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:13:45 - [ACCOUNT] session_test_clean | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\session_test_clean\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:13:49 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:13:49 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:13:49 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:13:49 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:13:49 - [SESSION] Browser profile loaded
+[BROWSER] 14:13:49 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:13:52 - [BROWSER DEBUG] page URL=https://www.facebook.com/
+[SESSION] 14:13:53 - [SESSION] Login required
+[SESSION] 14:13:56 - [SESSION] Login required
+[SESSION] 14:13:59 - [SESSION] Login required
+[SESSION] 14:14:02 - [SESSION] Login required
+[SESSION] 14:14:05 - [SESSION] Login required
+[SESSION] 14:14:08 - [SESSION] Login required
+[SESSION] 14:14:11 - [SESSION] Login required
+[SESSION] 14:14:14 - [SESSION] Login required
+[SESSION] 14:14:18 - [SESSION] Login required
+[SESSION] 14:14:21 - [SESSION] Login required
+[SESSION] 14:14:24 - [SESSION] Login required
+[SESSION] 14:14:27 - [SESSION] Login required
+[SESSION] 14:14:30 - [SESSION] Login required
+[SESSION] 14:14:33 - [SESSION] Login required
+[SESSION] 14:14:36 - [SESSION] Login required
+[SESSION] 14:14:39 - [SESSION] Login required
+[SESSION] 14:14:42 - [SESSION] Login required
+[SESSION] 14:14:45 - [SESSION] Login required
+[SESSION] 14:14:49 - [SESSION] Login required
+[SESSION] 14:14:52 - [SESSION] Login required
+[SESSION] 14:14:55 - [SESSION] Login required
+[SESSION] 14:14:58 - [SESSION] Login required
+[SESSION] 14:15:01 - [SESSION] Login required
+[SESSION] 14:15:04 - [SESSION] Login required
+[SESSION] 14:15:07 - [SESSION] Login required
+[SESSION] 14:15:10 - [SESSION] Login required
+[SESSION] 14:15:13 - [SESSION] Login required
+[SESSION] 14:15:16 - [SESSION] Login required
+[SESSION] 14:15:20 - [SESSION] Login required
+[SESSION] 14:15:23 - [SESSION] Login required
+[SESSION] 14:15:26 - [SESSION] Login required
+[SESSION] 14:15:29 - [SESSION] Login required
+[SESSION] 14:15:32 - [SESSION] Login required
+[SESSION] 14:15:35 - [SESSION] Login required
+[SESSION] 14:15:40 - [SESSION] Authenticated state verified
+[SESSION] 14:15:40 - [SESSION] Status: LIVE
+[BROWSER] 14:15:50 - Closing browser session...
+[BROWSER] 14:15:52 - Browser session closed cleanly.
+[BROWSER] 14:15:55 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:15:55 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:15:55 - [ACCOUNT] session_test_clean | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\session_test_clean\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:15:58 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:15:58 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:15:58 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:15:58 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:15:58 - [SESSION] Browser profile loaded
+[BROWSER] 14:15:58 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:15:59 - [BROWSER DEBUG] page URL=https://www.facebook.com/
+[SESSION] 14:16:03 - [SESSION] Login required
+[BROWSER] 14:16:03 - Closing browser session...
+[BROWSER] 14:16:03 - Browser session closed cleanly.
+[BROWSER] 14:19:55 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:19:55 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:19:55 - [ACCOUNT] session_test_clean | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\session_test_clean\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:20:00 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:20:00 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:20:00 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:20:00 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:20:00 - [SESSION] Browser profile loaded
+[BROWSER] 14:20:00 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:20:02 - [BROWSER DEBUG] page URL=https://www.facebook.com/
+[SESSION] 14:20:03 - [SESSION] Login required
+[SESSION] 14:20:06 - [SESSION] Login required
+[SESSION] 14:20:09 - [SESSION] Login required
+[SESSION] 14:20:12 - [SESSION] Login required
+[SESSION] 14:20:15 - [SESSION] Login required
+[SESSION] 14:20:19 - [SESSION] Login required
+[SESSION] 14:20:22 - [SESSION] Login required
+[SESSION] 14:20:25 - [SESSION] Login required
+[SESSION] 14:20:28 - [SESSION] Login required
+[SESSION] 14:20:31 - [SESSION] Login required
+[SESSION] 14:20:34 - [SESSION] Login required
+[SESSION] 14:20:37 - [SESSION] Login required
+[SESSION] 14:20:40 - [SESSION] Login required
+[SESSION] 14:20:43 - [SESSION] Login required
+[SESSION] 14:20:46 - [SESSION] Login required
+[SESSION] 14:20:50 - [SESSION] Login required
+[SESSION] 14:20:53 - [SESSION] Login required
+[SESSION] 14:20:56 - [SESSION] Login required
+[SESSION] 14:20:59 - [SESSION] Login required
+[SESSION] 14:21:02 - [SESSION ERROR] Error during login inspection: Page.query_selector: Execution context was destroyed, most likely because of a navigation
+[SCREENSHOT] 14:21:03 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\session_inspect_error_20260808_142102.png
+[SESSION] 14:21:06 - [SESSION] Authenticated state verified
+[SESSION] 14:21:06 - [SESSION] Status: LIVE
+[BROWSER] 14:26:17 - Closing browser session...
+[BROWSER] 14:26:20 - Browser session closed cleanly.
+[BROWSER] 14:28:47 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:28:47 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:28:47 - [ACCOUNT] session_test_clean | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\session_test_clean\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:28:52 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:28:52 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:28:52 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:28:52 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:28:52 - [SESSION] Browser profile loaded
+[BROWSER] 14:28:52 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:28:56 - [BROWSER DEBUG] page URL=https://www.facebook.com/
+[SESSION] 14:28:57 - [SESSION] Login required
+[SESSION] 14:28:57 - [SESSION] Login required
+[SESSION] 14:28:57 - [SESSION] Waiting for manual Facebook login...
+[SESSION] 14:28:59 - [SESSION] Login required
+[SESSION] 14:29:01 - [SESSION] Login required
+[SESSION] 14:29:04 - [SESSION] Login required
+[SESSION] 14:29:06 - [SESSION] Login required
+[SESSION] 14:29:09 - [SESSION] Login required
+[SESSION] 14:29:12 - [SESSION] Login required
+[SESSION] 14:29:14 - [SESSION] Login required
+[SESSION] 14:29:17 - [SESSION] Login required
+[SESSION] 14:29:19 - [SESSION] Login required
+[SESSION] 14:29:22 - [SESSION] Login required
+[SESSION] 14:29:24 - [SESSION] Login required
+[SESSION] 14:29:27 - [SESSION] Login required
+[SESSION] 14:29:30 - [SESSION] Login required
+[SESSION] 14:29:32 - [SESSION] Login required
+[SESSION] 14:29:35 - [SESSION] Login required
+[SESSION] 14:29:37 - [SESSION] Login required
+[SESSION] 14:29:40 - [SESSION] Login required
+[SESSION] 14:29:42 - [SESSION] Login required
+[SESSION] 14:29:45 - [SESSION] Login required
+[SESSION] 14:29:48 - [SESSION] Login required
+[SESSION] 14:29:50 - [SESSION] Login verification in progress
+[SESSION] 14:29:50 - [SESSION] 2FA / security verification detected
+[SESSION] 14:29:50 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:29:53 - [SESSION] Login verification in progress
+[SESSION] 14:29:53 - [SESSION] 2FA / security verification detected
+[SESSION] 14:29:53 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:29:55 - [SESSION] Login verification in progress
+[SESSION] 14:29:55 - [SESSION] 2FA / security verification detected
+[SESSION] 14:29:55 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:29:58 - [SESSION] Login verification in progress
+[SESSION] 14:29:58 - [SESSION] 2FA / security verification detected
+[SESSION] 14:29:58 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:00 - [SESSION] Login verification in progress
+[SESSION] 14:30:00 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:00 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:03 - [SESSION] Login verification in progress
+[SESSION] 14:30:03 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:03 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:05 - [SESSION] Login verification in progress
+[SESSION] 14:30:05 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:05 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:08 - [SESSION] Login verification in progress
+[SESSION] 14:30:08 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:08 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:10 - [SESSION] Login verification in progress
+[SESSION] 14:30:10 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:10 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:13 - [SESSION] Login verification in progress
+[SESSION] 14:30:13 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:13 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:15 - [SESSION] Login verification in progress
+[SESSION] 14:30:15 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:15 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:18 - [SESSION] Login verification in progress
+[SESSION] 14:30:18 - [SESSION] 2FA / security verification detected
+[SESSION] 14:30:18 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 14:30:23 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 14:30:24 - [SESSION] Authenticated state candidate detected
+[SESSION] 14:30:24 - [SESSION] Verifying authenticated state stability (Check 1 of 3)...
+[SESSION] 14:30:28 - [SESSION] Verifying authenticated state stability (Check 2 of 3)...
+[SESSION] 14:30:29 - [SESSION] Verifying authenticated state stability (Check 3 of 3)...
+[SESSION] 14:30:29 - [SESSION] Authenticated state stable
+[SESSION] 14:30:29 - [SESSION] Authenticated state verified
+[SESSION] 14:30:29 - [SESSION] Status: LIVE
+[SESSION] 14:30:29 - [SESSION] Manual login detected
+[SESSION] 14:30:29 - [SESSION] Authenticated state verified
+[SESSION] 14:30:29 - [SESSION] Status: LIVE
+[SESSION] 14:30:29 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 14:30:29 - [SESSION] Authenticated state candidate detected
+[SESSION] 14:30:29 - [SESSION] Verifying authenticated state stability (Check 1 of 3)...
+[SESSION] 14:30:31 - [SESSION] Verifying authenticated state stability (Check 2 of 3)...
+[SESSION] 14:30:32 - [SESSION] Verifying authenticated state stability (Check 3 of 3)...
+[SESSION] 14:30:32 - [SESSION] Authenticated state stable
+[SESSION] 14:30:32 - [SESSION] Authenticated state verified
+[SESSION] 14:30:32 - [SESSION] Status: LIVE
+[BROWSER] 14:35:00 - Closing browser session...
+[BROWSER] 14:35:03 - Browser session closed cleanly.
+[ACCOUNT] 14:40:36 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 14:40:36 - [TARGET PAGE] Huang
+[PAGE_TEST] 14:40:36 - --- STARTING MILESTONE 3: FACEBOOK PAGE SWITCHING & IDENTITY VERIFICATION ---
+[BROWSER] 14:40:36 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:40:36 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:40:36 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:40:40 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:40:40 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:40:40 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:40:40 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:40:40 - [SESSION] Browser profile loaded
+[BROWSER] 14:40:40 - Navigating to https://www.facebook.com/...
+[PAGE_TEST] 14:41:10 - [PAGE ERROR] Milestone 3 test execution error: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.facebook.com/", waiting until "domcontentloaded"
+
+[PAGE_TEST] 14:41:11 - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\tests\test_page_switch.py", line 37, in run_page_switch_test
+    bm.navigate("https://www.facebook.com/")
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 127, in navigate
+    self.page.goto(url, wait_until="domcontentloaded")
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 9875, in goto
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.goto(
+        ^^^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_page.py", line 560, in goto
+    return await self._main_frame.goto(**locals_to_params(locals()))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_frame.py", line 156, in goto
+    await self._channel.send(
+        "goto", self._navigation_timeout, locals_to_params(locals())
+    )
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.goto: Timeout 30000ms exceeded.
+Call log:
+  - navigating to "https://www.facebook.com/", waiting until "domcontentloaded"
+
+
+[SCREENSHOT] 14:41:41 - Failed to capture screenshot: Page.screenshot: Timeout 30000ms exceeded.
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+
+[BROWSER] 14:41:41 - Closing browser session...
+[BROWSER] 14:41:42 - Browser session closed cleanly.
+[NAV_TEST] 14:45:51 - --- TESTING FACEBOOK NAVIGATION & UI READINESS [ACCOUNT: test_account_01] ---
+[BROWSER] 14:45:51 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:45:51 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:45:51 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:45:55 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:45:55 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:45:55 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:45:55 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:45:55 - [SESSION] Browser profile loaded
+[NAV_TEST] 14:45:55 - [BROWSER] Navigation started
+[BROWSER] 14:45:55 - [BROWSER] Navigation started
+[BROWSER] 14:45:55 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:45:57 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 14:45:57 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 14:45:57 - [BROWSER] Current title: Facebook
+[BROWSER] 14:45:57 - [BROWSER] Facebook UI ready
+[NAV_TEST] 14:45:57 - [NAV_TEST] Facebook URL: https://www.facebook.com/
+[NAV_TEST] 14:45:57 - [NAV_TEST] Facebook Title: Facebook
+[NAV_TEST] 14:45:57 - [NAV_TEST] Inspecting session status after UI readiness...
+[ACCOUNT] 14:45:57 - [ACCOUNT] test_account_01
+[SESSION] 14:45:57 - [SESSION] Browser profile loaded
+[SESSION] 14:45:57 - [SESSION] Opening Facebook...
+[SESSION] 14:46:02 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 14:46:02 - [SESSION] Login required
+[SESSION] 14:46:02 - [SESSION] Stability check 1 failed or in progress (LOGIN REQUIRED). Resetting candidate state.
+[NAV_TEST] 14:46:02 - [NAV_TEST] Session Status: LOGIN IN PROGRESS
+[NAV_TEST] 14:51:03 - --- TESTING FACEBOOK NAVIGATION & UI READINESS [ACCOUNT: test_account_01] ---
+[BROWSER] 14:51:03 - [BROWSER DEBUG] visible browser launch requested
+[BROWSER] 14:51:03 - [BROWSER DEBUG] headless=False
+[BROWSER] 14:51:03 - [ACCOUNT] test_account_01 | Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data | Debug: True | Headless: False | Window: 500x600
+[BROWSER] 14:51:07 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:51:07 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:51:07 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:51:07 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:51:07 - [SESSION] Browser profile loaded
+[NAV_TEST] 14:51:07 - [BROWSER] Navigation started
+[BROWSER] 14:51:07 - [BROWSER] Navigation started
+[BROWSER] 14:51:07 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:51:10 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 14:51:10 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 14:51:10 - [BROWSER] Current title: Facebook
+[BROWSER] 14:51:10 - [BROWSER] Facebook UI ready
+[NAV_TEST] 14:51:10 - [NAV_TEST] Facebook URL: https://www.facebook.com/
+[NAV_TEST] 14:51:10 - [NAV_TEST] Facebook Title: Facebook
+[NAV_TEST] 14:51:10 - [NAV_TEST] Inspecting session status after UI readiness...
+[ACCOUNT] 14:51:10 - [ACCOUNT] test_account_01
+[SESSION] 14:51:10 - [SESSION] Browser profile loaded
+[SESSION] 14:51:10 - [SESSION] Opening Facebook...
+[SESSION] 14:51:15 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 14:51:16 - [SESSION] Login required
+[SESSION] 14:51:16 - [SESSION] Stability check 1 failed or in progress (LOGIN REQUIRED). Resetting candidate state.
+[NAV_TEST] 14:51:16 - [NAV_TEST] Session Status: LOGIN IN PROGRESS
+[BROWSER] 14:57:12 - Closing browser session...
+[DATABASE] 14:57:20 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 14:57:20 - Testing SQLite database metrics query...
+[TEST_DB] 14:57:20 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 14:57:20 - Database test passed cleanly.
+[BROWSER] 14:57:27 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 14:57:27 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 14:57:27 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 14:57:27 - [BROWSER PROFILE] Headless: False
+[BROWSER] 14:59:51 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 14:59:51 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 14:59:51 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 14:59:51 - [BROWSER PROFILE] Headless: False
+[BROWSER] 14:59:55 - [BROWSER DEBUG] context created=True
+[BROWSER] 14:59:55 - [BROWSER DEBUG] page created=True
+[BROWSER] 14:59:55 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 14:59:55 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 14:59:55 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 14:59:55 - [BROWSER] Navigation started
+[BROWSER] 14:59:55 - Navigating to https://www.facebook.com/...
+[BROWSER] 14:59:58 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 14:59:59 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 14:59:59 - [BROWSER] Current title: Facebook
+[BROWSER] 14:59:59 - [BROWSER] Facebook UI ready
+[SESSION] 15:00:02 - [SESSION] Login required
+[SESSION] 15:00:02 - [SESSION] Login required
+[SESSION] 15:00:02 - [SESSION] Waiting for manual Facebook login...
+[SESSION] 15:00:03 - [SESSION] Login required
+[SESSION] 15:00:05 - [SESSION] Login required
+[SESSION] 15:00:08 - [SESSION] Login required
+[SESSION] 15:00:10 - [SESSION] Login required
+[SESSION] 15:00:13 - [SESSION] Login required
+[SESSION] 15:00:16 - [SESSION] Login required
+[SESSION] 15:00:18 - [SESSION] Login required
+[SESSION] 15:00:21 - [SESSION] Login required
+[SESSION] 15:00:25 - [SESSION] Login verification in progress
+[SESSION] 15:00:28 - [SESSION] Login verification in progress
+[SESSION] 15:00:28 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:28 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:30 - [SESSION] Login verification in progress
+[SESSION] 15:00:30 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:30 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:33 - [SESSION] Login verification in progress
+[SESSION] 15:00:33 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:33 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:35 - [SESSION] Login verification in progress
+[SESSION] 15:00:35 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:35 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:38 - [SESSION] Login verification in progress
+[SESSION] 15:00:38 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:38 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:40 - [SESSION] Login verification in progress
+[SESSION] 15:00:40 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:40 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:43 - [SESSION] Login verification in progress
+[SESSION] 15:00:43 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:43 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:45 - [SESSION] Login verification in progress
+[SESSION] 15:00:45 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:45 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:48 - [SESSION] Login verification in progress
+[SESSION] 15:00:48 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:48 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:50 - [SESSION] Login verification in progress
+[SESSION] 15:00:50 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:50 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:53 - [SESSION] Login verification in progress
+[SESSION] 15:00:53 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:53 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:55 - [SESSION] Login verification in progress
+[SESSION] 15:00:55 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:55 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:00:58 - [SESSION] Login verification in progress
+[SESSION] 15:00:58 - [SESSION] 2FA / security verification detected
+[SESSION] 15:00:58 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:00 - [SESSION] Login verification in progress
+[SESSION] 15:01:00 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:00 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:03 - [SESSION] Login verification in progress
+[SESSION] 15:01:03 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:03 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:05 - [SESSION] Login verification in progress
+[SESSION] 15:01:05 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:05 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:08 - [SESSION] Login verification in progress
+[SESSION] 15:01:08 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:08 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:10 - [SESSION] Login verification in progress
+[SESSION] 15:01:10 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:10 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:13 - [SESSION] Login verification in progress
+[SESSION] 15:01:13 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:13 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:16 - [SESSION] Login verification in progress
+[SESSION] 15:01:16 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:16 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:18 - [SESSION] Login verification in progress
+[SESSION] 15:01:18 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:18 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:21 - [SESSION] Login verification in progress
+[SESSION] 15:01:21 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:21 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:23 - [SESSION] Login verification in progress
+[SESSION] 15:01:23 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:23 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:26 - [SESSION] Login verification in progress
+[SESSION] 15:01:26 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:26 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:28 - [SESSION] Login verification in progress
+[SESSION] 15:01:28 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:28 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:31 - [SESSION] Login verification in progress
+[SESSION] 15:01:31 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:31 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:33 - [SESSION] Login verification in progress
+[SESSION] 15:01:33 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:33 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:36 - [SESSION] Login verification in progress
+[SESSION] 15:01:36 - [SESSION] 2FA / security verification detected
+[SESSION] 15:01:36 - [SESSION] Status: LOGIN IN PROGRESS
+[SESSION] 15:01:41 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:01:43 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:01:43 - [SESSION] Verifying authenticated state stability (Check 1 of 3)...
+[SESSION] 15:01:45 - [SESSION] Verifying authenticated state stability (Check 2 of 3)...
+[SESSION] 15:01:47 - [SESSION] Verifying authenticated state stability (Check 3 of 3)...
+[SESSION] 15:01:47 - [SESSION] Authenticated state stable
+[SESSION] 15:01:47 - [SESSION] Authenticated state verified
+[SESSION] 15:01:47 - [SESSION] Status: LIVE
+[SESSION] 15:01:47 - [SESSION] Manual login detected
+[SESSION] 15:01:47 - [SESSION] Authenticated state verified
+[SESSION] 15:01:47 - [SESSION] Status: LIVE
+[SESSION] 15:01:47 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:01:47 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:01:47 - [SESSION] Verifying authenticated state stability (Check 1 of 3)...
+[SESSION] 15:01:49 - [SESSION] Verifying authenticated state stability (Check 2 of 3)...
+[SESSION] 15:01:50 - [SESSION] Verifying authenticated state stability (Check 3 of 3)...
+[SESSION] 15:01:50 - [SESSION] Authenticated state stable
+[SESSION] 15:01:50 - [SESSION] Authenticated state verified
+[SESSION] 15:01:50 - [SESSION] Status: LIVE
+[BROWSER] 15:02:03 - Closing browser session...
+[BROWSER] 15:02:05 - Browser session closed cleanly.
+[BROWSER] 15:02:08 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:02:08 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:02:08 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:02:08 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:02:10 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:02:10 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:02:10 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:02:10 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:02:10 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:02:10 - [BROWSER] Navigation started
+[BROWSER] 15:02:10 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:02:14 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:02:14 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:02:14 - [BROWSER] Current title: Facebook
+[BROWSER] 15:02:14 - [BROWSER] Facebook UI ready
+[SESSION] 15:02:14 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:02:16 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:02:16 - [SESSION] Verifying authenticated state stability (Check 1 of 3)...
+[SESSION] 15:02:18 - [SESSION] Verifying authenticated state stability (Check 2 of 3)...
+[SESSION] 15:02:19 - [SESSION] Verifying authenticated state stability (Check 3 of 3)...
+[SESSION] 15:02:19 - [SESSION] Authenticated state stable
+[SESSION] 15:02:19 - [SESSION] Authenticated state verified
+[SESSION] 15:02:19 - [SESSION] Status: LIVE
+[BROWSER] 15:04:46 - Closing browser session...
+[BROWSER] 15:04:48 - Browser session closed cleanly.
+[DATABASE] 15:06:08 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 15:06:08 - Testing SQLite database metrics query...
+[TEST_DB] 15:06:08 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 15:06:08 - Database test passed cleanly.
+[DATABASE] 15:08:01 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 15:08:01 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 15:08:02 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[BROWSER] 15:08:38 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:08:38 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:08:38 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:08:38 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:08:42 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:08:42 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:08:42 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:08:42 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:08:42 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:08:42 - [BROWSER] Navigation started
+[BROWSER] 15:08:42 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:08:47 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:08:48 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:08:48 - [BROWSER] Current title: Facebook
+[BROWSER] 15:08:48 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:08:48 - [ACCOUNT] test_account_01
+[SESSION] 15:08:48 - [SESSION] Browser profile loaded
+[SESSION] 15:08:48 - [SESSION] Opening Facebook...
+[SESSION] 15:08:53 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:08:54 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:08:54 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:08:56 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:08:56 - [SESSION] Authenticated state stable
+[SESSION] 15:08:56 - [SESSION] Authenticated state verified
+[SESSION] 15:08:56 - [SESSION] Status: LIVE
+[SESSION] 15:08:56 - [SESSION] Session loaded successfully
+[SESSION] 15:08:56 - [SESSION] Status: LIVE
+[AUTOMATION] 15:09:30 - [AUTOMATION] Starting Session Verification for test_account_01...
+[BROWSER] 15:09:30 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:09:30 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:09:30 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:09:30 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:09:32 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:09:32 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:09:32 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:09:32 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:09:32 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:09:32 - [BROWSER] Navigation started
+[BROWSER] 15:09:32 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:09:35 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:09:36 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:09:36 - [BROWSER] Current title: Facebook
+[BROWSER] 15:09:36 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:09:36 - [ACCOUNT] test_account_01
+[SESSION] 15:09:36 - [SESSION] Browser profile loaded
+[SESSION] 15:09:36 - [SESSION] Opening Facebook...
+[SESSION] 15:09:41 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:09:42 - [SESSION] Login verification in progress
+[SESSION] 15:09:42 - [SESSION] Stability check 1 failed or in progress (LOGIN IN PROGRESS). Resetting candidate state.
+[AUTOMATION] 15:09:42 - [AUTOMATION] Session not LIVE (LOGIN IN PROGRESS). Automation paused.
+[SESSION] 15:09:42 - [SESSION] Login required
+[SESSION] 15:09:42 - [SESSION] Waiting for manual Facebook login...
+[SESSION] 15:09:42 - [SESSION] Login verification in progress
+[AUTOMATION] 15:09:42 - [AUTOMATION ERROR] Run Automation error: Page.wait_for_timeout: Target page, context or browser has been closed
+[DATABASE] 15:16:02 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 15:16:02 - Testing SQLite database metrics query...
+[TEST_DB] 15:16:02 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 15:16:02 - Database test passed cleanly.
+[DATABASE] 15:18:03 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 15:18:04 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 15:18:04 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 15:18:13 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:18:13 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:18:13 - [TARGET PAGE] Huang
+[AUTOMATION] 15:18:13 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:18:13 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:18:13 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:18:13 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:18:13 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:18:13 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:18:13 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:18:18 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:18:18 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:18:18 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:18:18 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:18:18 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:18:18 - [BROWSER] Navigation started
+[BROWSER] 15:18:18 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:18:24 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:18:25 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:18:25 - [BROWSER] Current title: Facebook
+[BROWSER] 15:18:25 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:18:25 - [ACCOUNT] test_account_01
+[SESSION] 15:18:25 - [SESSION] Browser profile loaded
+[SESSION] 15:18:25 - [SESSION] Opening Facebook...
+[SESSION] 15:18:31 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:18:33 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:18:33 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:18:34 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:18:34 - [SESSION] Authenticated state stable
+[SESSION] 15:18:34 - [SESSION] Authenticated state verified
+[SESSION] 15:18:34 - [SESSION] Status: LIVE
+[AUTOMATION] 15:18:34 - [AUTOMATION] Account session verified
+[AUTOMATION] 15:18:34 - [AUTOMATION] Facebook UI ready
+[AUTOMATION] 15:18:34 - [AUTOMATION] Beginning Page Switch
+[STATE] 15:18:36 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 15:18:36 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 15:18:36 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 15:18:36 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 15:18:36 - [TARGET PAGE] Huang
+[PAGE_SWITCH] 15:18:36 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 15:18:36 - [PAGE SWITCH] Candidate found: selector='[aria-label='Your profile']', aria-label='Your profile', text=''
+[PAGE_SWITCH] 15:18:36 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 15:18:36 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 15:18:36 - [PAGE SWITCH] Opening profile switcher...
+[PAGE_SWITCH] 15:18:38 - [PAGE SWITCH] Profile switcher opened
+[PAGE_SWITCH] 15:18:38 - [PAGE SWITCH] Inspecting available profiles...
+[PAGE_SWITCH] 15:18:38 - [PAGE SWITCH] Clicking 'See all profiles' to expand profile list...
+[PAGE_SWITCH] 15:18:40 - [PAGE SWITCH] Searching for target Page: Huang
+[PAGE_SWITCH] 15:18:40 - [PAGE SWITCH] Target candidate detected: Huang
+[PAGE_SWITCH] 15:18:40 - [PAGE SWITCH] Target candidate verified (Selector: div[role='dialog'] span:has-text('Huang'))
+[PAGE_SWITCH] 15:18:40 - [PAGE SWITCH] Selecting Huang...
+[PAGE_SWITCH] 15:18:42 - [PAGE SWITCH] Dialog inspection warning: Page.query_selector_all: Execution context was destroyed, most likely because of a navigation
+[PAGE_VERIFY] 15:18:42 - [PAGE VERIFY] Waiting for Facebook identity transition...
+[PAGE_VERIFY] 15:18:42 - [PAGE VERIFY] Inspecting active identity...
+[STATE] 15:18:47 - [STATE MACHINE] Transitioned to IDENTITY_VERIFICATION
+[PAGE_VERIFY] 15:18:47 - [PAGE VERIFY] Expected: Huang
+[PAGE_VERIFY] 15:18:49 - [PAGE VERIFY] Identity signal 1: Profile control label: 'Your profile' ([aria-label='Your profile'])
+[PAGE_VERIFY] 15:18:49 - [PAGE VERIFY] Identity signal 2: Header text: 'Home' (h1)
+[PAGE_VERIFY] 15:18:49 - [PAGE VERIFY] Identity signal 3: Current URL: 'https://www.facebook.com/'
+[PAGE_VERIFY] 15:18:49 - [PAGE VERIFY] Actual: Facebook
+[PAGE_VERIFY] 15:18:49 - [PAGE VERIFY] FAILED
+[PAGE_VERIFY] 15:18:49 - [ERROR] Target Page was not activated.
+[PAGE_SWITCH] 15:18:49 - [PAGE SWITCH] SAFE STOP
+[PAGE_SWITCH] 15:18:49 - [PAGE SWITCH] Reason: Active identity 'Facebook' mismatch with expected 'Huang'
+[SCREENSHOT] 15:18:51 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\identity_verification_failed_20260808_151849.png
+[STATE] 15:18:51 - [STATE MACHINE] Transitioned to FAILED — Identity verification failed
+[AUTOMATION] 15:18:51 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[DATABASE] 15:27:24 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 15:27:24 - Testing SQLite database metrics query...
+[TEST_DB] 15:27:24 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 15:27:24 - Database test passed cleanly.
+[DATABASE] 15:28:47 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 15:28:48 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 15:28:48 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[BROWSER] 15:31:15 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:31:15 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:31:15 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:31:15 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:31:19 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:31:19 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:31:19 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:31:19 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:31:19 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:31:19 - [BROWSER] Navigation started
+[BROWSER] 15:31:19 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:31:25 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:31:26 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:31:26 - [BROWSER] Current title: Facebook
+[BROWSER] 15:31:26 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:31:26 - [ACCOUNT] test_account_01
+[SESSION] 15:31:26 - [SESSION] Browser profile loaded
+[SESSION] 15:31:26 - [SESSION] Opening Facebook...
+[SESSION] 15:31:32 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:31:33 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:31:33 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:31:34 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:31:34 - [SESSION] Authenticated state stable
+[SESSION] 15:31:34 - [SESSION] Authenticated state verified
+[SESSION] 15:31:34 - [SESSION] Status: LIVE
+[SESSION] 15:31:34 - [SESSION] Session loaded successfully
+[SESSION] 15:31:34 - [SESSION] Status: LIVE
+[AUTOMATION] 15:31:43 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:31:43 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:31:43 - [TARGET PAGE] Huang
+[AUTOMATION] 15:31:43 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:31:43 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:31:43 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:31:43 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:31:43 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:31:43 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:31:43 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:31:45 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:31:45 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:31:45 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:31:45 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:31:45 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:31:45 - [BROWSER] Navigation started
+[BROWSER] 15:31:45 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:31:49 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:31:49 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:31:49 - [BROWSER] Current title: Facebook
+[BROWSER] 15:31:49 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:31:49 - [ACCOUNT] test_account_01
+[SESSION] 15:31:49 - [SESSION] Browser profile loaded
+[SESSION] 15:31:49 - [SESSION] Opening Facebook...
+[SESSION] 15:31:56 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:31:56 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:31:56 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:31:58 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:31:58 - [SESSION] Authenticated state stable
+[SESSION] 15:31:58 - [SESSION] Authenticated state verified
+[SESSION] 15:31:58 - [SESSION] Status: LIVE
+[AUTOMATION] 15:31:58 - [AUTOMATION] Account session verified
+[AUTOMATION] 15:31:58 - [AUTOMATION] Facebook UI ready
+[STATE] 15:32:00 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 15:32:00 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 15:32:00 - [PAGE VERIFY] Expected: Huang
+[PAGE_VERIFY] 15:32:02 - [PAGE VERIFY] Identity signal 1: Profile control label: '清浅Huang's Timeline'
+[PAGE_VERIFY] 15:32:02 - [PAGE VERIFY] Identity signal 2: Left navigation profile link: '清浅Huang'
+[PAGE_VERIFY] 15:32:02 - [PAGE VERIFY] Actual: Huang
+[PAGE_VERIFY] 15:32:02 - [PAGE VERIFY] Identity evidence: ["Profile control label: '清浅Huang's Timeline'", "Left navigation profile link: '清浅Huang'"]
+[PAGE_VERIFY] 15:32:02 - [PAGE VERIFY] SUCCESS
+[PAGE_CHECK] 15:32:02 - [PAGE CHECK] Current active Page: Huang
+[PAGE_CHECK] 15:32:02 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:32:02 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:32:02 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:32:02 - [PAGE VERIFY] SUCCESS
+[AUTOMATION] 15:32:02 - [AUTOMATION] Target Page context verified: Huang
+[STATE] 15:32:02 - [STATE MACHINE] Transitioned to PAGE_CONTEXT_VERIFIED — Target Page 'Huang' was already active.
+[AUTOMATION] 15:32:02 - [AUTOMATION] Milestone 3 Page Switching & Active Page Identity Verification COMPLETED.
+[AUTOMATION] 15:32:02 - [AUTOMATION] Browser remains visible on screen for manual verification.
+[DATABASE] 15:34:29 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 15:34:30 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 15:34:31 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[BROWSER] 15:36:17 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:36:17 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:36:17 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:36:17 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:36:20 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:36:20 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:36:20 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:36:20 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:36:20 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:36:20 - [BROWSER] Navigation started
+[BROWSER] 15:36:20 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:36:25 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:36:25 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:36:25 - [BROWSER] Current title: Facebook
+[BROWSER] 15:36:25 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:36:25 - [ACCOUNT] test_account_01
+[SESSION] 15:36:25 - [SESSION] Browser profile loaded
+[SESSION] 15:36:25 - [SESSION] Opening Facebook...
+[SESSION] 15:36:31 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:36:32 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:36:32 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:36:33 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:36:33 - [SESSION] Authenticated state stable
+[SESSION] 15:36:33 - [SESSION] Authenticated state verified
+[SESSION] 15:36:33 - [SESSION] Status: LIVE
+[SESSION] 15:36:33 - [SESSION] Session loaded successfully
+[SESSION] 15:36:33 - [SESSION] Status: LIVE
+[AUTOMATION] 15:38:29 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:38:29 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:38:29 - [TARGET PAGE] Huang
+[AUTOMATION] 15:38:29 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:38:29 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:38:29 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:38:29 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:38:29 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:38:29 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:38:29 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:38:31 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:38:31 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:38:31 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:38:31 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:38:31 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:38:31 - [BROWSER] Navigation started
+[BROWSER] 15:38:31 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:38:35 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:38:35 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:38:35 - [BROWSER] Current title: Facebook
+[BROWSER] 15:38:35 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:38:35 - [ACCOUNT] test_account_01
+[SESSION] 15:38:35 - [SESSION] Browser profile loaded
+[SESSION] 15:38:35 - [SESSION] Opening Facebook...
+[SESSION] 15:38:42 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:38:42 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:38:42 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:38:45 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:38:45 - [SESSION] Authenticated state stable
+[SESSION] 15:38:45 - [SESSION] Authenticated state verified
+[SESSION] 15:38:45 - [SESSION] Status: LIVE
+[AUTOMATION] 15:38:45 - [AUTOMATION] Account session verified
+[AUTOMATION] 15:38:45 - [AUTOMATION] Facebook UI ready
+[STATE] 15:38:46 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 15:38:46 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 15:38:46 - [PAGE VERIFY] Expected: Huang
+[PAGE_VERIFY] 15:38:47 - [PAGE VERIFY] Identity signal 1: Profile control label: 'Your profile'
+[PAGE_VERIFY] 15:38:47 - [PAGE VERIFY] Identity signal 2: Left navigation profile link: '清浅Huang'
+[PAGE_VERIFY] 15:38:47 - [PAGE VERIFY] Actual: Huang
+[PAGE_VERIFY] 15:38:47 - [PAGE VERIFY] Identity evidence: ["Profile control label: 'Your profile'", "Left navigation profile link: '清浅Huang'"]
+[PAGE_VERIFY] 15:38:47 - [PAGE VERIFY] SUCCESS
+[PAGE_CHECK] 15:38:47 - [PAGE CHECK] Current active Page: Huang
+[PAGE_CHECK] 15:38:47 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:38:47 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:38:47 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:38:47 - [PAGE VERIFY] SUCCESS
+[AUTOMATION] 15:38:47 - [AUTOMATION] Target Page context verified: Huang
+[STATE] 15:38:47 - [STATE MACHINE] Transitioned to PAGE_CONTEXT_VERIFIED — Target Page 'Huang' was already active.
+[AUTOMATION] 15:38:47 - [AUTOMATION] Milestone 3 Page Switching & Active Page Identity Verification COMPLETED.
+[AUTOMATION] 15:38:47 - [AUTOMATION] Browser remains visible on screen for manual verification.
+[AUTOMATION] 15:39:40 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:39:40 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:39:40 - [TARGET PAGE] Huang
+[AUTOMATION] 15:39:40 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:39:40 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:39:40 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:39:40 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:39:40 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:39:40 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:39:40 - [BROWSER PROFILE] Headless: False
+[AUTOMATION] 15:39:46 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:39:46 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:39:46 - [TARGET PAGE] Huang
+[AUTOMATION] 15:39:46 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:39:46 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:39:46 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:39:46 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:39:46 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:39:46 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:39:46 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:39:48 - [BROWSER ERROR] Account profile is already in use.
+[BROWSER] 15:39:48 - [BROWSER ERROR] Account: test_account_01
+[BROWSER] 15:39:48 - [BROWSER ERROR] Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:39:48 - [BROWSER ERROR] Close the existing browser before retrying.
+[BROWSER] 15:39:48 - Closing browser session...
+[BROWSER] 15:39:48 - Browser session closed cleanly.
+[AUTOMATION] 15:39:48 - [AUTOMATION ERROR] State machine exception: BrowserType.launch_persistent_context: Failed to create a ProcessSingleton for your profile directory. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=3392
+  - [pid=3392][err] [3392:15080:0808/153947.908:ERROR:chrome\browser\process_singleton_win.cc:414] Lock file can not be created: The process cannot access the file because it is being used by another process. (0x20)
+  - [pid=3392][err] [3392:15080:0808/153947.910:ERROR:chrome\app\chrome_main_delegate.cc:520] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.
+  - [pid=3392] <gracefully close start>
+  - [pid=3392] <kill>
+  - [pid=3392] <will force kill>
+  - [pid=3392] taskkill stderr: ERROR: The process "3392" not found.
+  - [pid=3392] <process did exit: exitCode=21, signal=null>
+  - [pid=3392] starting temporary directories cleanup
+  - [pid=3392] finished temporary directories cleanup
+  - [pid=3392] <gracefully close end>
+
+[AUTOMATION] 15:39:48 - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\state_machine.py", line 69, in run_page_switch_workflow
+    page = self.bm.launch()
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 125, in launch
+    raise e
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 74, in launch
+    self.context = self.playwright.chromium.launch_persistent_context(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_data_dir=str(self.profile_dir),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        accept_downloads=True,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 17003, in launch_persistent_context
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.launch_persistent_context(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_type.py", line 165, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "launchPersistentContext", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 103, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Failed to create a ProcessSingleton for your profile directory. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=3392
+  - [pid=3392][err] [3392:15080:0808/153947.908:ERROR:chrome\browser\process_singleton_win.cc:414] Lock file can not be created: The process cannot access the file because it is being used by another process. (0x20)
+  - [pid=3392][err] [3392:15080:0808/153947.910:ERROR:chrome\app\chrome_main_delegate.cc:520] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.
+  - [pid=3392] <gracefully close start>
+  - [pid=3392] <kill>
+  - [pid=3392] <will force kill>
+  - [pid=3392] taskkill stderr: ERROR: The process "3392" not found.
+  - [pid=3392] <process did exit: exitCode=21, signal=null>
+  - [pid=3392] starting temporary directories cleanup
+  - [pid=3392] finished temporary directories cleanup
+  - [pid=3392] <gracefully close end>
+
+
+[BROWSER] 15:39:49 - [BROWSER DEBUG] context created=True
+[STATE] 15:39:49 - [STATE MACHINE] Transitioned to FAILED — BrowserType.launch_persistent_context: Failed to create a ProcessSingleton for your profile directory. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=3392
+  - [pid=3392][err] [3392:15080:0808/153947.908:ERROR:chrome\browser\process_singleton_win.cc:414] Lock file can not be created: The process cannot access the file because it is being used by another process. (0x20)
+  - [pid=3392][err] [3392:15080:0808/153947.910:ERROR:chrome\app\chrome_main_delegate.cc:520] Failed to create a ProcessSingleton for your profile directory. This means that running multiple instances would start multiple browser processes rather than opening a new window in the existing process. Aborting now to avoid profile corruption.
+  - [pid=3392] <gracefully close start>
+  - [pid=3392] <kill>
+  - [pid=3392] <will force kill>
+  - [pid=3392] taskkill stderr: ERROR: The process "3392" not found.
+  - [pid=3392] <process did exit: exitCode=21, signal=null>
+  - [pid=3392] starting temporary directories cleanup
+  - [pid=3392] finished temporary directories cleanup
+  - [pid=3392] <gracefully close end>
+
+[BROWSER] 15:39:49 - [BROWSER DEBUG] page created=True
+[AUTOMATION] 15:39:49 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[BROWSER] 15:39:49 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:39:49 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:39:49 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:39:49 - [BROWSER] Navigation started
+[BROWSER] 15:39:49 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:39:52 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:39:52 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:39:52 - [BROWSER] Current title: Facebook
+[BROWSER] 15:39:52 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:39:52 - [ACCOUNT] test_account_01
+[SESSION] 15:39:52 - [SESSION] Browser profile loaded
+[SESSION] 15:39:52 - [SESSION] Opening Facebook...
+[SESSION] 15:39:58 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:39:59 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:39:59 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:40:01 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:40:01 - [SESSION] Authenticated state stable
+[SESSION] 15:40:01 - [SESSION] Authenticated state verified
+[SESSION] 15:40:01 - [SESSION] Status: LIVE
+[AUTOMATION] 15:40:01 - [AUTOMATION] Account session verified
+[AUTOMATION] 15:40:01 - [AUTOMATION] Facebook UI ready
+[STATE] 15:40:02 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 15:40:02 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 15:40:02 - [PAGE VERIFY] Expected: Huang
+[PAGE_VERIFY] 15:40:03 - [PAGE VERIFY] Identity signal 1: Profile control label: 'Your profile'
+[PAGE_VERIFY] 15:40:03 - [PAGE VERIFY] Identity signal 2: Left navigation profile link: '清浅Huang'
+[PAGE_VERIFY] 15:40:03 - [PAGE VERIFY] Actual: Huang
+[PAGE_VERIFY] 15:40:03 - [PAGE VERIFY] Identity evidence: ["Profile control label: 'Your profile'", "Left navigation profile link: '清浅Huang'"]
+[PAGE_VERIFY] 15:40:03 - [PAGE VERIFY] SUCCESS
+[PAGE_CHECK] 15:40:03 - [PAGE CHECK] Current active Page: Huang
+[PAGE_CHECK] 15:40:03 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:40:03 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:40:03 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:40:03 - [PAGE VERIFY] SUCCESS
+[AUTOMATION] 15:40:03 - [AUTOMATION] Target Page context verified: Huang
+[STATE] 15:40:03 - [STATE MACHINE] Transitioned to PAGE_CONTEXT_VERIFIED — Target Page 'Huang' was already active.
+[AUTOMATION] 15:40:03 - [AUTOMATION] Milestone 3 Page Switching & Active Page Identity Verification COMPLETED.
+[AUTOMATION] 15:40:03 - [AUTOMATION] Browser remains visible on screen for manual verification.
+[DATABASE] 15:44:07 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 15:44:07 - Testing SQLite database metrics query...
+[TEST_DB] 15:44:07 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 15:44:07 - Database test passed cleanly.
+[DATABASE] 15:47:01 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 15:47:01 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 15:47:02 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 15:47:14 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:47:14 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:47:14 - [TARGET PAGE] Huang
+[AUTOMATION] 15:47:14 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:47:14 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:47:14 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:47:14 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:47:14 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:47:14 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:47:14 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:47:18 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:47:18 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:47:18 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:47:18 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:47:18 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:47:18 - [BROWSER] Navigation started
+[BROWSER] 15:47:18 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:47:23 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:47:23 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:47:23 - [BROWSER] Current title: Facebook
+[BROWSER] 15:47:23 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:47:23 - [ACCOUNT] test_account_01
+[SESSION] 15:47:23 - [SESSION] Browser profile loaded
+[SESSION] 15:47:23 - [SESSION] Opening Facebook...
+[SESSION] 15:47:29 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:47:31 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:47:31 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:47:33 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:47:33 - [SESSION] Authenticated state stable
+[SESSION] 15:47:33 - [SESSION] Authenticated state verified
+[SESSION] 15:47:33 - [SESSION] Status: LIVE
+[AUTOMATION] 15:47:33 - [AUTOMATION] Account session verified
+[AUTOMATION] 15:47:33 - [AUTOMATION] Facebook UI ready
+[STATE] 15:47:34 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 15:47:34 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 15:47:34 - [PAGE VERIFY] Expected Target Page: Huang
+[PAGE_VERIFY] 15:47:36 - [PAGE VERIFY] Signal 1 (Page Feature): Page sidebar feature detected: 'div[role='navigation'] a[href*='/professional_dashboard/']'
+[PAGE_VERIFY] 15:47:36 - [PAGE VERIFY] Signal 2 (Profile Control): 'Your profile'
+[PAGE_VERIFY] 15:47:36 - [PAGE VERIFY] Signal 3 (Nav Profile Link): 'John Dee'
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Identity type: TARGET_PAGE_ACTIVE
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Active identity: Huang
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:47:36 - [PAGE VERIFY] SUCCESS
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Identity type: TARGET_PAGE_ACTIVE
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Active identity: Huang
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:47:36 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:47:36 - [PAGE VERIFY] SUCCESS
+[AUTOMATION] 15:47:36 - [AUTOMATION] Target Page context verified: Huang
+[STATE] 15:47:36 - [STATE MACHINE] Transitioned to PAGE_CONTEXT_VERIFIED — Target Page 'Huang' was already active.
+[AUTOMATION] 15:47:36 - [AUTOMATION] Milestone 3 Page Switching & Active Page Identity Verification COMPLETED.
+[AUTOMATION] 15:47:36 - [AUTOMATION] Browser remains visible on screen for manual verification.
+[DATABASE] 15:49:44 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 15:49:44 - Testing SQLite database metrics query...
+[TEST_DB] 15:49:44 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 15:49:44 - Database test passed cleanly.
+[AUTOMATION] 15:53:36 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 15:53:36 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 15:53:36 - [TARGET PAGE] Huang
+[AUTOMATION] 15:53:36 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 15:53:36 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 15:53:36 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 15:53:36 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 15:53:36 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:53:36 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 15:53:36 - [BROWSER PROFILE] Headless: False
+[BROWSER] 15:53:40 - [BROWSER DEBUG] context created=True
+[BROWSER] 15:53:40 - [BROWSER DEBUG] page created=True
+[BROWSER] 15:53:40 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 15:53:40 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 15:53:40 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 15:53:40 - [BROWSER] Navigation started
+[BROWSER] 15:53:40 - Navigating to https://www.facebook.com/...
+[BROWSER] 15:53:44 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 15:53:45 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 15:53:45 - [BROWSER] Current title: Facebook
+[BROWSER] 15:53:45 - [BROWSER] Facebook UI ready
+[ACCOUNT] 15:53:45 - [ACCOUNT] test_account_01
+[SESSION] 15:53:45 - [SESSION] Browser profile loaded
+[SESSION] 15:53:45 - [SESSION] Opening Facebook...
+[SESSION] 15:53:50 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 15:53:51 - [SESSION] Authenticated state candidate detected
+[SESSION] 15:53:51 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 15:53:53 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 15:53:53 - [SESSION] Authenticated state stable
+[SESSION] 15:53:53 - [SESSION] Authenticated state verified
+[SESSION] 15:53:53 - [SESSION] Status: LIVE
+[AUTOMATION] 15:53:53 - [AUTOMATION] Account session verified
+[AUTOMATION] 15:53:53 - [AUTOMATION] Facebook UI ready
+[STATE] 15:53:56 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 15:53:56 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 15:53:56 - [PAGE VERIFY] Expected Target Page: Huang
+[PAGE_VERIFY] 15:54:01 - [PAGE VERIFY] Signal 1 (Page Feature): Page sidebar feature detected: 'div[role='navigation'] a[href*='/professional_dashboard/']'
+[PAGE_VERIFY] 15:54:02 - [PAGE VERIFY] Signal 2 (Profile Control): 'Your profile'
+[PAGE_VERIFY] 15:54:02 - [PAGE VERIFY] Signal 3 (Nav Profile Link): 'John Dee'
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Identity type: TARGET_PAGE_ACTIVE
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Active identity: Huang
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:54:02 - [PAGE VERIFY] SUCCESS
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Identity type: TARGET_PAGE_ACTIVE
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Active identity: Huang
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] TARGET_ALREADY_ACTIVE
+[PAGE_CHECK] 15:54:02 - [PAGE CHECK] Target Page 'Huang' is already active
+[PAGE_VERIFY] 15:54:02 - [PAGE VERIFY] SUCCESS
+[AUTOMATION] 15:54:02 - [AUTOMATION] Target Page context verified: Huang
+[STATE] 15:54:02 - [STATE MACHINE] Transitioned to PAGE_CONTEXT_VERIFIED — Target Page 'Huang' was already active.
+[AUTOMATION] 15:54:02 - [AUTOMATION] Milestone 3 Page Switching & Active Page Identity Verification COMPLETED.
+[AUTOMATION] 15:54:02 - [AUTOMATION] Browser remains visible on screen for manual verification.
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] target_page_evidence = ['Huang', 'Huang']
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] final_classification = TARGET_PAGE_ACTIVE (Active: Huang)
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] page_identity_evidence = ['Tech News']
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] final_classification = DIFFERENT_PAGE_ACTIVE (Active: Tech News)
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 15:58:04 - [IDENTITY DEBUG] final_classification = IDENTITY_AMBIGUOUS (Active: Unknown)
+[DATABASE] 15:58:10 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 15:58:10 - Testing SQLite database metrics query...
+[TEST_DB] 15:58:10 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 15:58:10 - Database test passed cleanly.
+[DATABASE] 16:01:50 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:01:51 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:01:52 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:01:57 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:01:57 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:01:57 - [TARGET PAGE] Huang
+[AUTOMATION] 16:01:57 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:01:57 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:01:57 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:01:57 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:01:57 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:01:57 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:01:57 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:02:01 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:02:01 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:02:01 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:02:01 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:02:01 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:02:01 - [BROWSER] Navigation started
+[BROWSER] 16:02:01 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:02:07 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:02:07 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:02:07 - [BROWSER] Current title: Facebook
+[BROWSER] 16:02:07 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:02:07 - [ACCOUNT] test_account_01
+[SESSION] 16:02:07 - [SESSION] Browser profile loaded
+[SESSION] 16:02:07 - [SESSION] Opening Facebook...
+[SESSION] 16:02:15 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:02:15 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:02:15 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:02:17 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:02:17 - [SESSION] Authenticated state stable
+[SESSION] 16:02:17 - [SESSION] Authenticated state verified
+[SESSION] 16:02:17 - [SESSION] Status: LIVE
+[AUTOMATION] 16:02:17 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:02:17 - [AUTOMATION] Facebook UI ready
+[STATE] 16:02:18 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:02:18 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:02:18 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:02:19 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:02:19 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:02:19 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:02:19 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:02:19 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:02:19 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:02:19 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:02:19 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:02:19 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:02:19 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:02:19 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:02:19 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:02:19 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:02:19 - [TARGET PAGE] Huang
+[PAGE_SWITCH] 16:02:19 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:02:20 - [PAGE SWITCH] Candidate found: selector='[aria-label='Your profile']', aria-label='Your profile', text=''
+[PAGE_SWITCH] 16:02:20 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:02:20 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:02:20 - [PAGE SWITCH] Opening profile switcher...
+[PAGE_SWITCH] 16:02:22 - [PAGE SWITCH] Profile switcher opened
+[PAGE_SWITCH] 16:02:22 - [PAGE SWITCH] Inspecting available profiles...
+[PAGE_SWITCH] 16:02:22 - [PAGE SWITCH] Clicking 'See all profiles' to expand profile list...
+[PAGE_SWITCH] 16:02:24 - [PAGE SWITCH] Searching for target Page: Huang
+[PAGE_SWITCH] 16:02:24 - [PAGE SWITCH] Target candidate detected: Huang
+[PAGE_SWITCH] 16:02:24 - [PAGE SWITCH] Target candidate verified (Selector: div[role='dialog'] span:has-text('Huang'))
+[PAGE_SWITCH] 16:02:24 - [PAGE SWITCH] Selecting Huang...
+[PAGE_VERIFY] 16:02:26 - [PAGE VERIFY] Facebook navigation transition detected
+[PAGE_VERIFY] 16:02:26 - [PAGE VERIFY] Waiting for Facebook UI to stabilize...
+[PAGE_VERIFY] 16:02:29 - [PAGE VERIFY] Waiting for Facebook identity transition...
+[PAGE_VERIFY] 16:02:29 - [PAGE VERIFY] Inspecting active identity...
+[STATE] 16:02:34 - [STATE MACHINE] Transitioned to IDENTITY_VERIFICATION
+[PAGE_VERIFY] 16:02:34 - [PAGE VERIFY] Inspecting active identity...
+[PAGE_VERIFY] 16:02:34 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:02:35 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:02:36 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='清浅Huang' | href='https://www.facebook.com/profile.php?id=61567609374409' | visible=True
+[IDENTITY_DEBUG] 16:02:36 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 16:02:36 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:02:36 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:02:36 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[PAGE_CHECK] 16:02:36 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:02:36 - [PAGE CHECK] Active identity: 清浅Huang
+[PAGE_CHECK] 16:02:36 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:02:36 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:02:36 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_SWITCH] 16:02:36 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:02:36 - [PAGE SWITCH] Reason: Active identity '清浅Huang' mismatch with expected 'Huang'
+[SCREENSHOT] 16:02:39 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\identity_verification_failed_20260808_160236.png
+[STATE] 16:02:39 - [STATE MACHINE] Transitioned to FAILED — Identity verification failed
+[AUTOMATION] 16:02:39 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] target_page_evidence = ['Huang', 'Huang']
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] final_classification = TARGET_PAGE_ACTIVE (Active: Huang)
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] page_identity_evidence = ['Tech News']
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] final_classification = DIFFERENT_PAGE_ACTIVE (Active: Tech News)
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:04:18 - [IDENTITY DEBUG] final_classification = IDENTITY_AMBIGUOUS (Active: Unknown)
+[DATABASE] 16:04:22 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 16:04:22 - Testing SQLite database metrics query...
+[TEST_DB] 16:04:22 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 16:04:22 - Database test passed cleanly.
+[DATABASE] 16:05:29 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:05:30 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:05:31 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[BROWSER] 16:05:35 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:05:35 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:05:35 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:05:35 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:05:40 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:05:40 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:05:40 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:05:40 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:05:40 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:05:40 - [BROWSER] Navigation started
+[BROWSER] 16:05:40 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:05:44 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:05:45 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:05:45 - [BROWSER] Current title: Facebook
+[BROWSER] 16:05:45 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:05:45 - [ACCOUNT] test_account_01
+[SESSION] 16:05:45 - [SESSION] Browser profile loaded
+[SESSION] 16:05:45 - [SESSION] Opening Facebook...
+[SESSION] 16:05:51 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:05:51 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:05:51 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:05:53 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:05:53 - [SESSION] Authenticated state stable
+[SESSION] 16:05:53 - [SESSION] Authenticated state verified
+[SESSION] 16:05:53 - [SESSION] Status: LIVE
+[SESSION] 16:05:53 - [SESSION] Session loaded successfully
+[SESSION] 16:05:53 - [SESSION] Status: LIVE
+[DATABASE] 16:06:11 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:06:12 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:06:12 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:06:16 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:06:16 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:06:16 - [TARGET PAGE] Huang
+[AUTOMATION] 16:06:16 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:06:16 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:06:16 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:06:16 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:06:16 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:06:16 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:06:16 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:06:18 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:06:18 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:06:18 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:06:18 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:06:18 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:06:18 - [BROWSER] Navigation started
+[BROWSER] 16:06:18 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:06:21 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:06:22 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:06:22 - [BROWSER] Current title: Facebook
+[BROWSER] 16:06:22 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:06:22 - [ACCOUNT] test_account_01
+[SESSION] 16:06:22 - [SESSION] Browser profile loaded
+[SESSION] 16:06:22 - [SESSION] Opening Facebook...
+[SESSION] 16:06:27 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:06:28 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:06:28 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:06:29 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:06:29 - [SESSION] Authenticated state stable
+[SESSION] 16:06:29 - [SESSION] Authenticated state verified
+[SESSION] 16:06:29 - [SESSION] Status: LIVE
+[AUTOMATION] 16:06:29 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:06:29 - [AUTOMATION] Facebook UI ready
+[STATE] 16:06:31 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:06:31 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:06:31 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:06:32 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:06:32 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:06:32 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:06:32 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:06:32 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:06:32 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:06:32 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:06:32 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:06:32 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:06:32 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:06:32 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:06:32 - [TARGET PAGE] Huang
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] Candidate found: selector='[aria-label='Your profile']', aria-label='Your profile', text=''
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:06:32 - [PAGE SWITCH] Opening profile switcher...
+[PAGE_SWITCH] 16:06:34 - [PAGE SWITCH] Profile switcher opened
+[PAGE_SWITCH] 16:06:34 - [PAGE SWITCH] Inspecting available profiles...
+[PAGE_SWITCH] 16:06:34 - [PAGE SWITCH] Clicking 'See all profiles' to expand profile list...
+[PAGE_SWITCH] 16:06:36 - [PAGE SWITCH] Searching for target Page: Huang (STRICT EXACT MATCH)
+[PAGE_SWITCH] 16:06:59 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:06:59 - [PAGE SWITCH] Reason: Could not locate target Page 'Huang' (STRICT EXACT MATCH) in switcher list.
+[PAGE_SWITCH] 16:06:59 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:06:59 - [PAGE SWITCH] Reason: Could not complete switch to target Page 'Huang'
+[SCREENSHOT] 16:07:00 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\page_switch_failed_20260808_160659.png
+[STATE] 16:07:00 - [STATE MACHINE] Transitioned to FAILED — Page switch execution failed
+[AUTOMATION] 16:07:00 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[AUTOMATION] 16:07:14 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:07:14 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:07:14 - [TARGET PAGE] Huang
+[AUTOMATION] 16:07:14 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:07:14 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:07:14 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:07:14 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:07:14 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:07:14 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:07:14 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:07:16 - [BROWSER ERROR] Account profile is already in use.
+[BROWSER] 16:07:16 - [BROWSER ERROR] Account: test_account_01
+[BROWSER] 16:07:16 - [BROWSER ERROR] Profile: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:07:16 - [BROWSER ERROR] Close the existing browser before retrying.
+[BROWSER] 16:07:16 - Closing browser session...
+[BROWSER] 16:07:16 - Browser session closed cleanly.
+[AUTOMATION] 16:07:16 - [AUTOMATION ERROR] State machine exception: BrowserType.launch_persistent_context: Opening in existing browser session. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=9944
+  - [pid=9944][out] Opening in existing browser session.
+  - [pid=9944] <gracefully close start>
+  - [pid=9944] <kill>
+  - [pid=9944] <will force kill>
+  - [pid=9944] taskkill stderr: ERROR: The process "9944" not found.
+  - [pid=9944] <process did exit: exitCode=0, signal=null>
+  - [pid=9944] starting temporary directories cleanup
+  - [pid=9944] finished temporary directories cleanup
+  - [pid=9944] <gracefully close end>
+
+[AUTOMATION] 16:07:16 - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\state_machine.py", line 69, in run_page_switch_workflow
+    page = self.bm.launch()
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 125, in launch
+    raise e
+  File "C:\Users\I_T Computer\Antigravity\app\browser\browser_manager.py", line 74, in launch
+    self.context = self.playwright.chromium.launch_persistent_context(
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        user_data_dir=str(self.profile_dir),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+        accept_downloads=True,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 17003, in launch_persistent_context
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.launch_persistent_context(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<51 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_browser_type.py", line 165, in launch_persistent_context
+    result = await self._channel.send_return_as_dict(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        "launchPersistentContext", TimeoutSettings.launch_timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 103, in send_return_as_dict
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.Error: BrowserType.launch_persistent_context: Opening in existing browser session. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=9944
+  - [pid=9944][out] Opening in existing browser session.
+  - [pid=9944] <gracefully close start>
+  - [pid=9944] <kill>
+  - [pid=9944] <will force kill>
+  - [pid=9944] taskkill stderr: ERROR: The process "9944" not found.
+  - [pid=9944] <process did exit: exitCode=0, signal=null>
+  - [pid=9944] starting temporary directories cleanup
+  - [pid=9944] finished temporary directories cleanup
+  - [pid=9944] <gracefully close end>
+
+
+[STATE] 16:07:16 - [STATE MACHINE] Transitioned to FAILED — BrowserType.launch_persistent_context: Opening in existing browser session. This usually means that the profile is already in use by another instance of Chromium.
+Call log:
+  - <launching> C:\Users\I_T Computer\AppData\Local\ms-playwright\chromium-1234\chrome-win64\chrome.exe --disable-field-trial-config --disable-background-networking --disable-background-timer-throttling --disable-backgrounding-occluded-windows --disable-back-forward-cache --disable-breakpad --disable-client-side-phishing-detection --disable-component-extensions-with-background-pages --disable-component-update --no-default-browser-check --disable-default-apps --disable-dev-shm-usage --disable-edgeupdater --disable-extensions --disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,BlockOriginHeaderModificationOnRedirect,Translate,AutoDeElevate,OptimizationHints,msForceBrowserSignIn,msEdgeUpdateLaunchServicesPreferredVersion --enable-features=CDPScreenshotNewSurface --allow-pre-commit-input --disable-hang-monitor --disable-ipc-flooding-protection --disable-popup-blocking --disable-prompt-on-repost --disable-renderer-backgrounding --disable-updater-scheduler --force-color-profile=srgb --metrics-recording-only --no-first-run --password-store=basic --use-mock-keychain --no-service-autorun --export-tagged-pdf --disable-search-engine-choice-screen --unsafely-disable-devtools-self-xss-warnings --edge-skip-compat-layer-relaunch --disable-infobars --disable-search-engine-choice-screen --disable-sync --enable-unsafe-swiftshader --no-sandbox --window-size=500,600 --window-position=100,100 --disable-notifications --no-sandbox --user-data-dir=C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data --remote-debugging-pipe about:blank
+  - <launched> pid=9944
+  - [pid=9944][out] Opening in existing browser session.
+  - [pid=9944] <gracefully close start>
+  - [pid=9944] <kill>
+  - [pid=9944] <will force kill>
+  - [pid=9944] taskkill stderr: ERROR: The process "9944" not found.
+  - [pid=9944] <process did exit: exitCode=0, signal=null>
+  - [pid=9944] starting temporary directories cleanup
+  - [pid=9944] finished temporary directories cleanup
+  - [pid=9944] <gracefully close end>
+
+[AUTOMATION] 16:07:16 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[AUTOMATION] 16:07:21 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:07:21 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:07:21 - [TARGET PAGE] Huang
+[AUTOMATION] 16:07:21 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:07:21 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:07:21 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:07:21 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:07:21 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:07:21 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:07:21 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:07:23 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:07:23 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:07:23 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:07:23 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:07:23 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:07:23 - [BROWSER] Navigation started
+[BROWSER] 16:07:23 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:07:27 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:07:27 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:07:27 - [BROWSER] Current title: Facebook
+[BROWSER] 16:07:27 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:07:27 - [ACCOUNT] test_account_01
+[SESSION] 16:07:27 - [SESSION] Browser profile loaded
+[SESSION] 16:07:27 - [SESSION] Opening Facebook...
+[SESSION] 16:07:34 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:07:36 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:07:36 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:07:38 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:07:38 - [SESSION] Authenticated state stable
+[SESSION] 16:07:38 - [SESSION] Authenticated state verified
+[SESSION] 16:07:38 - [SESSION] Status: LIVE
+[AUTOMATION] 16:07:38 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:07:38 - [AUTOMATION] Facebook UI ready
+[STATE] 16:07:39 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:07:39 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:07:39 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:07:41 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:07:41 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:07:41 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:07:41 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:07:41 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:07:41 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:07:41 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:07:41 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:07:41 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:07:41 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:07:41 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:07:41 - [TARGET PAGE] Huang
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] Candidate found: selector='[aria-label='Your profile']', aria-label='Your profile', text=''
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:07:41 - [PAGE SWITCH] Opening profile switcher...
+[PAGE_SWITCH] 16:07:43 - [PAGE SWITCH] Profile switcher opened
+[PAGE_SWITCH] 16:07:43 - [PAGE SWITCH] Inspecting available profiles...
+[PAGE_SWITCH] 16:07:43 - [PAGE SWITCH] Clicking 'See all profiles' to expand profile list...
+[PAGE_SWITCH] 16:07:45 - [PAGE SWITCH] Searching for target Page: Huang (STRICT EXACT MATCH)
+[PAGE_SWITCH] 16:08:12 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:08:12 - [PAGE SWITCH] Reason: Could not locate target Page 'Huang' (STRICT EXACT MATCH) in switcher list.
+[PAGE_SWITCH] 16:08:12 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:08:12 - [PAGE SWITCH] Reason: Could not complete switch to target Page 'Huang'
+[SCREENSHOT] 16:08:16 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\page_switch_failed_20260808_160812.png
+[STATE] 16:08:16 - [STATE MACHINE] Transitioned to FAILED — Page switch execution failed
+[AUTOMATION] 16:08:16 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] target_page_evidence = ['Huang', 'Huang']
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] final_classification = TARGET_PAGE_ACTIVE (Active: Huang)
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] page_identity_evidence = ['Tech News']
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] final_classification = DIFFERENT_PAGE_ACTIVE (Active: Tech News)
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:10:52 - [IDENTITY DEBUG] final_classification = IDENTITY_AMBIGUOUS (Active: Unknown)
+[DATABASE] 16:10:57 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 16:10:57 - Testing SQLite database metrics query...
+[TEST_DB] 16:10:57 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 16:10:57 - Database test passed cleanly.
+[DATABASE] 16:12:09 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:12:09 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:12:10 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:12:18 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:12:18 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:12:18 - [TARGET PAGE] Huang
+[AUTOMATION] 16:12:18 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:12:18 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:12:18 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:12:18 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:12:18 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:12:18 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:12:18 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:12:23 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:12:23 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:12:23 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:12:23 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:12:23 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:12:23 - [BROWSER] Navigation started
+[BROWSER] 16:12:23 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:12:28 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:12:28 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:12:28 - [BROWSER] Current title: Facebook
+[BROWSER] 16:12:28 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:12:28 - [ACCOUNT] test_account_01
+[SESSION] 16:12:28 - [SESSION] Browser profile loaded
+[SESSION] 16:12:28 - [SESSION] Opening Facebook...
+[SESSION] 16:12:34 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:12:35 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:12:35 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:12:37 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:12:37 - [SESSION] Authenticated state stable
+[SESSION] 16:12:37 - [SESSION] Authenticated state verified
+[SESSION] 16:12:37 - [SESSION] Status: LIVE
+[AUTOMATION] 16:12:37 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:12:37 - [AUTOMATION] Facebook UI ready
+[STATE] 16:12:38 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:12:38 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:12:38 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:12:39 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:12:39 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:12:39 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:12:39 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:12:39 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:12:39 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:12:39 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:12:39 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:12:39 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:12:39 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:12:39 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:12:40 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:12:40 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:12:40 - [TARGET PAGE] Huang (Normalized: 'huang')
+[PAGE_SWITCH] 16:12:40 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:12:40 - [PAGE SWITCH] Account control candidate found: selector='[aria-label='Your profile']', aria='Your profile', text=''
+[PAGE_SWITCH] 16:12:40 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:12:40 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:12:40 - [PAGE SWITCH] Opening profile switcher menu...
+[PAGE_SWITCH] 16:12:42 - [PAGE SWITCH] Profile switcher menu opened
+[PAGE_SWITCH] 16:12:44 - [PAGE SWITCH] Current visible menu entries: ['More', 'Log out', 'Settings & privacy', 'amazing world', 'Report a problem', '清浅Huang', '·', 'CTRL B', 'John Dee', 'See all profiles']
+[PAGE_SWITCH] 16:12:44 - [PAGE SWITCH] Searching for 'See all Pages' / 'See all profiles' entry...
+[PAGE_SWITCH] 16:12:45 - [PAGE SWITCH] 'See all Pages' found (Selector: '[aria-label='See all profiles']')
+[PAGE_SWITCH] 16:12:45 - [PAGE SWITCH] Clicking 'See all Pages' to open Pages list view...
+[PAGE_SWITCH] 16:12:47 - [PAGE SWITCH] Waiting for Pages view/dialog to fully load...
+[PAGE_SWITCH] 16:12:47 - [PAGE SWITCH] Pages view loaded. Current URL: 'https://www.facebook.com/'
+[PAGE_SWITCH] 16:12:47 - [PAGE SWITCH] Inspecting Pages list for target: 'Huang' (STRICT EXACT MATCH: normalize(found) == 'huang')
+[PAGE_SWITCH] 16:12:56 - [PAGE SWITCH] All visible Page names in list (61 found): ['John Dee', '清浅Huang', 'amazing world', 'Create Page', 'See all Pages', '1 Unread Chats\n1', 'Number of unread notifications\n1', 'See more', 'More', "What's on your mind, John?"]
+[PAGE_SWITCH] 16:12:56 - [PAGE SWITCH] TARGET_PAGE_NOT_FOUND_IN_ALL_PAGES
+[PAGE_SWITCH] 16:12:56 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:12:56 - [PAGE SWITCH] Reason: Target Page 'Huang' was not found in 'See all Pages' list.
+[PAGE_SWITCH] 16:12:57 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:12:57 - [PAGE SWITCH] Reason: Could not complete switch to target Page 'Huang'
+[SCREENSHOT] 16:12:58 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\page_switch_failed_20260808_161257.png
+[STATE] 16:12:58 - [STATE MACHINE] Transitioned to FAILED — Page switch execution failed
+[AUTOMATION] 16:12:58 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] target_page_evidence = ['Huang', 'Huang']
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] final_classification = TARGET_PAGE_ACTIVE (Active: Huang)
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] page_identity_evidence = ['Tech News']
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] final_classification = DIFFERENT_PAGE_ACTIVE (Active: Tech News)
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:16:14 - [IDENTITY DEBUG] final_classification = IDENTITY_AMBIGUOUS (Active: Unknown)
+[DATABASE] 16:16:21 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 16:16:21 - Testing SQLite database metrics query...
+[TEST_DB] 16:16:21 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 16:16:21 - Database test passed cleanly.
+[DATABASE] 16:19:22 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:19:23 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:19:24 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:19:45 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:19:45 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:19:45 - [TARGET PAGE] Huang
+[AUTOMATION] 16:19:45 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:19:45 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:19:45 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:19:45 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:19:45 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:19:45 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:19:45 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:19:48 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:19:48 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:19:48 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:19:48 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:19:48 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:19:48 - [BROWSER] Navigation started
+[BROWSER] 16:19:48 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:19:53 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:19:53 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:19:53 - [BROWSER] Current title: Facebook
+[BROWSER] 16:19:53 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:19:53 - [ACCOUNT] test_account_01
+[SESSION] 16:19:53 - [SESSION] Browser profile loaded
+[SESSION] 16:19:53 - [SESSION] Opening Facebook...
+[SESSION] 16:19:59 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:20:01 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:20:01 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:20:02 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:20:02 - [SESSION] Authenticated state stable
+[SESSION] 16:20:03 - [SESSION] Authenticated state verified
+[SESSION] 16:20:03 - [SESSION] Status: LIVE
+[AUTOMATION] 16:20:03 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:20:03 - [AUTOMATION] Facebook UI ready
+[STATE] 16:20:04 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:20:04 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:20:04 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:20:06 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:20:06 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:20:06 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:20:06 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:20:06 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:20:06 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:20:06 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:20:06 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:20:06 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:20:06 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:20:06 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:20:06 - [TARGET PAGE] Huang (Normalized: 'huang')
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] Account control candidate found: selector='[aria-label='Your profile']', aria='Your profile', text=''
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:20:06 - [PAGE SWITCH] Opening profile switcher menu...
+[PAGE_SWITCH] 16:20:08 - [PAGE SWITCH] Profile switcher menu opened
+[PAGE_SWITCH] 16:20:11 - [PAGE SWITCH] Current visible menu entries: ['Report a problem', 'Log out', '·', 'CTRL B', 'John Dee', 'Help & support', 'See all profiles', 'Display & accessibility', 'amazing world', 'Privacy\n\xa0\n · Consumer Health Privacy\n\xa0\n · Terms\n\xa0\n · Advertising\n\xa0\n · Ad Choices \n\xa0\n · Cookies\n\xa0\n · More']
+[PAGE_SWITCH] 16:20:11 - [PAGE SWITCH] Searching for 'See all Pages' / 'See all profiles' entry...
+[PAGE_SWITCH] 16:20:11 - [PAGE SWITCH] Pages view transition attempt 1/2...
+[PAGE_SWITCH] 16:20:11 - [PAGE SWITCH] Found 'See all Pages' control (Selector: 'span:has-text('See all profiles')')
+[PAGE_SWITCH] 16:20:11 - [PAGE SWITCH] Clicking interactive parent container of 'See all Pages'...
+[PAGE_SWITCH] 16:20:14 - [PAGE SWITCH] Pages view transition VERIFIED! Original profile menu dismissed.
+[PAGE_SWITCH] 16:20:14 - [PAGE SWITCH] Inspecting Pages list for target: 'Huang' (STRICT EXACT MATCH: normalize(found) == 'huang')
+[PAGE_SWITCH] 16:20:27 - [PAGE SWITCH] All visible Page names in list (77 found): ['John Dee', '清浅Huang', 'amazing world', 'Create Page', 'See all Pages', '1 Unread Chats\n1', 'Number of unread notifications\n1', 'See more', 'More', 'OK']
+[PAGE_SWITCH] 16:20:27 - [PAGE SWITCH] TARGET_PAGE_NOT_FOUND_IN_ALL_PAGES
+[PAGE_SWITCH] 16:20:27 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:20:27 - [PAGE SWITCH] Reason: Target Page 'Huang' was not found in 'See all Pages' list.
+[PAGE_SWITCH] 16:20:28 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:20:28 - [PAGE SWITCH] Reason: Could not complete switch to target Page 'Huang'
+[SCREENSHOT] 16:20:29 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\page_switch_failed_20260808_162028.png
+[STATE] 16:20:29 - [STATE MACHINE] Transitioned to FAILED — Page switch execution failed
+[AUTOMATION] 16:20:29 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[DATABASE] 16:20:50 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:20:51 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:20:51 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:21:04 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:21:04 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:21:04 - [TARGET PAGE] Huang
+[AUTOMATION] 16:21:04 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:21:04 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:21:04 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:21:04 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:21:04 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:21:04 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:21:04 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:21:06 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:21:06 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:21:06 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:21:06 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:21:06 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:21:06 - [BROWSER] Navigation started
+[BROWSER] 16:21:06 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:21:10 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:21:10 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:21:10 - [BROWSER] Current title: Facebook
+[BROWSER] 16:21:10 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:21:10 - [ACCOUNT] test_account_01
+[SESSION] 16:21:10 - [SESSION] Browser profile loaded
+[SESSION] 16:21:10 - [SESSION] Opening Facebook...
+[SESSION] 16:21:16 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:21:18 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:21:18 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:21:19 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:21:19 - [SESSION] Authenticated state stable
+[SESSION] 16:21:19 - [SESSION] Authenticated state verified
+[SESSION] 16:21:19 - [SESSION] Status: LIVE
+[AUTOMATION] 16:21:19 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:21:19 - [AUTOMATION] Facebook UI ready
+[STATE] 16:21:21 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:21:21 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:21:21 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:21:22 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:21:22 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:21:22 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:21:22 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:21:22 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:21:22 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:21:22 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:21:22 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:21:22 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:21:22 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:21:23 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:21:23 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:21:23 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:21:23 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:21:23 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:21:23 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:21:23 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:21:23 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:21:23 - [TARGET PAGE] Huang (Normalized: 'huang')
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] Account control candidate found: selector='[aria-label='Your profile']', aria='Your profile', text=''
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:21:23 - [PAGE SWITCH] Opening profile switcher menu...
+[PAGE_SWITCH] 16:21:25 - [PAGE SWITCH] Profile switcher menu opened
+[PAGE_SWITCH] 16:21:27 - [PAGE SWITCH] Current visible menu entries: ['Privacy\n\xa0\n · Consumer Health Privacy\n\xa0\n · Terms\n\xa0\n · Advertising\n\xa0\n · Ad Choices \n\xa0\n · Cookies\n\xa0\n · More', 'Settings & privacy', 'amazing world', 'Display & accessibility', 'Help & support', 'John Dee', '·', 'Report a problem', 'More', 'See all profiles']
+[PAGE_SWITCH] 16:21:27 - [PAGE SWITCH] Searching for 'See all Pages' / 'See all profiles' entry...
+[PAGE_SWITCH] 16:21:27 - [PAGE SWITCH] Pages view transition attempt 1/2...
+[PAGE_SWITCH] 16:21:27 - [PAGE SWITCH] Found 'See all Pages' control (Selector: 'span:has-text('See all profiles')')
+[PAGE_SWITCH] 16:21:27 - [PAGE SWITCH] Clicking interactive parent container of 'See all Pages'...
+[PAGE_SWITCH] 16:21:30 - [PAGE SWITCH] Pages view transition VERIFIED! Original profile menu dismissed.
+[PAGE_SWITCH] 16:21:30 - [PAGE SWITCH] Inspecting Pages list for target: 'Huang' (STRICT EXACT MATCH: normalize(found) == 'huang')
+[PAGE_SWITCH] 16:21:44 - [PAGE SWITCH] All visible Page names in list (74 found): ['John Dee', '清浅Huang', 'amazing world', 'Create Page', 'See all Pages', '1 Unread Chats\n1', 'Number of unread notifications\n1', 'See more', 'More', "What's on your mind, John?"]
+[PAGE_SWITCH] 16:21:44 - [PAGE SWITCH] TARGET_PAGE_NOT_FOUND_IN_ALL_PAGES
+[PAGE_SWITCH] 16:21:44 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:21:44 - [PAGE SWITCH] Reason: Target Page 'Huang' was not found in 'See all Pages' list.
+[PAGE_SWITCH] 16:21:45 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:21:45 - [PAGE SWITCH] Reason: Could not complete switch to target Page 'Huang'
+[SCREENSHOT] 16:21:46 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\page_switch_failed_20260808_162145.png
+[STATE] 16:21:46 - [STATE MACHINE] Transitioned to FAILED — Page switch execution failed
+[AUTOMATION] 16:21:46 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] target_page_evidence = ['Huang', 'Huang']
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] final_classification = TARGET_PAGE_ACTIVE (Active: Huang)
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] page_identity_evidence = ['Tech News']
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] final_classification = DIFFERENT_PAGE_ACTIVE (Active: Tech News)
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:25:13 - [IDENTITY DEBUG] final_classification = IDENTITY_AMBIGUOUS (Active: Unknown)
+[DATABASE] 16:25:19 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 16:25:19 - Testing SQLite database metrics query...
+[TEST_DB] 16:25:19 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 16:25:19 - Database test passed cleanly.
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] personal_profile_evidence = ['清浅Huang']
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: 清浅Huang)
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] target_page_evidence = ['Huang', 'Huang']
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] final_classification = TARGET_PAGE_ACTIVE (Active: Huang)
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] page_identity_evidence = ['Tech News']
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] final_classification = DIFFERENT_PAGE_ACTIVE (Active: Tech News)
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] personal_profile_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:29:39 - [IDENTITY DEBUG] final_classification = IDENTITY_AMBIGUOUS (Active: Unknown)
+[DATABASE] 16:29:49 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[TEST_DB] 16:29:49 - Testing SQLite database metrics query...
+[TEST_DB] 16:29:49 - Database Metrics: {'total_accounts': 0, 'live_accounts': 0, 'dead_accounts': 0, 'active_pages': 0, 'pending_videos': 0, 'published': 0, 'failed': 0}
+[TEST_DB] 16:29:49 - Database test passed cleanly.
+[DATABASE] 16:31:27 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:31:27 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:31:28 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:31:31 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:31:31 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:31:31 - [TARGET PAGE] Huang
+[AUTOMATION] 16:31:31 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:31:31 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:31:32 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:31:32 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:31:32 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:31:32 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:31:32 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:31:35 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:31:35 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:31:35 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:31:35 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:31:35 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:31:35 - [BROWSER] Navigation started
+[BROWSER] 16:31:35 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:31:39 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:31:40 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:31:40 - [BROWSER] Current title: Facebook
+[BROWSER] 16:31:40 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:31:40 - [ACCOUNT] test_account_01
+[SESSION] 16:31:40 - [SESSION] Browser profile loaded
+[SESSION] 16:31:40 - [SESSION] Opening Facebook...
+[SESSION] 16:31:46 - [SESSION] Authenticated state candidate evaluation starting...
+[SESSION] 16:31:46 - [SESSION] Authenticated state candidate detected
+[SESSION] 16:31:46 - [SESSION] Verifying authenticated state stability (Check 1 of 2)...
+[SESSION] 16:31:48 - [SESSION] Verifying authenticated state stability (Check 2 of 2)...
+[SESSION] 16:31:48 - [SESSION] Authenticated state stable
+[SESSION] 16:31:48 - [SESSION] Authenticated state verified
+[SESSION] 16:31:48 - [SESSION] Status: LIVE
+[AUTOMATION] 16:31:48 - [AUTOMATION] Account session verified
+[AUTOMATION] 16:31:48 - [AUTOMATION] Facebook UI ready
+[STATE] 16:31:49 - [STATE MACHINE] Transitioned to CURRENT_PAGE_CONTEXT_CHECK
+[PAGE_CHECK] 16:31:49 - [PAGE CHECK] Checking current active Page...
+[PAGE_VERIFY] 16:31:49 - [PAGE VERIFY] Target Page requested: 'Huang'
+[DIAGNOSTIC] 16:31:50 - [REAL-DOM DIAGNOSTIC] Beginning active identity DOM inspection...
+[DIAGNOSTIC] 16:31:50 - [REAL-DOM DIAGNOSTIC] Signal 2 (Nav Profile Link): text='John Dee' | href='https://www.facebook.com/profile.php?id=61563679843834' | visible=True
+[IDENTITY_DEBUG] 16:31:50 - [IDENTITY DEBUG] personal_profile_evidence = ['John Dee']
+[IDENTITY_DEBUG] 16:31:50 - [IDENTITY DEBUG] page_identity_evidence = []
+[IDENTITY_DEBUG] 16:31:50 - [IDENTITY DEBUG] target_page_evidence = []
+[IDENTITY_DEBUG] 16:31:50 - [IDENTITY DEBUG] final_classification = PERSONAL_PROFILE_ACTIVE (Active: John Dee)
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] Identity type: PERSONAL_PROFILE_ACTIVE
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] Active identity: John Dee
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] Target Page: Huang
+[PAGE_CHECK] 16:31:50 - [PAGE CHECK] TARGET_NOT_ACTIVE
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] PAGE_SWITCH_REQUIRED
+[STATE] 16:31:50 - [STATE MACHINE] Transitioned to PROFILE_CONTROL_DISCOVERY
+[STATE] 16:31:50 - [STATE MACHINE] Transitioned to PROFILE_SWITCHER_OPEN
+[STATE] 16:31:50 - [STATE MACHINE] Transitioned to TARGET_PAGE_DISCOVERY
+[STATE] 16:31:50 - [STATE MACHINE] Transitioned to TARGET_PAGE_SELECTION
+[TARGET_PAGE] 16:31:50 - [TARGET PAGE] Huang (Normalized: 'huang')
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] Searching for account/profile control...
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] Account control candidate found: selector='[aria-label='Your profile']', aria='Your profile', text=''
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] Visibility: TRUE
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] Account control verified
+[PAGE_SWITCH] 16:31:50 - [PAGE SWITCH] Opening profile switcher menu...
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] Profile switcher menu opened
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] Searching for exact 'See all Pages' entry...
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] PAGES_VIEW_NOT_OPENED
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] Reason: Could not locate exact 'See all Pages' control in profile menu.
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] SAFE_STOP
+[PAGE_SWITCH] 16:31:52 - [PAGE SWITCH] Reason: Could not complete switch to target Page 'Huang'
+[SCREENSHOT] 16:31:53 - Screenshot saved: C:\Users\I_T Computer\Antigravity\data\screenshots\page_switch_failed_20260808_163152.png
+[STATE] 16:31:53 - [STATE MACHINE] Transitioned to FAILED — Page switch execution failed
+[AUTOMATION] 16:31:53 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.
+[DATABASE] 16:34:48 - Database initialized cleanly at C:\Users\I_T Computer\Antigravity\data\app_database.db
+[MAIN] 16:34:49 - Starting FB AutoViral SaaS Pro v1.0.0...
+[GUI] 16:34:50 - GUI Window initialized successfully (FB AutoViral SaaS Pro v1.0.0)
+[AUTOMATION] 16:35:22 - [AUTOMATION] Initiating Milestone 3 Page Switch for Account 'test_account_01' -> Page 'Huang'...
+[ACCOUNT] 16:35:22 - [ACCOUNT] test_account_01
+[TARGET_PAGE] 16:35:22 - [TARGET PAGE] Huang
+[AUTOMATION] 16:35:22 - [AUTOMATION] Beginning Page Switch workflow...
+[STATE] 16:35:22 - [STATE MACHINE] Transitioned to ACCOUNT_READY — Account: test_account_01
+[STATE] 16:35:22 - [STATE MACHINE] Transitioned to SESSION_VERIFY
+[BROWSER] 16:35:22 - [BROWSER PROFILE] Account ID: test_account_01
+[BROWSER] 16:35:22 - [BROWSER PROFILE] User Data Directory: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:35:22 - [BROWSER PROFILE] Persistent: TRUE
+[BROWSER] 16:35:22 - [BROWSER PROFILE] Headless: False
+[BROWSER] 16:35:25 - [BROWSER DEBUG] context created=True
+[BROWSER] 16:35:25 - [BROWSER DEBUG] page created=True
+[BROWSER] 16:35:25 - [BROWSER DEBUG] browser connected=True
+[BROWSER] 16:35:25 - [BROWSER DEBUG] page URL=about:blank
+[BROWSER] 16:35:25 - [SESSION] Persistent browser profile loaded: C:\Users\I_T Computer\Antigravity\data\accounts\test_account_01\user_data
+[BROWSER] 16:35:25 - [BROWSER] Navigation started
+[BROWSER] 16:35:25 - Navigating to https://www.facebook.com/...
+[BROWSER] 16:35:31 - [BROWSER] Facebook UI readiness check...
+[BROWSER] 16:35:32 - [BROWSER] Current URL: https://www.facebook.com/
+[BROWSER] 16:35:32 - [BROWSER] Current title: Facebook
+[BROWSER] 16:35:32 - [BROWSER] Facebook UI ready
+[ACCOUNT] 16:35:32 - [ACCOUNT] test_account_01
+[SESSION] 16:35:32 - [SESSION] Browser profile loaded
+[SESSION] 16:35:32 - [SESSION] Opening Facebook...
+[SESSION] 16:35:32 - [SESSION ERROR] Facebook navigation failed: Page.goto: Target page, context or browser has been closed
+Call log:
+  - navigating to "https://www.facebook.com/", waiting until "domcontentloaded"
+
+[SCREENSHOT] 16:35:32 - Bounded screenshot capture timed out/failed: Page.screenshot: Target page, context or browser has been closed
+[AUTOMATION] 16:35:32 - [AUTOMATION] Session not LIVE. Waiting for manual login...
+[SESSION] 16:35:32 - [SESSION] Login required
+[SESSION] 16:35:32 - [SESSION] Waiting for manual Facebook login...
+[SESSION] 16:35:32 - [SESSION] Login verification in progress
+[AUTOMATION] 16:35:32 - [AUTOMATION ERROR] State machine exception: Page.wait_for_timeout: Target page, context or browser has been closed
+[AUTOMATION] 16:35:32 - Traceback:
+Traceback (most recent call last):
+  File "C:\Users\I_T Computer\Antigravity\app\automation\state_machine.py", line 80, in run_page_switch_workflow
+    if not sm.wait_for_manual_login(page):
+           ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\I_T Computer\Antigravity\app\browser\session_manager.py", line 215, in wait_for_manual_login
+    page.wait_for_timeout(2500)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\sync_api\_generated.py", line 12696, in wait_for_timeout
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.wait_for_timeout(timeout=to_milliseconds(timeout))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_page.py", line 1142, in wait_for_timeout
+    await self._main_frame.wait_for_timeout(timeout)
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_frame.py", line 924, in wait_for_timeout
+    await self._channel.send("waitForTimeout", None, {"waitTimeout": timeout})
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\I_T Computer\AppData\Local\Programs\Python\Python314\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TargetClosedError: Page.wait_for_timeout: Target page, context or browser has been closed
+
+[SCREENSHOT] 16:35:32 - Failed to capture screenshot: Invalid Playwright object
+[STATE] 16:35:32 - [STATE MACHINE] Transitioned to FAILED — Page.wait_for_timeout: Target page, context or browser has been closed
+[AUTOMATION] 16:35:32 - [AUTOMATION ERROR] Milestone 3 Page Switch workflow halted safely.

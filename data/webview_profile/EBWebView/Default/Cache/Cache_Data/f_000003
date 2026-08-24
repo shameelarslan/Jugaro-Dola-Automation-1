@@ -1,0 +1,1041 @@
+/**
+ * Waqas Automation Pro v2.0.6 - Client App JS (Tauri / Web Frontend)
+ * 2026 Commercial SaaS UI & Super Admin Analytics Logic
+ */
+
+const API_BASE = "http://127.0.0.1:8765/api";
+
+// ── APP STATE ─────────────────────────────────────────────────────────────
+let appState = {
+    activeTab: "dashboard",
+    activeCategory: "ALL",
+    config: {},
+    stats: {},
+    sessions: [],
+    prompts: [],
+    viralPrompts: [],
+    downloads: [],
+    superAdmin: {},
+    superAdminUsers: [],
+    isAutomationRunning: false
+};
+
+let superAdminCharts = {
+    topCreators: null,
+    statusDonut: null,
+    productionVelocity: null
+};
+
+// ── INITIALIZATION ────────────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+    initNavigation();
+    initSubTabs();
+    initModals();
+    initCategoryChips();
+    initEventHandlers();
+    initUserPopoverAndAuth();
+    
+    // Initial Data Fetch
+    fetchStats();
+    fetchSessions();
+    fetchPrompts();
+    fetchDownloads();
+
+    // Start Polling Interval (every 3 seconds)
+    setInterval(() => {
+        if (appState.activeTab === "dashboard") fetchStats();
+        if (appState.activeTab === "sessions") fetchSessions();
+        if (appState.activeTab === "prompts") fetchPrompts();
+        if (appState.activeTab === "automation") fetchAutomationStatus();
+        if (appState.activeTab === "downloads") fetchDownloads();
+        if (appState.activeTab === "super-admin") fetchSuperAdminData();
+        if (appState.activeTab === "logs") fetchLogs();
+    }, 3000);
+});
+
+// ── NAVIGATION & TAB SWITCHING ────────────────────────────────────────────
+function initNavigation() {
+    const navItems = document.querySelectorAll(".nav-item");
+    navItems.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const targetTab = btn.dataset.tab;
+            if (!targetTab) return;
+            
+            navItems.forEach(i => i.classList.remove("active"));
+            btn.classList.add("active");
+
+            document.querySelectorAll(".view-panel").forEach(panel => {
+                panel.classList.remove("active");
+            });
+
+            const activePanel = document.getElementById(`view-${targetTab}`);
+            if (activePanel) {
+                activePanel.classList.add("active");
+                appState.activeTab = targetTab;
+                onTabActivated(targetTab);
+            }
+        });
+    });
+}
+
+function onTabActivated(tab) {
+    if (tab === "dashboard") fetchStats();
+    if (tab === "sessions") fetchSessions();
+    if (tab === "prompts") fetchPrompts();
+    if (tab === "viral-prompts") fetchViralPrompts();
+    if (tab === "automation") fetchAutomationStatus();
+    if (tab === "downloads") fetchDownloads();
+    if (tab === "logs") fetchLogs();
+    if (tab === "super-admin") fetchSuperAdminData();
+}
+
+// ── SUB-TABS NAVIGATION (SUPER ADMIN) ─────────────────────────────────────
+function initSubTabs() {
+    const subTabBtns = document.querySelectorAll(".subtab-btn");
+    subTabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = btn.dataset.subtab;
+            if (!target) return;
+
+            subTabBtns.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            document.querySelectorAll(".subtab-panel").forEach(p => p.classList.remove("active"));
+            const targetPanel = document.getElementById(`subtab-${target}`);
+            if (targetPanel) {
+                targetPanel.classList.add("active");
+            }
+
+            if (target === "sa-analytics" && appState.superAdminUsers && appState.superAdminUsers.length > 0) {
+                renderSuperAdminCharts(appState.superAdminUsers);
+            }
+        });
+    });
+}
+
+// ── CATEGORY CHIPS FOR VIRAL LIBRARY ──────────────────────────────────────
+function initCategoryChips() {
+    const chipsContainer = document.getElementById("viral-category-chips");
+    if (!chipsContainer) return;
+
+    chipsContainer.addEventListener("click", (e) => {
+        const chip = e.target.closest(".chip");
+        if (!chip) return;
+
+        chipsContainer.querySelectorAll(".chip").forEach(c => c.classList.remove("active"));
+        chip.classList.add("active");
+
+        appState.activeCategory = chip.dataset.category || "ALL";
+        filterAndRenderViralPrompts();
+    });
+}
+
+// ── API CALLS ─────────────────────────────────────────────────────────────
+async function apiRequest(endpoint, method = "GET", body = null) {
+    try {
+        const options = {
+            method,
+            headers: { "Content-Type": "application/json" }
+        };
+        if (body) options.body = JSON.stringify(body);
+
+        const res = await fetch(`${API_BASE}${endpoint}`, options);
+        return await res.json();
+    } catch (err) {
+        console.error(`API Error on ${endpoint}:`, err);
+        return { success: false, error: err.message };
+    }
+}
+
+// 1. STATS & DASHBOARD
+async function fetchStats() {
+    const res = await apiRequest("/stats");
+    if (res.success && res.stats) {
+        const s = res.stats;
+        appState.stats = s;
+        
+        animateCounter("dash-pending-prompts", s.pending_prompts || 0);
+        animateCounter("dash-avail-sessions", s.available_sessions || 0);
+        animateCounter("dash-completed-prompts", s.completed_prompts || 0);
+        animateCounter("dash-cloud-users", s.cloud_total_users || 0);
+
+        if (s.config) {
+            appState.config = s.config;
+            document.getElementById("cfg-sessions-at-a-time").value = s.config.sessions_at_a_time || 3;
+            document.getElementById("cfg-videos-per-session").value = s.config.videos_per_session || 15;
+            document.getElementById("cfg-download-dir").value = s.config.default_download_dir || "";
+        }
+
+        if (s.current_user && s.current_user.status === "Active") {
+            const email = s.current_user.email || "Guest User";
+            const name = s.current_user.full_name || email.split("@")[0];
+            const role = s.current_user.role || "free";
+
+            document.getElementById("user-display-name").textContent = name;
+            document.getElementById("user-avatar-text").textContent = name.substring(0, 2).toUpperCase();
+
+            const popName = document.getElementById("pop-user-name");
+            const popEmail = document.getElementById("pop-user-email");
+            if (popName) popName.textContent = name;
+            if (popEmail) popEmail.textContent = email;
+
+            const badgeEl = document.getElementById("user-license-badge");
+            if (badgeEl) {
+                if (role === "admin") {
+                    badgeEl.textContent = "👑 Super Admin";
+                    badgeEl.className = "license-badge badge-admin";
+                } else if (role === "paid") {
+                    badgeEl.textContent = "⭐ Pro Paid License";
+                    badgeEl.className = "license-badge badge-paid";
+                } else {
+                    badgeEl.textContent = "🟢 Free License";
+                    badgeEl.className = "license-badge badge-free";
+                }
+            }
+
+            const isUserAdmin = (role === "admin");
+            document.querySelectorAll(".admin-tab").forEach(el => {
+                if (isUserAdmin) {
+                    el.classList.remove("hidden");
+                } else {
+                    el.classList.add("hidden");
+                }
+            });
+        } else {
+            // User signed out -> Show Auth Modal
+            document.getElementById("user-display-name").textContent = "Signed Out";
+            document.getElementById("user-avatar-text").textContent = "??";
+            const badgeEl = document.getElementById("user-license-badge");
+            if (badgeEl) {
+                badgeEl.textContent = "🔴 Signed Out";
+                badgeEl.className = "license-badge badge-red";
+            }
+            document.querySelectorAll(".admin-tab").forEach(el => el.classList.add("hidden"));
+            const modalAuth = document.getElementById("modal-auth");
+            if (modalAuth && modalAuth.classList.contains("hidden")) {
+                switchAuthTab("signin");
+                modalAuth.classList.remove("hidden");
+            }
+        }
+    }
+}
+
+function animateCounter(elementId, targetValue) {
+    const el = document.getElementById(elementId);
+    if (!el) return;
+    el.textContent = targetValue;
+}
+
+// 2. SESSIONS
+async function fetchSessions() {
+    const res = await apiRequest("/sessions");
+    if (res.success && res.sessions) {
+        appState.sessions = res.sessions;
+        renderSessions(res.sessions);
+    }
+}
+
+function renderSessions(sessions) {
+    const container = document.getElementById("sessions-container");
+    if (!container) return;
+
+    if (!sessions || sessions.length === 0) {
+        container.innerHTML = `
+            <div class="glass-card full-width" style="grid-column: 1 / -1;">
+                <p style="text-align: center; color: var(--text-muted); padding: 30px;">
+                    📂 No active browser session profiles found.<br>Click <strong>"Add New Session"</strong> above to register your Dola AI or Facebook session profile.
+                </p>
+            </div>`;
+        return;
+    }
+
+    container.innerHTML = sessions.map(s => `
+        <div class="glass-card">
+            <div class="flex-between" style="margin-bottom: 12px;">
+                <h3 style="color: #ffffff;">🔑 ${escapeHtml(s.name)}</h3>
+                <span class="badge ${s.status === 'Available' ? 'badge-green' : 'badge-yellow'}">${s.status}</span>
+            </div>
+            <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; line-height: 1.5;">
+                Engine: <strong style="color: var(--accent);">${s.session_type || 'Dola AI Pro'}</strong><br>
+                Registered: ${s.created_at ? s.created_at.substring(0, 10) : 'Active Session'}
+            </p>
+            <div class="card-footer-actions">
+                <button class="btn btn-danger btn-sm" onclick="deleteSession(${s.id})">🗑️ Delete</button>
+            </div>
+        </div>
+    `).join("");
+}
+
+async function deleteSession(id) {
+    if (!confirm("Are you sure you want to delete this session profile?")) return;
+    const res = await apiRequest("/sessions/delete", "POST", { id });
+    if (res.success) fetchSessions();
+    else alert(`Error: ${res.error}`);
+}
+
+// 3. PROMPTS
+async function fetchPrompts() {
+    const res = await apiRequest("/prompts");
+    if (res.success && res.prompts) {
+        appState.prompts = res.prompts;
+        renderPrompts(res.prompts);
+    }
+}
+
+function renderPrompts(prompts) {
+    const tbody = document.getElementById("prompts-table-body");
+    if (!tbody) return;
+
+    if (!prompts || prompts.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align:center; color: var(--text-muted); padding: 32px;">No prompts queued. Add custom prompts or select from Viral Prompts Vault.</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = prompts.map(p => `
+        <tr>
+            <td style="font-family: var(--font-mono); color: var(--text-muted);">#${p.id}</td>
+            <td style="font-weight: 500; max-width: 400px; white-space: normal;">${escapeHtml(p.prompt_text)}</td>
+            <td><span class="badge badge-cyan">${escapeHtml(p.category || 'General')}</span></td>
+            <td><span class="badge ${p.status === 'Completed' ? 'badge-green' : (p.status === 'Pending' ? 'badge-yellow' : 'badge-red')}">${p.status}</span></td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="deletePrompt(${p.id})">Delete</button>
+            </td>
+        </tr>
+    `).join("");
+}
+
+async function deletePrompt(id) {
+    const res = await apiRequest("/prompts/delete", "POST", { id });
+    if (res.success) fetchPrompts();
+}
+
+// 4. VIRAL PROMPTS
+async function fetchViralPrompts(search = "") {
+    const res = await apiRequest(`/viral-prompts?q=${encodeURIComponent(search)}`);
+    if (res.success && res.prompts) {
+        appState.viralPrompts = res.prompts;
+        filterAndRenderViralPrompts();
+    }
+}
+
+function filterAndRenderViralPrompts() {
+    const container = document.getElementById("viral-prompts-container");
+    if (!container) return;
+
+    let filtered = appState.viralPrompts;
+    if (appState.activeCategory && appState.activeCategory !== "ALL") {
+        filtered = filtered.filter(p => {
+            const cat = (p.category || "").toLowerCase();
+            const target = appState.activeCategory.toLowerCase();
+            return cat.includes(target) || target.includes(cat);
+        });
+    }
+
+    if (!filtered || filtered.length === 0) {
+        container.innerHTML = `
+            <div class="glass-card full-width" style="grid-column: 1 / -1; text-align: center; padding: 40px;">
+                <p style="color: var(--text-muted);">No viral prompts match the selected category filter.</p>
+            </div>`;
+        return;
+    }
+
+    container.innerHTML = filtered.map(p => {
+        const text = p.content || p.prompt || p.title || '';
+        const previewText = text.length > 200 ? text.substring(0, 200) + "..." : text;
+        const categoryName = p.category || 'Viral Library';
+        const words = p.word_count || (text ? text.split(/\s+/).length : 0);
+        const chars = p.char_count || text.length;
+
+        return `
+        <div class="viral-card">
+            <div class="viral-card-header">
+                <div class="viral-title">🔥 ${escapeHtml(p.title || 'Viral Prompt')}</div>
+                <div class="viral-score">🔥 98% Score</div>
+            </div>
+            <div style="margin: 2px 0 6px 0;">
+                <span class="badge badge-cyan">${escapeHtml(categoryName)}</span>
+            </div>
+            <div class="viral-body" style="font-size: 12px; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 12px;">
+                ${escapeHtml(previewText)}
+            </div>
+            <div style="font-size: 11px; color: var(--text-dim); margin-bottom: 12px; display: flex; gap: 14px;">
+                <span>📏 ${words} words</span>
+                <span>🔤 ${chars} chars</span>
+            </div>
+            <div class="card-actions-row">
+                <button class="btn btn-secondary btn-sm" id="btn-copy-${p.id}" onclick="copyViralById('${p.id}')">
+                    📋 Copy Prompt
+                </button>
+                <button class="btn btn-accent btn-sm" onclick="addViralById('${p.id}')">
+                    ➕ Add to Queue
+                </button>
+            </div>
+        </div>`;
+    }).join("");
+}
+
+async function copyViralById(promptId) {
+    const item = appState.viralPrompts.find(p => p.id === promptId);
+    if (!item) return;
+    const text = item.content || item.prompt || item.title || '';
+
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+        } else {
+            const ta = document.createElement("textarea");
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+        }
+
+        const btn = document.getElementById(`btn-copy-${promptId}`);
+        if (btn) {
+            const origHTML = btn.innerHTML;
+            btn.innerHTML = "✅ Copied!";
+            btn.classList.add("btn-success");
+            setTimeout(() => {
+                btn.innerHTML = origHTML;
+                btn.classList.remove("btn-success");
+            }, 2000);
+        }
+    } catch (err) {
+        alert("Could not copy prompt: " + err.message);
+    }
+}
+
+async function copyAllVisibleViralPrompts() {
+    let filtered = appState.viralPrompts;
+    if (appState.activeCategory && appState.activeCategory !== "ALL") {
+        filtered = filtered.filter(p => {
+            const cat = (p.category || "").toLowerCase();
+            const target = appState.activeCategory.toLowerCase();
+            return cat.includes(target) || target.includes(cat);
+        });
+    }
+
+    if (!filtered || filtered.length === 0) {
+        return alert("No prompts available to copy.");
+    }
+
+    const combinedText = filtered.map((p, idx) => `=== PROMPT #${idx + 1}: ${p.title} [${p.category || 'Viral'}] ===\n\n${p.content || p.prompt || p.title}\n\n`).join("--------------------------------------------------\n\n");
+
+    try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(combinedText);
+        } else {
+            const ta = document.createElement("textarea");
+            ta.value = combinedText;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand("copy");
+            document.body.removeChild(ta);
+        }
+
+        const btn = document.getElementById("btn-copy-all-viral");
+        if (btn) {
+            const origHTML = btn.innerHTML;
+            btn.innerHTML = `✅ Copied ${filtered.length} Prompts!`;
+            btn.classList.add("btn-success");
+            setTimeout(() => {
+                btn.innerHTML = origHTML;
+                btn.classList.remove("btn-success");
+            }, 2500);
+        }
+    } catch (err) {
+        alert("Copy failed: " + err.message);
+    }
+}
+
+async function addViralById(promptId) {
+    const item = appState.viralPrompts.find(p => p.id === promptId);
+    if (!item) return;
+    const text = item.content || item.prompt || item.title;
+    const category = item.category || "Viral Library";
+
+    const res = await apiRequest("/viral-prompts/add-to-queue", "POST", {
+        prompts: [{ prompt: text, category }]
+    });
+    if (res.success) {
+        alert(`✅ "${item.title}" added to Prompt Queue!`);
+        fetchPrompts();
+    } else {
+        alert(`Error: ${res.error}`);
+    }
+}
+
+// 5. AUTOMATION STATUS & CONTROL
+async function fetchAutomationStatus() {
+    const res = await apiRequest("/automation/status");
+    if (res.success && res.automation) {
+        const auto = res.automation;
+        appState.isAutomationRunning = auto.is_running;
+
+        const title = document.getElementById("auto-status-title");
+        const btnStart = document.getElementById("btn-auto-start");
+        const btnStop = document.getElementById("btn-auto-stop");
+        const globalStart = document.getElementById("btn-global-start");
+        const globalStop = document.getElementById("btn-global-stop");
+
+        if (auto.is_running) {
+            title.textContent = `⚡ Automation Workers Active (${auto.active_workers || 1} Threads Running)`;
+            btnStart.classList.add("hidden");
+            btnStop.classList.remove("hidden");
+            globalStart.classList.add("hidden");
+            globalStop.classList.remove("hidden");
+            document.getElementById("system-status-text").textContent = "Automation Running...";
+        } else {
+            title.textContent = "Automation Workers Idle";
+            btnStart.classList.remove("hidden");
+            btnStop.classList.add("hidden");
+            globalStart.classList.remove("hidden");
+            globalStop.classList.add("hidden");
+            document.getElementById("system-status-text").textContent = "System Ready";
+        }
+    }
+}
+
+async function startAutomation() {
+    const res = await apiRequest("/automation/start", "POST");
+    if (res.success) {
+        fetchAutomationStatus();
+    } else {
+        alert(`Cannot start automation: ${res.error}`);
+    }
+}
+
+async function stopAutomation() {
+    const res = await apiRequest("/automation/stop", "POST");
+    if (res.success) {
+        fetchAutomationStatus();
+    }
+}
+
+// 6. DOWNLOADS
+async function fetchDownloads() {
+    const res = await apiRequest("/downloads");
+    if (res.success && res.files) {
+        appState.downloads = res.files;
+        renderDownloads(res.files);
+    }
+}
+
+function renderDownloads(files) {
+    const tbody = document.getElementById("downloads-table-body");
+    if (!tbody) return;
+
+    if (!files || files.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color: var(--text-muted); padding: 32px;">No MP4 videos generated yet. Click "Run Automation" to start generating videos.</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = files.map(f => `
+        <tr>
+            <td style="font-weight: 700; color: var(--accent);">🎥 ${escapeHtml(f.name)}</td>
+            <td style="font-family: var(--font-mono);">${f.size_mb} MB</td>
+            <td style="color: var(--text-muted);">${f.mtime}</td>
+            <td>
+                <button class="btn btn-secondary btn-sm" onclick="openDownloadsFolder()">📁 Open Folder</button>
+            </td>
+        </tr>
+    `).join("");
+}
+
+async function openDownloadsFolder() {
+    await apiRequest("/downloads/open", "POST");
+}
+
+// 7. LOGS
+async function fetchLogs() {
+    const res = await apiRequest("/logs");
+    if (res.success && res.logs) {
+        const consoleEl = document.getElementById("full-logs-console");
+        const miniEl = document.getElementById("mini-logs-console");
+        
+        if (consoleEl && res.logs.length > 0) {
+            consoleEl.innerHTML = res.logs.map(l => {
+                let cls = "info";
+                if (l.includes("WARN")) cls = "warn";
+                if (l.includes("ERROR") || l.includes("CRASH") || l.includes("FAILED")) cls = "error";
+                if (l.includes("SUCCESS") || l.includes("COMPLETED")) cls = "success";
+                return `<div class="log-line ${cls}">${escapeHtml(l)}</div>`;
+            }).join("");
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        if (miniEl && res.logs.length > 0) {
+            const recent = res.logs.slice(-15);
+            miniEl.innerHTML = recent.map(l => {
+                let cls = "info";
+                if (l.includes("WARN")) cls = "warn";
+                if (l.includes("ERROR") || l.includes("CRASH")) cls = "error";
+                if (l.includes("SUCCESS") || l.includes("COMPLETED")) cls = "success";
+                return `<div class="log-line ${cls}">${escapeHtml(l)}</div>`;
+            }).join("");
+            miniEl.scrollTop = miniEl.scrollHeight;
+        }
+    }
+}
+
+// 8. SUPER ADMIN
+async function fetchSuperAdminData() {
+    const res = await apiRequest("/super-admin/data");
+    if (res.success && res.super_admin) {
+        const sa = res.super_admin;
+        appState.superAdmin = sa;
+        appState.superAdminUsers = sa.all_users || [];
+
+        animateCounter("sa-total-users", sa.total_users || 0);
+        animateCounter("sa-pending-users", sa.pending_users || 0);
+        animateCounter("sa-total-videos", sa.total_videos_all_time || 0);
+
+        const totalVideos = sa.total_videos_all_time || 0;
+        const totalUsers = sa.total_users || 1;
+        const avg = (totalVideos / totalUsers).toFixed(1);
+        animateCounter("sa-avg-videos", avg);
+
+        renderSuperAdminTable(appState.superAdminUsers);
+        renderSuperAdminCharts(appState.superAdminUsers);
+    }
+}
+
+function renderSuperAdminTable(users) {
+    const tbody = document.getElementById("super-admin-table-body");
+    if (!tbody) return;
+
+    if (!users || users.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color: var(--text-muted); padding: 32px;">No creators registered in cloud database.</td></tr>`;
+        return;
+    }
+
+    tbody.innerHTML = users.map(u => {
+        const uRole = u.role || "free";
+        return `
+        <tr>
+            <td style="font-weight: 700; color: #ffffff;">${escapeHtml(u.email)}</td>
+            <td>${escapeHtml(u.name || 'Creator')}</td>
+            <td style="font-family: var(--font-mono); font-weight: 700; color: var(--accent);">${u.total_videos || 0}</td>
+            <td>
+                <span class="badge ${u.status === 'Active' ? 'badge-green' : (u.status === 'Pending' ? 'badge-yellow' : 'badge-red')}">${u.status}</span>
+            </td>
+            <td>
+                <select class="role-select" onchange="changeUserRole('${u.user_id}', this.value)">
+                    <option value="free" ${uRole === 'free' ? 'selected' : ''}>🟢 Free User</option>
+                    <option value="paid" ${uRole === 'paid' ? 'selected' : ''}>⭐ Paid User</option>
+                    <option value="admin" ${uRole === 'admin' ? 'selected' : ''}>👑 Admin</option>
+                </select>
+            </td>
+            <td>
+                ${u.status === 'Pending' ? `<button class="btn btn-accent btn-sm" onclick="toggleUserStatus('${u.user_id}', 'Active')">Approve</button>` : ''}
+                ${u.status === 'Active' ? `<button class="btn btn-danger btn-sm" onclick="toggleUserStatus('${u.user_id}', 'Blocked')">Block</button>` : ''}
+                ${u.status === 'Blocked' ? `<button class="btn btn-accent btn-sm" onclick="toggleUserStatus('${u.user_id}', 'Active')">Unblock</button>` : ''}
+            </td>
+        </tr>`;
+    }).join("");
+}
+
+async function changeUserRole(userId, newRole) {
+    const res = await apiRequest("/super-admin/update-role", "POST", {
+        user_id: userId,
+        new_role: newRole
+    });
+    if (res.success) {
+        fetchSuperAdminData();
+    } else {
+        alert(`Error updating role: ${res.error}`);
+    }
+}
+
+function renderSuperAdminCharts(users) {
+    if (typeof Chart === "undefined" || !users || users.length === 0) return;
+
+    // 1. Top 10 Creators Bar Chart
+    const sortedUsers = [...users].sort((a, b) => (b.total_videos || 0) - (a.total_videos || 0)).slice(0, 10);
+    const labels = sortedUsers.map(u => u.name || u.email.split("@")[0]);
+    const videoCounts = sortedUsers.map(u => u.total_videos || 0);
+
+    const ctxTop = document.getElementById("chart-top-creators");
+    if (ctxTop) {
+        if (superAdminCharts.topCreators) superAdminCharts.topCreators.destroy();
+        superAdminCharts.topCreators = new Chart(ctxTop, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Total Videos Generated',
+                    data: videoCounts,
+                    backgroundColor: 'rgba(139, 92, 246, 0.75)',
+                    borderColor: '#8b5cf6',
+                    borderWidth: 1.5,
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { ticks: { color: '#94a3b8', font: { size: 11 } }, grid: { display: false } },
+                    y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255, 255, 255, 0.05)' } }
+                }
+            }
+        });
+    }
+
+    // 2. Status Donut Chart
+    const activeCount = users.filter(u => u.status === 'Active').length;
+    const pendingCount = users.filter(u => u.status === 'Pending').length;
+    const blockedCount = users.filter(u => u.status === 'Blocked').length;
+
+    const ctxDonut = document.getElementById("chart-status-donut");
+    if (ctxDonut) {
+        if (superAdminCharts.statusDonut) superAdminCharts.statusDonut.destroy();
+        superAdminCharts.statusDonut = new Chart(ctxDonut, {
+            type: 'doughnut',
+            data: {
+                labels: ['Active Creators', 'Pending Approvals', 'Blocked Accounts'],
+                datasets: [{
+                    data: [activeCount, pendingCount, blockedCount],
+                    backgroundColor: ['#10b981', '#fbbf24', '#f43f5e'],
+                    borderWidth: 2,
+                    borderColor: '#070913'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: { color: '#f8fafc', font: { size: 12, weight: 'bold' }, padding: 16 }
+                    }
+                },
+                cutout: '70%'
+            }
+        });
+    }
+
+    // 3. Production Velocity Area Chart
+    const ctxVelocity = document.getElementById("chart-production-velocity");
+    if (ctxVelocity) {
+        if (superAdminCharts.productionVelocity) superAdminCharts.productionVelocity.destroy();
+        
+        const bins = ['1-50 Vids', '51-150 Vids', '151-300 Vids', '301-500 Vids', '500+ Vids'];
+        const binCounts = [
+            users.filter(u => (u.total_videos || 0) >= 1 && (u.total_videos || 0) <= 50).length,
+            users.filter(u => (u.total_videos || 0) > 50 && (u.total_videos || 0) <= 150).length,
+            users.filter(u => (u.total_videos || 0) > 150 && (u.total_videos || 0) <= 300).length,
+            users.filter(u => (u.total_videos || 0) > 300 && (u.total_videos || 0) <= 500).length,
+            users.filter(u => (u.total_videos || 0) > 500).length
+        ];
+
+        superAdminCharts.productionVelocity = new Chart(ctxVelocity, {
+            type: 'line',
+            data: {
+                labels: bins,
+                datasets: [{
+                    label: 'Creators Volume Capacity',
+                    data: binCounts,
+                    fill: true,
+                    backgroundColor: 'rgba(6, 182, 212, 0.15)',
+                    borderColor: '#06b6d4',
+                    borderWidth: 2.5,
+                    tension: 0.4,
+                    pointBackgroundColor: '#38bdf8',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false }
+                },
+                scales: {
+                    x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
+                    y: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(255, 255, 255, 0.05)' } }
+                }
+            }
+        });
+    }
+}
+
+async function toggleUserStatus(userId, newStatus) {
+    const res = await apiRequest("/super-admin/toggle-status", "POST", {
+        user_id: userId,
+        new_status: newStatus
+    });
+    if (res.success) {
+        fetchSuperAdminData();
+    } else {
+        alert(`Error updating status: ${res.error}`);
+    }
+}
+
+// ── EVENT HANDLERS & MODALS ───────────────────────────────────────────────
+function initEventHandlers() {
+    // Start / Stop Automation buttons
+    document.getElementById("btn-global-start").addEventListener("click", startAutomation);
+    document.getElementById("btn-global-stop").addEventListener("click", stopAutomation);
+    document.getElementById("btn-auto-start").addEventListener("click", startAutomation);
+    document.getElementById("btn-auto-stop").addEventListener("click", stopAutomation);
+    document.getElementById("btn-dash-start-run").addEventListener("click", startAutomation);
+
+    // Copy All Visible Prompts Button
+    const btnCopyAll = document.getElementById("btn-copy-all-viral");
+    if (btnCopyAll) {
+        btnCopyAll.addEventListener("click", copyAllVisibleViralPrompts);
+    }
+
+    // Live Search on Creators Directory Table
+    const inputSaSearch = document.getElementById("input-sa-search");
+    if (inputSaSearch) {
+        inputSaSearch.addEventListener("input", (e) => {
+            const query = e.target.value.toLowerCase().trim();
+            if (!appState.superAdminUsers) return;
+            const filtered = appState.superAdminUsers.filter(u => 
+                (u.email || '').toLowerCase().includes(query) || 
+                (u.name || '').toLowerCase().includes(query)
+            );
+            renderSuperAdminTable(filtered);
+        });
+    }
+
+    // Save Dashboard Config
+    document.getElementById("btn-save-dash-config").addEventListener("click", async () => {
+        const sessionsAtTime = parseInt(document.getElementById("cfg-sessions-at-a-time").value) || 3;
+        const videosPerSession = parseInt(document.getElementById("cfg-videos-per-session").value) || 15;
+        
+        const res = await apiRequest("/config/update", "POST", {
+            sessions_at_a_time: sessionsAtTime,
+            videos_per_session: videosPerSession
+        });
+        if (res.success) alert("Configuration saved successfully!");
+        else alert(`Error saving config: ${res.error}`);
+    });
+
+    // Clear Logs Button
+    const btnClearLogs = document.getElementById("btn-clear-logs");
+    if (btnClearLogs) {
+        btnClearLogs.addEventListener("click", () => {
+            const consoleEl = document.getElementById("full-logs-console");
+            if (consoleEl) consoleEl.innerHTML = `<div class="log-line info">Logs cleared by user.</div>`;
+        });
+    }
+
+    // Open Directory
+    document.getElementById("btn-open-dir-dash").addEventListener("click", openDownloadsFolder);
+    document.getElementById("btn-open-downloads-dir").addEventListener("click", openDownloadsFolder);
+
+    // Search Viral Prompts
+    document.getElementById("input-viral-search").addEventListener("input", (e) => {
+        fetchViralPrompts(e.target.value);
+    });
+
+    // Clear Completed Prompts
+    document.getElementById("btn-clear-completed-prompts").addEventListener("click", async () => {
+        const completed = appState.prompts.filter(p => p.status === "Completed");
+        for (const p of completed) {
+            await apiRequest("/prompts/delete", "POST", { id: p.id });
+        }
+        fetchPrompts();
+    });
+
+    // Super Admin Refresh
+    document.getElementById("btn-refresh-super").addEventListener("click", fetchSuperAdminData);
+}
+
+function initModals() {
+    // Session Modal
+    const modalSession = document.getElementById("modal-add-session");
+    document.getElementById("btn-open-add-session").addEventListener("click", () => modalSession.classList.remove("hidden"));
+    document.getElementById("btn-close-session-modal").addEventListener("click", () => modalSession.classList.add("hidden"));
+    
+    document.getElementById("btn-save-session").addEventListener("click", async () => {
+        const name = document.getElementById("modal-session-name").value.trim();
+        const cookie = document.getElementById("modal-session-cookie").value.trim();
+        if (!name) return alert("Please enter session name!");
+
+        const res = await apiRequest("/sessions/add", "POST", { name, cookie_data: cookie });
+        if (res.success) {
+            modalSession.classList.add("hidden");
+            document.getElementById("modal-session-name").value = "";
+            document.getElementById("modal-session-cookie").value = "";
+            fetchSessions();
+        } else {
+            alert(`Error: ${res.error}`);
+        }
+    });
+
+    // Prompt Modal
+    const modalPrompt = document.getElementById("modal-add-prompt");
+    document.getElementById("btn-open-add-prompt").addEventListener("click", () => modalPrompt.classList.remove("hidden"));
+    document.getElementById("btn-close-prompt-modal").addEventListener("click", () => modalPrompt.classList.add("hidden"));
+
+    document.getElementById("btn-save-prompt").addEventListener("click", async () => {
+        const text = document.getElementById("modal-prompt-text").value.trim();
+        const category = document.getElementById("modal-prompt-category").value.trim() || "General";
+        if (!text) return alert("Please enter prompt description!");
+
+        const res = await apiRequest("/prompts/add", "POST", { text, category });
+        if (res.success) {
+            modalPrompt.classList.add("hidden");
+            document.getElementById("modal-prompt-text").value = "";
+            fetchPrompts();
+        } else {
+            alert(`Error: ${res.error}`);
+        }
+    });
+}
+
+function escapeHtml(str) {
+    if (!str) return "";
+    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
+}
+
+function initUserPopoverAndAuth() {
+    const cardTrigger = document.getElementById("user-card-trigger");
+    const popoverMenu = document.getElementById("user-popover-menu");
+    const btnSwitch = document.getElementById("btn-popover-switch");
+    const btnLogout = document.getElementById("btn-popover-logout");
+    const modalAuth = document.getElementById("modal-auth");
+
+    // Toggle Popover
+    if (cardTrigger && popoverMenu) {
+        cardTrigger.addEventListener("click", (e) => {
+            if (e.target.closest(".user-popover-menu")) return;
+            popoverMenu.classList.toggle("hidden");
+            cardTrigger.classList.toggle("active-menu");
+        });
+
+        // Close on outside click
+        document.addEventListener("click", (e) => {
+            if (!cardTrigger.contains(e.target)) {
+                popoverMenu.classList.add("hidden");
+                cardTrigger.classList.remove("active-menu");
+            }
+        });
+    }
+
+    // Switch Account Action
+    if (btnSwitch) {
+        btnSwitch.addEventListener("click", () => {
+            if (popoverMenu) popoverMenu.classList.add("hidden");
+            if (modalAuth) {
+                switchAuthTab("signin");
+                modalAuth.classList.remove("hidden");
+            }
+        });
+    }
+
+    // Logout Action
+    if (btnLogout) {
+        btnLogout.addEventListener("click", async () => {
+            if (!confirm("Are you sure you want to log out of your account?")) return;
+            if (popoverMenu) popoverMenu.classList.add("hidden");
+            const res = await apiRequest("/auth/logout", "POST");
+            if (res.success) {
+                document.getElementById("user-display-name").textContent = "Logged Out";
+                document.getElementById("user-avatar-text").textContent = "??";
+                const badgeEl = document.getElementById("user-license-badge");
+                if (badgeEl) {
+                    badgeEl.textContent = "🔴 Signed Out";
+                    badgeEl.className = "license-badge badge-red";
+                }
+                document.querySelectorAll(".admin-tab").forEach(el => el.classList.add("hidden"));
+                if (modalAuth) {
+                    switchAuthTab("signin");
+                    modalAuth.classList.remove("hidden");
+                }
+            }
+        });
+    }
+
+    // Auth Modal Tabs (Sign In vs Sign Up)
+    const authTabBtns = document.querySelectorAll(".auth-tab-btn");
+    authTabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const target = btn.dataset.authtab;
+            switchAuthTab(target);
+        });
+    });
+
+    // Close Auth Modal
+    const btnCloseAuth = document.getElementById("btn-close-auth-modal");
+    const btnCloseAuthSignup = document.getElementById("btn-close-auth-signup-modal");
+    if (btnCloseAuth) btnCloseAuth.addEventListener("click", () => modalAuth.classList.add("hidden"));
+    if (btnCloseAuthSignup) btnCloseAuthSignup.addEventListener("click", () => modalAuth.classList.add("hidden"));
+
+    // Submit Sign In
+    const btnSubmitSignin = document.getElementById("btn-submit-signin");
+    if (btnSubmitSignin) {
+        btnSubmitSignin.addEventListener("click", async () => {
+            const email = document.getElementById("auth-signin-email").value.trim();
+            const password = document.getElementById("auth-signin-password").value.trim();
+            if (!email || !password) return alert("Please enter both email and password!");
+
+            btnSubmitSignin.disabled = true;
+            btnSubmitSignin.textContent = "⏳ Signing In...";
+
+            const res = await apiRequest("/auth/login", "POST", { email, password });
+            btnSubmitSignin.disabled = false;
+            btnSubmitSignin.textContent = "🚀 Sign In";
+
+            if (res.success) {
+                alert(`✅ Welcome back, ${res.user ? res.user.full_name : email}!`);
+                modalAuth.classList.add("hidden");
+                fetchStats();
+            } else {
+                alert(`Login Failed: ${res.error}`);
+            }
+        });
+    }
+
+    // Submit Sign Up
+    const btnSubmitSignup = document.getElementById("btn-submit-signup");
+    if (btnSubmitSignup) {
+        btnSubmitSignup.addEventListener("click", async () => {
+            const name = document.getElementById("auth-signup-name").value.trim();
+            const email = document.getElementById("auth-signup-email").value.trim();
+            const password = document.getElementById("auth-signup-password").value.trim();
+            const whatsapp = document.getElementById("auth-signup-whatsapp").value.trim();
+
+            if (!email || !password) return alert("Please enter email and password!");
+
+            btnSubmitSignup.disabled = true;
+            btnSubmitSignup.textContent = "⏳ Registering...";
+
+            const res = await apiRequest("/auth/signup", "POST", {
+                email,
+                password,
+                full_name: name,
+                whatsapp_number: whatsapp
+            });
+
+            btnSubmitSignup.disabled = false;
+            btnSubmitSignup.textContent = "🎉 Create Account";
+
+            if (res.success) {
+                alert(res.message);
+                modalAuth.classList.add("hidden");
+                fetchStats();
+            } else {
+                alert(`Registration Failed: ${res.error}`);
+            }
+        });
+    }
+}
+
+function switchAuthTab(tabName) {
+    document.querySelectorAll(".auth-tab-btn").forEach(b => {
+        if (b.dataset.authtab === tabName) b.classList.add("active");
+        else b.classList.remove("active");
+    });
+    document.querySelectorAll(".auth-panel").forEach(p => p.classList.remove("active"));
+    const targetPanel = document.getElementById(`auth-panel-${tabName}`);
+    if (targetPanel) targetPanel.classList.add("active");
+}
