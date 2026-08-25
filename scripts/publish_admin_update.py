@@ -24,8 +24,8 @@ SITECUSTOMIZE_FILE = ROOT_DIR / "sitecustomize.py"
 SUPABASE_URL = "https://krdclqrlxbwpnadfxudd.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyZGNscXJseGJ3cG5hZGZ4dWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY4MjA5MDcsImV4cCI6MjEwMjM5NjkwN30.8W956EAIwjV_V43k5x7-SX7IsfTYoz_74HIMEJ9kwnQ"
 
-# Target exclusively for Admins
-TARGET_AUDIENCE = "admin"
+# Target exclusively for Admins (backward compatible with older installed builds)
+TARGET_AUDIENCE = "admin,waqasshoukat2193@gmail.com,ali@gmail.com,shameel@gmail.com,waqasai@gmail.com"
 
 def build_patch_zip(version_str: str) -> Path:
     output_dir = ROOT_DIR / "installer_output"

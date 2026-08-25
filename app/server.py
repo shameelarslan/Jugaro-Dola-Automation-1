@@ -653,6 +653,12 @@ class SidecarAPIHandler(BaseHTTPRequestHandler):
     def _handle_check_update(self):
         """Checks Supabase for available updates for the current user."""
         try:
+            import importlib
+            import app.core.cloud_manager
+            import app.core.updater
+            importlib.reload(app.core.cloud_manager)
+            importlib.reload(app.core.updater)
+            from app.core.cloud_manager import cloud_manager
             update_info = cloud_manager.check_for_update()
             if update_info:
                 self._send_json({
@@ -667,7 +673,7 @@ class SidecarAPIHandler(BaseHTTPRequestHandler):
             else:
                 self._send_json({"success": True, "update_available": False})
         except Exception as e:
-            self._send_json({"success": True, "update_available": False})
+            self._send_json({"success": True, "update_available": False, "error": str(e)})
 
     def _handle_apply_update(self, data):
         """Downloads and applies the update patch package automatically."""
