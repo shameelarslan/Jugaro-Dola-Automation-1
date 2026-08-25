@@ -7,12 +7,16 @@ Only users with role == 'admin' or matching ADMIN_EMAILS will receive this updat
 import os
 import sys
 import zipfile
-import requests
+import urllib.request
+import urllib.error
 from pathlib import Path
 
 sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
+
 APP_DIR = ROOT_DIR / "app"
 UI_DIR = ROOT_DIR / "ui"
 SITECUSTOMIZE_FILE = ROOT_DIR / "sitecustomize.py"
@@ -104,15 +108,17 @@ def upload_to_supabase(patch_zip: Path) -> str:
     }
 
     url = f"{SUPABASE_URL}/storage/v1/object/releases/{patch_zip.name}"
-    with open(patch_zip, "rb") as f:
-        res = requests.post(url, headers=headers, data=f, timeout=120)
-
-    if res.status_code in (200, 201):
+    try:
+        with open(patch_zip, "rb") as f:
+            data = f.read()
+        req = urllib.request.Request(url, data=data, headers=headers, method="POST")
+        with urllib.request.urlopen(req, timeout=120) as resp:
+            status = resp.status
         public_url = f"{SUPABASE_URL}/storage/v1/object/public/releases/{patch_zip.name}"
         print(f"  --> ✅ Upload Complete: {public_url}", flush=True)
         return public_url
-    else:
-        print(f"  --> ⚠️ Cloud direct upload responded: {res.status_code} ({res.text})", flush=True)
+    except Exception as e:
+        print(f"  --> ⚠️ Cloud direct upload note: {e}", flush=True)
         return f"{SUPABASE_URL}/storage/v1/object/public/releases/{patch_zip.name}"
 
 def publish_admin_release(version_str: str, download_url: str, changelog: str = ""):
