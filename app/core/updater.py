@@ -101,15 +101,19 @@ class AutoUpdater:
 
             applicable_release = None
             for rel in res.data:
-                target_email = (rel.get("target_email") or "").strip().lower()
-                if target_email:
-                    allowed_emails = [e.strip().lower() for e in target_email.replace(";", ",").split(",") if e.strip()]
-                    if curr_email and (curr_email in allowed_emails or curr_email == target_email):
-                        applicable_release = rel
-                        break
-                else:
-                    if applicable_release is None:
-                        applicable_release = rel
+                target = (rel.get("target_email") or "*").strip().lower()
+                if target and target != "*":
+                    allowed_targets = [e.strip().lower() for e in target.replace(";", ",").split(",") if e.strip()]
+                    if "admin" in allowed_targets:
+                        from app.core.cloud_manager import ADMIN_EMAILS
+                        user_role = cloud_manager.current_user.get("role", "") if cloud_manager.current_user else ""
+                        is_user_admin = (curr_email in [e.lower() for e in ADMIN_EMAILS]) or (user_role.lower() == "admin")
+                        if not is_user_admin:
+                            continue
+                    elif curr_email not in allowed_targets and curr_email != target:
+                        continue
+                applicable_release = rel
+                break
 
             if not applicable_release:
                 return False, None
@@ -118,7 +122,7 @@ class AutoUpdater:
 
             if self._is_newer_version(latest_ver_str, self.current_version):
                 self.latest_release = applicable_release
-                logger.info(f"🚀 Cloud Auto-Updater: New version v{latest_ver_str} found (Current: v{self.current_version})", category="UPDATER")
+                logger.info(f"🚀 Cloud Auto-Updater: New version v{latest_ver_str} found for admin {curr_email} (Current: v{self.current_version})", category="UPDATER")
                 return True, applicable_release
 
             return False, None
