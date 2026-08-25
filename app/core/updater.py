@@ -18,7 +18,7 @@ from typing import Optional, Dict, Any, Tuple
 from app.core.logger import logger
 from app.core.cloud_manager import cloud_manager
 
-CURRENT_VERSION = "2.1.2"
+CURRENT_VERSION = "2.1.3"
 DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
 VERSION_FILE = DATA_DIR / "app_version.txt"
 
