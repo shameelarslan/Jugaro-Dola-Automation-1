@@ -32,70 +32,69 @@ def build_patch_zip(version_str: str) -> Path:
     output_dir.mkdir(parents=True, exist_ok=True)
     patch_zip = output_dir / f"update_v{version_str}.zip"
 
-    print(f"\n[1/3] 📦 Packaging patch zip: {patch_zip.name} ...", flush=True)
-
-    # Ensure sitecustomize.py exists for disk priority
-    if not SITECUSTOMIZE_FILE.exists():
-        sitecustomize_code = '''"""
-Dynamic Runtime Hotfix & Disk-Priority Module Loader for Waqas Automation Pro.
-"""
-import sys
-import os
-
-try:
-    internal_dir = os.path.abspath(os.path.dirname(__file__))
-    if internal_dir not in sys.path:
-        sys.path.insert(0, internal_dir)
-
-    app_dir = os.path.join(internal_dir, "app")
-    if os.path.exists(app_dir):
-        class DiskPriorityFinder:
-            def find_spec(self, fullname, path, target=None):
-                if fullname == "app" or fullname.startswith("app."):
-                    for finder in sys.meta_path:
-                        if finder is not self and hasattr(finder, 'find_spec') and 'PathFinder' in finder.__class__.__name__:
-                            try:
-                                spec = finder.find_spec(fullname, path, target)
-                                if spec is not None:
-                                    return spec
-                            except Exception:
-                                pass
-                return None
-        sys.meta_path.insert(0, DiskPriorityFinder())
-except Exception:
-    pass
-'''
-        SITECUSTOMIZE_FILE.write_text(sitecustomize_code, encoding="utf-8")
+    dist_app_dir = ROOT_DIR / "dist" / "WaqasAutomationPro"
 
     with zipfile.ZipFile(patch_zip, "w", zipfile.ZIP_DEFLATED) as zf:
-        if SITECUSTOMIZE_FILE.exists():
-            zf.write(SITECUSTOMIZE_FILE, arcname="sitecustomize.py")
+        if dist_app_dir.exists():
+            print("  --> Packaging compiled launcher, core app modules & UI ...")
+            main_exe = dist_app_dir / "WaqasAutomationPro.exe"
+            if main_exe.exists():
+                zf.write(main_exe, arcname="WaqasAutomationPro.exe")
 
+            # Include entire app directory
+            app_src = dist_app_dir / "app" if (dist_app_dir / "app").exists() else APP_DIR
+            if app_src.exists():
+                for root, dirs, files in os.walk(app_src):
+                    if "__pycache__" in root:
+                        continue
+                    for f in files:
+                        if f.endswith((".pyc", ".pyo")):
+                            continue
+                        file_path = Path(root) / f
+                        arc_name = Path("app") / file_path.relative_to(app_src)
+                        zf.write(file_path, arcname=str(arc_name))
+                        zf.write(file_path, arcname=str(Path("_internal/app") / file_path.relative_to(app_src)))
+
+            # Include entire ui directory
+            ui_src = dist_app_dir / "ui" if (dist_app_dir / "ui").exists() else UI_DIR
+            if ui_src.exists():
+                for root, dirs, files in os.walk(ui_src):
+                    for f in files:
+                        file_path = Path(root) / f
+                        arc_name = Path("ui") / file_path.relative_to(ui_src)
+                        zf.write(file_path, arcname=str(arc_name))
+                        zf.write(file_path, arcname=str(Path("_internal/ui") / file_path.relative_to(ui_src)))
+
+            # Include sitecustomize.py
+            if SITECUSTOMIZE_FILE.exists():
+                zf.write(SITECUSTOMIZE_FILE, arcname="sitecustomize.py")
+                zf.write(SITECUSTOMIZE_FILE, arcname="_internal/sitecustomize.py")
+        else:
+            if SITECUSTOMIZE_FILE.exists():
+                zf.write(SITECUSTOMIZE_FILE, arcname="sitecustomize.py")
+
+            if APP_DIR.exists():
+                for root, dirs, files in os.walk(APP_DIR):
+                    if "__pycache__" in root or f.endswith((".pyc", ".pyo")):
+                        continue
+                    for f in files:
+                        file_path = Path(root) / f
+                        arc_name = Path("app") / file_path.relative_to(APP_DIR)
+                        zf.write(file_path, arcname=str(arc_name))
+
+            if UI_DIR.exists():
+                for root, dirs, files in os.walk(UI_DIR):
+                    for f in files:
+                        file_path = Path(root) / f
+                        arc_name = Path("ui") / file_path.relative_to(UI_DIR)
+                        zf.write(file_path, arcname=str(arc_name))
+
+        # Always inject version file
         version_data = f"{version_str}\n"
         zf.writestr("data/app_version.txt", version_data)
 
-        # Include app directory
-        if APP_DIR.exists():
-            for root, dirs, files in os.walk(APP_DIR):
-                if "__pycache__" in root:
-                    continue
-                for f in files:
-                    if f.endswith((".pyc", ".pyo")):
-                        continue
-                    file_path = Path(root) / f
-                    arc_name = Path("app") / file_path.relative_to(APP_DIR)
-                    zf.write(file_path, arcname=str(arc_name))
-
-        # Include ui directory
-        if UI_DIR.exists():
-            for root, dirs, files in os.walk(UI_DIR):
-                for f in files:
-                    file_path = Path(root) / f
-                    arc_name = Path("ui") / file_path.relative_to(UI_DIR)
-                    zf.write(file_path, arcname=str(arc_name))
-
     size_mb = patch_zip.stat().st_size / (1024 * 1024)
-    print(f"  --> ✅ Patch Zip created: {patch_zip.name} ({size_mb:.2f} MB)", flush=True)
+    print(f"  --> ✅ Fast Patch Zip created: {patch_zip.name} ({size_mb:.2f} MB)", flush=True)
     return patch_zip
 
 def upload_to_supabase(patch_zip: Path) -> str:
