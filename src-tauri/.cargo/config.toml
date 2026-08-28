@@ -1,0 +1,3 @@
+[build]
+target-dir = "C:/Users/msham/AppData/Local/tauri_build_cache"
+jobs = 2

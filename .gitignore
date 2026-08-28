@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Build artifacts
+build/
+dist/
+installer_output/
+src-tauri/target/
+*.exe
+*.zip
+*.spec.bak
+
+# Runtime data — NEVER commit: contains login session tokens, browser
+# profiles/cookies, databases, and logs
+data/*
+!data/viral_prompts/
+!data/golden_snapshot/
+!data/app_version.txt
+*.db
+*.db-wal
+*.db-shm
+user_session.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
