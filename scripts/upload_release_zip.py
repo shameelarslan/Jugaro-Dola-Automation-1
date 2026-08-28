@@ -14,7 +14,8 @@ from supabase import create_client
 # and should equal CURRENT_VERSION in app/core/updater.py at build time.
 RELEASE_VERSION = "2.1.1"
 
-def main():
+def build_zip() -> Path:
+    """Packages the OTA patch zip and returns its path. Reused by publish_github_release.py."""
     base_dir = Path(__file__).resolve().parent.parent
     zip_path = base_dir / f"update_v{RELEASE_VERSION}.zip"
 
@@ -49,6 +50,10 @@ def main():
             zf.write(sc_file, Path("_internal/sitecustomize.py"))
 
     print(f"Comprehensive Zip package created! Size: {zip_path.stat().st_size / 1024 / 1024:.2f} MB")
+    return zip_path
+
+def main():
+    zip_path = build_zip()
 
     print(f"[2/3] Uploading update_v{RELEASE_VERSION}.zip to Supabase Storage...")
     client = create_client(SUPABASE_URL, SUPABASE_KEY)
