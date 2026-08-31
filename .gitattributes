@@ -1,0 +1,29 @@
+# Normalize line endings so Windows checkouts stop showing every file as
+# modified. Git stores text as LF and checks out CRLF on Windows.
+* text=auto
+
+# Windows-only scripts must keep CRLF.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# Explicit LF for tooling that dislikes CRLF.
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# Never touch binaries.
+*.png binary
+*.ico binary
+*.icns binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.pdf binary
+*.zip binary
+*.exe binary
+*.dll binary
+*.db binary
+*.mp4 binary
+*.woff binary
+*.woff2 binary

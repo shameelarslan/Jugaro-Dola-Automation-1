@@ -1,6 +1,6 @@
 [package]
 name = "waqas-automation-pro"
-version = "2.0.7"
+version = "2.1.1"
 description = "Waqas Automation Pro Desktop Application"
 authors = ["Waqas Automation"]
 edition = "2021"

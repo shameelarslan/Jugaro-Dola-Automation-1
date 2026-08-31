@@ -11,6 +11,15 @@ src-tauri/target/
 *.exe
 *.zip
 *.spec.bak
+release_output/
+portable/
+
+# Bundle payloads produced by the build (frozen backend + Chromium).
+# Only the .gitkeep placeholders are tracked so the Tauri resource globs match.
+src-tauri/resources/server/*
+!src-tauri/resources/server/.gitkeep
+src-tauri/resources/ms-playwright/*
+!src-tauri/resources/ms-playwright/.gitkeep
 
 # Runtime data — NEVER commit: contains login session tokens, browser
 # profiles/cookies, databases, and logs

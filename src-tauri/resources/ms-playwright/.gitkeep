@@ -1,0 +1,2 @@
+Placeholder so the Tauri resource glob always matches.
+Chromium is downloaded here by CI:  python -m playwright install chromium

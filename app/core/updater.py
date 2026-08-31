@@ -20,10 +20,12 @@ from pathlib import Path
 from typing import Optional, Dict, Any, Tuple
 from app.core.logger import logger
 from app.core.cloud_manager import cloud_manager
+from app.core.config import DATA_DIR, RESOURCE_DATA_DIR
 
 CURRENT_VERSION = "2.1.1"
-DATA_DIR = Path(__file__).resolve().parent.parent.parent / "data"
 VERSION_FILE = DATA_DIR / "app_version.txt"
+# Version stamp shipped inside the installed bundle (read-only).
+BUNDLED_VERSION_FILE = RESOURCE_DATA_DIR / "app_version.txt"
 
 def _is_newer_semver(latest: str, current: str) -> bool:
     try:
@@ -38,6 +40,15 @@ def _is_newer_semver(latest: str, current: str) -> bool:
 
 def get_installed_version() -> str:
     """Reads installed version from data/app_version.txt or falls back to CURRENT_VERSION."""
+    if not VERSION_FILE.exists() and BUNDLED_VERSION_FILE.exists():
+        # First run after install: seed the writable stamp from the bundled one.
+        try:
+            seeded = BUNDLED_VERSION_FILE.read_text(encoding="utf-8").strip()
+            if seeded:
+                set_installed_version(seeded)
+        except Exception:
+            pass
+
     if VERSION_FILE.exists():
         try:
             v = VERSION_FILE.read_text(encoding="utf-8").strip()

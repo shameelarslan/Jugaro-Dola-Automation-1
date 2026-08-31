@@ -8,7 +8,39 @@ import re
 import hashlib
 import hmac
 from typing import List, Callable, Optional, Any, Dict, Set
-from PyQt6.QtCore import QObject, pyqtSignal
+
+try:
+    from PyQt6.QtCore import QObject, pyqtSignal
+except Exception:  # pragma: no cover - headless / server-only builds ship without Qt
+    class _PlainSignal:
+        """Minimal stand-in for pyqtSignal used when PyQt6 is unavailable."""
+
+        def __init__(self, *_args, **_kwargs):
+            self._subscribers: List[Callable[..., Any]] = []
+
+        def connect(self, fn: Callable[..., Any]) -> None:
+            if fn not in self._subscribers:
+                self._subscribers.append(fn)
+
+        def disconnect(self, fn: Optional[Callable[..., Any]] = None) -> None:
+            if fn is None:
+                self._subscribers.clear()
+            elif fn in self._subscribers:
+                self._subscribers.remove(fn)
+
+        def emit(self, *args: Any) -> None:
+            for fn in list(self._subscribers):
+                try:
+                    fn(*args)
+                except Exception:
+                    pass
+
+    class QObject:  # type: ignore[no-redef]
+        def __init__(self, *_args, **_kwargs) -> None:
+            pass
+
+    def pyqtSignal(*args, **kwargs):  # type: ignore[no-redef]
+        return _PlainSignal(*args, **kwargs)
 
 class AdminManager(QObject):
     mode_changed = pyqtSignal(bool)  # True = Admin, False = User

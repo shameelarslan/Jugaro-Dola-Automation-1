@@ -1,3 +1,4 @@
+# Build output goes to src-tauri/target by default so CI and local builds agree.
+# To reuse a shared cache locally, set CARGO_TARGET_DIR instead of hardcoding a
+# path here (build_tauri_exe.bat already does this).
 [build]
-target-dir = "C:/Users/msham/AppData/Local/tauri_build_cache"
-jobs = 2

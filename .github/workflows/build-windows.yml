@@ -1,0 +1,166 @@
+name: Build Windows Installer
+
+# Tag push (v2.1.2) -> builds and publishes a GitHub Release with the installer.
+# Manual run    -> builds and uploads the installer as a downloadable artifact.
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Version to stamp, e.g. 2.1.2 (blank = keep data/app_version.txt)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+env:
+  PYTHON_VERSION: "3.12"
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    name: Build installer (windows-latest)
+    runs-on: windows-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: ver
+        shell: pwsh
+        run: |
+          if ($env:GITHUB_REF_TYPE -eq "tag") {
+            $v = $env:GITHUB_REF_NAME -replace '^v',''
+          } elseif ("${{ github.event.inputs.version }}".Trim() -ne "") {
+            $v = "${{ github.event.inputs.version }}".Trim() -replace '^v',''
+          } else {
+            $v = (Get-Content "data/app_version.txt" -Raw).Trim()
+          }
+          if ($v -notmatch '^\d+\.\d+\.\d+$') {
+            Write-Error "Resolved version '$v' is not MAJOR.MINOR.PATCH"
+            exit 1
+          }
+          "version=$v" | Out-File -FilePath $env:GITHUB_OUTPUT -Append
+          Write-Host "Building version $v"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+
+      - name: Set up Rust
+        uses: dtolnay/rust-toolchain@stable
+
+      - name: Cache Rust build
+        uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install "pyinstaller==6.11.1"
+
+      - name: Stamp version across project files
+        run: python scripts/sync_version.py ${{ steps.ver.outputs.version }}
+
+      - name: Download Chromium into the bundle
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ github.workspace }}\src-tauri\resources\ms-playwright
+        run: python -m playwright install chromium
+
+      - name: Freeze Python backend into sidecar exe
+        run: python scripts/build_server_sidecar.py
+
+      - name: Verify bundle inputs exist
+        shell: pwsh
+        run: |
+          $sidecar = "src-tauri/resources/server/WaqasAutomationServer.exe"
+          if (-not (Test-Path $sidecar)) { Write-Error "Sidecar exe missing: $sidecar"; exit 1 }
+          $chrome = Get-ChildItem -Path "src-tauri/resources/ms-playwright" -Recurse -Filter "chrome.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+          if (-not $chrome) { Write-Error "Bundled Chromium not found under src-tauri/resources/ms-playwright"; exit 1 }
+          Write-Host "Sidecar OK. Chromium: $($chrome.FullName)"
+
+      - name: Build Tauri bundles
+        working-directory: src-tauri
+        env:
+          CARGO_TARGET_DIR: ${{ github.workspace }}\src-tauri\target
+        run: npx --yes @tauri-apps/cli@^2 build
+
+      - name: Collect release files
+        id: collect
+        shell: pwsh
+        run: |
+          $v = "${{ steps.ver.outputs.version }}"
+          $bundle = "src-tauri/target/release/bundle"
+          New-Item -ItemType Directory -Force -Path "release_output" | Out-Null
+
+          $setup = Get-ChildItem -Path "$bundle/nsis" -Filter "*-setup.exe" -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($setup) {
+            Copy-Item $setup.FullName "release_output/WaqasAutomationPro_v${v}_Setup.exe"
+          } else {
+            Write-Error "NSIS installer not produced"; exit 1
+          }
+
+          $msi = Get-ChildItem -Path "$bundle/msi" -Filter "*.msi" -ErrorAction SilentlyContinue | Select-Object -First 1
+          if ($msi) { Copy-Item $msi.FullName "release_output/WaqasAutomationPro_v${v}_x64.msi" }
+
+          # Portable build: the exe plus its bundled resources, no installer needed.
+          $portable = "portable/WaqasAutomationPro"
+          New-Item -ItemType Directory -Force -Path $portable | Out-Null
+          Copy-Item "src-tauri/target/release/WaqasAutomationPro.exe" $portable
+          # Tauri stages resources next to the exe; fall back to the source tree.
+          if (Test-Path "src-tauri/target/release/resources") {
+            Copy-Item "src-tauri/target/release/resources" $portable -Recurse
+          } else {
+            Copy-Item "src-tauri/resources" $portable -Recurse
+          }
+          Compress-Archive -Path "$portable/*" -DestinationPath "release_output/WaqasAutomationPro_v${v}_Portable.zip" -Force
+
+          Get-ChildItem "release_output" | ForEach-Object {
+            "{0,-52} {1,8:N1} MB" -f $_.Name, ($_.Length / 1MB)
+          }
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: WaqasAutomationPro-v${{ steps.ver.outputs.version }}-windows
+          path: release_output/*
+          if-no-files-found: error
+          retention-days: 90
+
+      - name: Publish GitHub Release
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: Waqas Automation Pro v${{ steps.ver.outputs.version }}
+          draft: false
+          prerelease: false
+          files: release_output/*
+          body: |
+            ## Waqas Automation Pro v${{ steps.ver.outputs.version }}
+
+            **Install:** download `WaqasAutomationPro_v${{ steps.ver.outputs.version }}_Setup.exe`, run it, done.
+            Python, the automation backend and Chromium all ship inside the installer — nothing else to set up.
+
+            | File | Use |
+            |------|-----|
+            | `..._Setup.exe` | Recommended installer (installs for the current user, no admin needed) |
+            | `..._x64.msi` | Machine-wide install for managed/enterprise machines (needs admin) |
+            | `..._Portable.zip` | No install — unzip and run `WaqasAutomationPro.exe` |
+
+            The build is not code-signed yet, so Windows SmartScreen may show
+            "unknown publisher" — choose **More info -> Run anyway**.

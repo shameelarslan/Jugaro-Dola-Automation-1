@@ -3,12 +3,79 @@ App Configuration & Setting Defaults for Dola Bulk Video Automation Software.
 """
 
 import os
+import sys
 from pathlib import Path
 from dataclasses import dataclass, field
 
+# BASE_DIR points at the bundled (read-only) application root.
+# Frozen builds resolve this to the PyInstaller _internal folder.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
-DATA_DIR = BASE_DIR / "data"
-DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+APP_NAME = "WaqasAutomationPro"
+
+
+def _is_writable(path: Path) -> bool:
+    """True only if we can actually create and write inside `path`."""
+    try:
+        path.mkdir(parents=True, exist_ok=True)
+        probe = path / ".write_test"
+        probe.write_text("ok", encoding="utf-8")
+    except Exception:
+        return False
+    # Creating the file is the real test; a failed cleanup (locked file, odd
+    # filesystem permissions) must not disqualify an otherwise usable folder.
+    try:
+        probe.unlink()
+    except Exception:
+        pass
+    return True
+
+
+def _resolve_data_dir() -> Path:
+    """
+    Picks a data directory that is guaranteed writable.
+
+    Installed builds may sit in Program Files, where writing next to the
+    executable fails and would crash the app on import. Order of preference:
+      1. WAQAS_DATA_DIR environment override
+      2. an existing data folder next to the exe (keeps pre-existing installs intact)
+      3. %LOCALAPPDATA%\\WaqasAutomationPro\\data
+      4. the source tree's data/ folder (development)
+    """
+    override = os.environ.get("WAQAS_DATA_DIR", "").strip()
+    if override:
+        candidate = Path(override).expanduser()
+        if _is_writable(candidate):
+            return candidate
+
+    if getattr(sys, "frozen", False):
+        exe_dir = Path(sys.executable).resolve().parent
+        # Legacy layouts written by earlier installers — reuse them so an
+        # existing user's database, sessions and logs are never orphaned.
+        for legacy in (exe_dir / "data", BASE_DIR / "data"):
+            if legacy.is_dir() and _is_writable(legacy):
+                return legacy
+
+        local_appdata = os.environ.get("LOCALAPPDATA") or str(Path.home() / "AppData" / "Local")
+        user_dir = Path(local_appdata) / APP_NAME / "data"
+        if _is_writable(user_dir):
+            return user_dir
+
+    source_dir = BASE_DIR / "data"
+    if _is_writable(source_dir):
+        return source_dir
+
+    # Last resort: temp, so the app still starts instead of dying on import.
+    import tempfile
+    fallback = Path(tempfile.gettempdir()) / APP_NAME / "data"
+    fallback.mkdir(parents=True, exist_ok=True)
+    return fallback
+
+
+DATA_DIR = _resolve_data_dir()
+
+# Read-only assets that ship inside the bundle (viral prompts, version stamp, ui).
+RESOURCE_DATA_DIR = BASE_DIR / "data"
 
 DB_PATH = DATA_DIR / "dola_automation.db"
 DEFAULT_DOWNLOAD_DIR = str(Path.home() / "Downloads" / "Dola_Videos")

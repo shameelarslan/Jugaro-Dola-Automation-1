@@ -15,19 +15,35 @@ from app.core.logger import logger
 
 class BrowserFactory:
     @staticmethod
+    def _find_chrome_exe_in(root: str) -> Optional[str]:
+        """Walks a Playwright browsers cache folder looking for chrome.exe."""
+        if not root or not os.path.isdir(root):
+            return None
+        for dirpath, _dirs, files in os.walk(root):
+            if "chrome.exe" in files:
+                return os.path.join(dirpath, "chrome.exe")
+        return None
+
+    @staticmethod
     def get_system_browser() -> Tuple[Optional[str], Optional[str]]:
         """
         Locates the best available Chromium-based browser on the host system.
-        PRIORITY: Playwright bundled Chromium > System Chrome > Edge > Brave
+        PRIORITY: Bundled Chromium (shipped with installer) > Playwright cache > Chrome > Edge > Brave
         Using bundled Chromium first avoids conflicts with user's personal browser sessions.
         Returns: (executable_path, channel)
         """
-        # 1. PRIORITY: Check Playwright bundled Chromium in AppData (isolated, no conflict)
+        # 0. HIGHEST PRIORITY: Chromium shipped inside the installer.
+        # The Tauri shell exports PLAYWRIGHT_BROWSERS_PATH at launch.
+        bundled_root = os.environ.get("PLAYWRIGHT_BROWSERS_PATH", "").strip()
+        bundled = BrowserFactory._find_chrome_exe_in(bundled_root)
+        if bundled:
+            return bundled, None
+
+        # 1. Playwright bundled Chromium in AppData (isolated, no conflict)
         playwright_cache = os.path.expandvars(r"%LOCALAPPDATA%\ms-playwright")
-        if os.path.isdir(playwright_cache):
-            for root, dirs, files in os.walk(playwright_cache):
-                if "chrome.exe" in files:
-                    return os.path.join(root, "chrome.exe"), None
+        cached = BrowserFactory._find_chrome_exe_in(playwright_cache)
+        if cached:
+            return cached, None
 
         # 2. Standard Google Chrome paths (fallback if bundled not available)
         chrome_candidates = [

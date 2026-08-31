@@ -135,9 +135,16 @@ class PromptManager:
                 for p in prompts:
                     writer.writerow([p["id"], p["prompt_text"], p["ratio"], p["duration"], p["model"], p["status"]])
         elif format_type.lower() in ("xlsx", "excel"):
-            import pandas as pd
-            df = pd.DataFrame(prompts)
-            df.to_excel(path, index=False)
+            import openpyxl
+            wb = openpyxl.Workbook()
+            sheet = wb.active
+            sheet.title = "Prompts"
+            headers = ["ID", "Prompt", "Ratio", "Duration", "Model", "Status"]
+            sheet.append(headers)
+            for p in prompts:
+                sheet.append([p.get("id"), p.get("prompt_text"), p.get("ratio"),
+                              p.get("duration"), p.get("model"), p.get("status")])
+            wb.save(str(path))
         else:
             raise ValueError(f"Unsupported export format: {format_type}")
 
