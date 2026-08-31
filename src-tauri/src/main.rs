@@ -174,12 +174,14 @@ fn main() {
         .on_window_event(|window, event| {
             if let tauri::WindowEvent::CloseRequested { .. } = event {
                 // Kill the backend on exit so no orphan process keeps port 8765.
-                let state = window.state::<SidecarState>();
-                if let Ok(mut lock) = state.child.lock() {
-                    if let Some(mut child) = lock.take() {
-                        let _ = child.kill();
-                        let _ = child.wait();
-                        println!("Backend process closed.");
+                {
+                    let state = window.state::<SidecarState>();
+                    if let Ok(mut lock) = state.child.lock() {
+                        if let Some(mut child) = lock.take() {
+                            let _ = child.kill();
+                            let _ = child.wait();
+                            println!("Backend process closed.");
+                        }
                     }
                 }
             }
