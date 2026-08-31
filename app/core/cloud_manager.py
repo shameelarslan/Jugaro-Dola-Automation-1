@@ -712,10 +712,13 @@ class CloudManager:
                 target = (update.get("target_email") or "*").strip().lower()
                 if target and target != "*":
                     target_list = [e.strip().lower() for e in target.replace(";", ",").split(",") if e.strip()]
-                    if "admin" in target_list:
+                    # Direct email match always passes (even if "admin" is also in the list)
+                    if user_email in target_list:
+                        pass  # explicitly allowed
+                    elif "admin" in target_list:
                         if self.determine_role(user_email, user_role) != "admin":
                             continue
-                    elif user_email not in target_list:
+                    else:
                         continue
                 applicable_release = update
                 break
