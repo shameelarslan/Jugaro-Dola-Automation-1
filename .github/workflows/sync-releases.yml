@@ -1,0 +1,39 @@
+name: Sync Releases to Supabase
+
+on:
+  release:
+    types: [published, created]
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  sync-releases:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install supabase python-dotenv packaging
+      
+      - name: Run release sync
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
+        run: python scripts/auto_release_sync.py
+      
+      - name: Upload sync logs
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: sync-logs
+          path: logs/
+          retention-days: 7
