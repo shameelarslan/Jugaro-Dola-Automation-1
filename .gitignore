@@ -1,1 +1,39 @@
-installer_output/WaqasAutomationPro_v2.0.7_Setup.exe
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+# PyInstaller & Build artifacts
+build/
+dist/
+*.spec
+*.toc
+*.pkg
+
+# Installer output & binaries
+installer_output/
+*.exe
+*.zip
+*.msi
+
+# Local databases & user session files
+data/*.db
+data/*.db-wal
+data/*.db-shm
+data/user_session.json
+data/logs/
+data/screenshots/
+data/accounts/
+data/input/
+data/archive/
+data/test_playwright_profile/
+data/webview_profile/
+
+# Environment & IDE
+.venv/
+venv/
+env/
+.idea/
+.vscode/
+*.log
