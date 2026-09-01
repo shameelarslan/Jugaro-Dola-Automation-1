@@ -41,29 +41,27 @@ def build_patch_zip(version_str: str) -> Path:
             if main_exe.exists():
                 zf.write(main_exe, arcname="WaqasAutomationPro.exe")
 
-            # Include entire app directory
-            app_src = dist_app_dir / "app" if (dist_app_dir / "app").exists() else APP_DIR
-            if app_src.exists():
-                for root, dirs, files in os.walk(app_src):
+            # Include entire app directory from workspace root
+            if APP_DIR.exists():
+                for root, dirs, files in os.walk(APP_DIR):
                     if "__pycache__" in root:
                         continue
                     for f in files:
                         if f.endswith((".pyc", ".pyo")):
                             continue
                         file_path = Path(root) / f
-                        arc_name = Path("app") / file_path.relative_to(app_src)
+                        arc_name = Path("app") / file_path.relative_to(APP_DIR)
                         zf.write(file_path, arcname=str(arc_name))
-                        zf.write(file_path, arcname=str(Path("_internal/app") / file_path.relative_to(app_src)))
+                        zf.write(file_path, arcname=str(Path("_internal/app") / file_path.relative_to(APP_DIR)))
 
-            # Include entire ui directory
-            ui_src = dist_app_dir / "ui" if (dist_app_dir / "ui").exists() else UI_DIR
-            if ui_src.exists():
-                for root, dirs, files in os.walk(ui_src):
+            # Include entire ui directory from workspace root
+            if UI_DIR.exists():
+                for root, dirs, files in os.walk(UI_DIR):
                     for f in files:
                         file_path = Path(root) / f
-                        arc_name = Path("ui") / file_path.relative_to(ui_src)
+                        arc_name = Path("ui") / file_path.relative_to(UI_DIR)
                         zf.write(file_path, arcname=str(arc_name))
-                        zf.write(file_path, arcname=str(Path("_internal/ui") / file_path.relative_to(ui_src)))
+                        zf.write(file_path, arcname=str(Path("_internal/ui") / file_path.relative_to(UI_DIR)))
 
             # Include sitecustomize.py
             if SITECUSTOMIZE_FILE.exists():
@@ -72,6 +70,7 @@ def build_patch_zip(version_str: str) -> Path:
         else:
             if SITECUSTOMIZE_FILE.exists():
                 zf.write(SITECUSTOMIZE_FILE, arcname="sitecustomize.py")
+                zf.write(SITECUSTOMIZE_FILE, arcname="_internal/sitecustomize.py")
 
             if APP_DIR.exists():
                 for root, dirs, files in os.walk(APP_DIR):
@@ -81,6 +80,7 @@ def build_patch_zip(version_str: str) -> Path:
                         file_path = Path(root) / f
                         arc_name = Path("app") / file_path.relative_to(APP_DIR)
                         zf.write(file_path, arcname=str(arc_name))
+                        zf.write(file_path, arcname=str(Path("_internal/app") / file_path.relative_to(APP_DIR)))
 
             if UI_DIR.exists():
                 for root, dirs, files in os.walk(UI_DIR):
@@ -88,10 +88,12 @@ def build_patch_zip(version_str: str) -> Path:
                         file_path = Path(root) / f
                         arc_name = Path("ui") / file_path.relative_to(UI_DIR)
                         zf.write(file_path, arcname=str(arc_name))
+                        zf.write(file_path, arcname=str(Path("_internal/ui") / file_path.relative_to(UI_DIR)))
 
-        # Always inject version file
+        # Always inject version file into both root and _internal
         version_data = f"{version_str}\n"
         zf.writestr("data/app_version.txt", version_data)
+        zf.writestr("_internal/data/app_version.txt", version_data)
 
     size_mb = patch_zip.stat().st_size / (1024 * 1024)
     print(f"  --> ✅ Fast Patch Zip created: {patch_zip.name} ({size_mb:.2f} MB)", flush=True)

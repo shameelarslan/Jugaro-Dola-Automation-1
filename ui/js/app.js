@@ -25,7 +25,9 @@ let appState = {
 let superAdminCharts = {
     dailyActiveTrend: null,
     topCreators: null,
-    statusDonut: null
+    statusDonut: null,
+    testingLeadsTrend: null,
+    testingLeadsSources: null
 };
 
 // ── CUSTOM IN-APP MODAL DIALOGS & TOASTS (REPLACES BROWSER ALERTS/CONFIRMS) ─
@@ -113,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initEventHandlers();
     initUserPopoverAndAuth();
     initPasswordToggles();
+    initTestingLabEvents();
     
     // Initial Data Fetch
     fetchStats();
@@ -1644,6 +1647,119 @@ function renderSuperAdminCharts(saOrUsers) {
     } catch (e) {
         console.error("Donut chart render error:", e);
     }
+
+    // 4. Testing Lab: Leads Generation Trend Chart
+    try {
+        const ctxLeadsTrend = document.getElementById("chart-testing-leads-trend");
+        if (ctxLeadsTrend) {
+            if (superAdminCharts.testingLeadsTrend) {
+                superAdminCharts.testingLeadsTrend.destroy();
+                superAdminCharts.testingLeadsTrend = null;
+            }
+
+            const leadsLabels = ["06:00", "08:00", "10:00", "12:00", "14:00", "16:00", "18:00", "20:00", "22:00", "00:00"];
+            const rawLeadsData = [45, 82, 120, 195, 240, 310, 280, 190, 140, 95];
+            const cumulativeData = [45, 127, 247, 442, 682, 992, 1272, 1462, 1602, 1697];
+
+            superAdminCharts.testingLeadsTrend = new Chart(ctxLeadsTrend, {
+                type: 'bar',
+                data: {
+                    labels: leadsLabels,
+                    datasets: [
+                        {
+                            type: 'line',
+                            label: 'Cumulative Ingested Leads',
+                            data: cumulativeData,
+                            borderColor: '#38bdf8',
+                            backgroundColor: 'rgba(56, 189, 248, 0.15)',
+                            borderWidth: 3,
+                            pointBackgroundColor: '#38bdf8',
+                            pointRadius: 4,
+                            tension: 0.35,
+                            yAxisID: 'y1'
+                        },
+                        {
+                            type: 'bar',
+                            label: 'Hourly Leads Discovered',
+                            data: rawLeadsData,
+                            backgroundColor: 'rgba(16, 185, 129, 0.7)',
+                            borderColor: '#10b981',
+                            borderWidth: 1.5,
+                            borderRadius: 6,
+                            yAxisID: 'y'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onHover: (event, elements, chart) => { chart.canvas.style.cursor = 'default'; },
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: { color: '#94a3b8', font: { size: 11, weight: 'bold' } }
+                        }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { display: false } },
+                        y: {
+                            type: 'linear',
+                            position: 'left',
+                            ticks: { color: '#10b981' },
+                            grid: { color: 'rgba(255, 255, 255, 0.05)' }
+                        },
+                        y1: {
+                            type: 'linear',
+                            position: 'right',
+                            ticks: { color: '#38bdf8' },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        }
+    } catch (e) {
+        console.error("Testing leads trend chart render error:", e);
+    }
+
+    // 5. Testing Lab: Lead Sources & Channel Breakdown Donut
+    try {
+        const ctxLeadsSource = document.getElementById("chart-testing-leads-sources");
+        if (ctxLeadsSource) {
+            if (superAdminCharts.testingLeadsSources) {
+                superAdminCharts.testingLeadsSources.destroy();
+                superAdminCharts.testingLeadsSources = null;
+            }
+
+            superAdminCharts.testingLeadsSources = new Chart(ctxLeadsSource, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Facebook Ads', 'Organic Reels', 'Direct Ingestion', 'Viral Seeds'],
+                    datasets: [{
+                        data: [540, 420, 310, 212],
+                        backgroundColor: ['#8b5cf6', '#3b82f6', '#10b981', '#f59e0b'],
+                        borderWidth: 2,
+                        borderColor: '#070913'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    onHover: (event, elements, chart) => { chart.canvas.style.cursor = 'default'; },
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#f8fafc', font: { size: 11, weight: 'bold' }, padding: 10 }
+                        }
+                    },
+                    cutout: '65%'
+                }
+            });
+        }
+    } catch (e) {
+        console.error("Testing leads sources donut render error:", e);
+    }
 }
 
 // ── MODERN EXECUTIVE DASHBOARD CHARTS ────────────────────────────────────
@@ -2175,6 +2291,68 @@ function initPasswordToggles() {
             }
         });
     });
+}
+
+function initTestingLabEvents() {
+    const btnSim = document.getElementById("btn-simulate-leads");
+    const btnReset = document.getElementById("btn-reset-test-leads");
+    const totalLeadsEl = document.getElementById("testing-total-leads");
+    const qualifiedLeadsEl = document.getElementById("testing-qualified-leads");
+    const logFeed = document.getElementById("testing-leads-log-feed");
+
+    let currentLeads = 1482;
+    let currentQualified = 386;
+
+    if (btnSim) {
+        btnSim.addEventListener("click", () => {
+            currentLeads += 25;
+            currentQualified += 7;
+            if (totalLeadsEl) totalLeadsEl.textContent = currentLeads.toLocaleString();
+            if (qualifiedLeadsEl) qualifiedLeadsEl.textContent = currentQualified.toLocaleString();
+
+            const timeStr = new Date().toTimeString().slice(0, 8);
+            if (logFeed) {
+                const newLog = document.createElement("div");
+                newLog.style.color = "#38bdf8";
+                newLog.textContent = `[${timeStr}] ⚡ Generated 25 test leads! Ingestion pipeline active (Total: ${currentLeads})`;
+                logFeed.insertBefore(newLog, logFeed.firstChild);
+            }
+
+            if (superAdminCharts && superAdminCharts.testingLeadsTrend) {
+                const dataArr = superAdminCharts.testingLeadsTrend.data.datasets[1].data;
+                const lastIdx = dataArr.length - 1;
+                dataArr[lastIdx] = (dataArr[lastIdx] || 0) + 25;
+                const cumArr = superAdminCharts.testingLeadsTrend.data.datasets[0].data;
+                cumArr[cumArr.length - 1] = currentLeads;
+                superAdminCharts.testingLeadsTrend.update();
+            }
+
+            showToast("⚡ 25 Test Leads Generated & Graphs Updated!", "success");
+        });
+    }
+
+    if (btnReset) {
+        btnReset.addEventListener("click", () => {
+            currentLeads = 1482;
+            currentQualified = 386;
+            if (totalLeadsEl) totalLeadsEl.textContent = "1,482";
+            if (qualifiedLeadsEl) qualifiedLeadsEl.textContent = "386";
+            if (logFeed) {
+                logFeed.innerHTML = `
+                    <div style="color: #10b981;">[12:40:15] ⚡ Lead Generation Test Suite initialized in Admin Console</div>
+                    <div style="color: #38bdf8;">[12:40:18] 🎯 Scraped & Verified 15 Meta / Facebook Ads leads from active sessions</div>
+                    <div style="color: #a78bfa;">[12:40:22] 💎 High-intent tag applied to 8 qualified creators</div>
+                    <div style="color: #f59e0b;">[12:40:25] 📊 Real-time Chart.js telemetry synchronized with Cloud Backend</div>
+                `;
+            }
+            if (superAdminCharts && superAdminCharts.testingLeadsTrend) {
+                superAdminCharts.testingLeadsTrend.data.datasets[1].data = [45, 82, 120, 195, 240, 310, 280, 190, 140, 95];
+                superAdminCharts.testingLeadsTrend.data.datasets[0].data = [45, 127, 247, 442, 682, 992, 1272, 1462, 1602, 1697];
+                superAdminCharts.testingLeadsTrend.update();
+            }
+            showToast("🔄 Test Leads Telemetry Reset", "info");
+        });
+    }
 }
 
 function initModals() {
