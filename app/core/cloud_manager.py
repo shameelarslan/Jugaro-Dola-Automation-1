@@ -20,13 +20,10 @@ except ImportError:
 SUPABASE_URL = "https://krdclqrlxbwpnadfxudd.supabase.co"
 SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtyZGNscXJseGJ3cG5hZGZ4dWRkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODY4MjA5MDcsImV4cCI6MjEwMjM5NjkwN30.8W956EAIwjV_V43k5x7-SX7IsfTYoz_74HIMEJ9kwnQ"
 
-SESSION_FILE = Path(__file__).resolve().parent.parent.parent / "data" / "user_session.json"
+from app.core.version import get_installed_version, get_data_dir, APP_VERSION
+
+SESSION_FILE = get_data_dir() / "user_session.json"
 ADMIN_EMAILS = {"waqasshoukat2193@gmail.com", "ali@gmail.com", "shameel@gmail.com", "waqasai@gmail.com"}
-try:
-    from app.core.updater import get_installed_version
-    APP_VERSION = get_installed_version()
-except Exception:
-    APP_VERSION = "2.0.7"
 
 
 class CloudManager:
@@ -690,71 +687,25 @@ class CloudManager:
                 return False
 
     def check_for_update(self) -> Optional[Dict[str, Any]]:
-        """Checks Supabase for available updates targeted at current user.
-        Returns update info dict if update available, None otherwise."""
-        if not self.client:
-            return None
+        """Checks for available updates targeted at current user via AutoUpdater."""
         try:
-            user_email = ""
-            user_role = ""
-            if self.current_user:
-                user_email = (self.current_user.get("email") or "").strip().lower()
-                user_role = self.current_user.get("role", "")
-            elif SESSION_FILE.exists():
-                try:
-                    with open(SESSION_FILE, "r", encoding="utf-8-sig") as f:
-                        s_data = json.load(f)
-                        user_email = (s_data.get("email") or "").strip().lower()
-                        user_role = s_data.get("role", "")
-                except Exception:
-                    pass
-
-            # Fetch latest active releases from app_releases table
-            res = self.client.table("app_releases") \
-                .select("*") \
-                .eq("is_active", True) \
-                .order("id", desc=True) \
-                .execute()
-
-            if not res.data:
-                return None
-
-            applicable_release = None
-            for update in res.data:
-                target = (update.get("target_email") or "*").strip().lower()
-                if target and target != "*":
-                    target_list = [e.strip().lower() for e in target.replace(";", ",").split(",") if e.strip()]
-                    # Direct email match always passes (even if "admin" is also in the list)
-                    if user_email in target_list:
-                        pass  # explicitly allowed
-                    elif "admin" in target_list:
-                        if self.determine_role(user_email, user_role) != "admin":
-                            continue
-                    else:
-                        continue
-                applicable_release = update
-                break
-
-            if not applicable_release:
-                return None
-
-            latest_version = applicable_release.get("version", "").strip()
-
-            from app.core.updater import _is_newer_semver, get_installed_version
-            curr_ver = get_installed_version()
-            if not _is_newer_semver(latest_version, curr_ver):
-                return None
-
-            logger.info(f"Update available: v{latest_version} for {user_email}", category="CLOUD")
-            return {
-                "version": latest_version,
-                "download_url": applicable_release.get("download_url", ""),
-                "release_notes": applicable_release.get("changelog", ""),
-                "is_mandatory": applicable_release.get("is_mandatory", False),
-                "current_version": curr_ver
-            }
+            from app.core.updater import updater
+            user_email = (self.current_user.get("email") if self.current_user else "") or ""
+            user_role = (self.current_user.get("role") if self.current_user else "") or ""
+            is_avail, rel, err = updater.check_for_updates(user_email=user_email, user_role=user_role)
+            if is_avail and rel:
+                return {
+                    "version": rel.get("version"),
+                    "title": rel.get("title"),
+                    "download_url": rel.get("download_url", ""),
+                    "release_notes": rel.get("release_notes", ""),
+                    "is_mandatory": rel.get("is_mandatory", False),
+                    "sha256": rel.get("sha256", ""),
+                    "current_version": get_installed_version()
+                }
+            return None
         except Exception as e:
-            logger.warning(f"Update check failed: {e}", category="CLOUD")
+            logger.warning(f"Update check error: {e}", category="CLOUD")
             return None
 
 cloud_manager = CloudManager.get_instance()

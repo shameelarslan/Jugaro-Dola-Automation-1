@@ -151,37 +151,62 @@ let pendingUpdateData = null;
 // ── AUTO-UPDATE CHECK & 1-CLICK INSTALL ──────────────────────────────────
 async function checkForUpdate(isManual = false) {
     if (isManual) {
-        showToast("🔍 Checking Supabase Cloud for updates...", "info");
+        showToast("🔍 Checking for updates...", "info");
     }
     try {
         const res = await fetch(`${API_BASE}/check-update`);
         const data = await res.json();
+        const currVer = data.current_version || (appState.stats && appState.stats.app_version) || "2.1.5";
+
         if (data.success && data.update_available) {
             pendingUpdateData = data;
             // Populate modal
-            document.getElementById("update-current-ver").textContent = `v${data.current_version}`;
-            document.getElementById("update-new-ver").textContent = `v${data.version}`;
-            document.getElementById("update-release-notes").innerHTML = `
-                <h4>📋 What's New in v${data.version}:</h4>
-                <p>${(data.release_notes || "Bug fixes and performance improvements.").replace(/\n/g, "<br>")}</p>
-            `;
+            const curVerEl = document.getElementById("update-current-ver");
+            const newVerEl = document.getElementById("update-new-ver");
+            const titleEl = document.querySelector(".update-modal-title");
+            const notesEl = document.getElementById("update-release-notes");
 
-            // If mandatory, hide skip button
-            if (data.is_mandatory) {
-                document.getElementById("update-skip-btn").style.display = "none";
-            } else {
-                document.getElementById("update-skip-btn").style.display = "inline-block";
+            if (curVerEl) curVerEl.textContent = `v${currVer}`;
+            if (newVerEl) newVerEl.textContent = `v${data.version}`;
+            if (titleEl && data.title) titleEl.textContent = data.title;
+            if (notesEl) {
+                notesEl.innerHTML = `
+                    <h4>📋 What's New in v${data.version}:</h4>
+                    <p>${(data.release_notes || "Performance enhancements, bug fixes, and stability improvements.").replace(/\n/g, "<br>")}</p>
+                `;
             }
 
+            // Mandatory vs Optional update handling
+            const skipBtn = document.getElementById("update-skip-btn");
+            if (skipBtn) {
+                if (data.is_mandatory) {
+                    skipBtn.style.display = "none";
+                } else {
+                    skipBtn.style.display = "inline-block";
+                    skipBtn.textContent = "Remind Me Later";
+                }
+            }
+
+            // Reset modal states
+            const actionsDiv = document.getElementById("update-modal-actions");
+            const progressDiv = document.getElementById("update-progress");
+            if (actionsDiv) actionsDiv.classList.remove("hidden");
+            if (progressDiv) progressDiv.classList.add("hidden");
+
             // Show modal
-            document.getElementById("update-modal-overlay").classList.remove("hidden");
+            const overlay = document.getElementById("update-modal-overlay");
+            if (overlay) overlay.classList.remove("hidden");
         } else if (isManual) {
-            showAlert("You're Up to Date! 🎉", `You are running the latest version of Waqas Automation Pro (v${data.current_version || "2.0.7"}). No new updates available on Supabase Cloud right now.`, "✅");
+            if (data.error && !data.success) {
+                showAlert("Update Check Status", `Could not connect to update servers: ${data.error}`, "⚠️");
+            } else {
+                showAlert("You're Up to Date! 🎉", `You are running the latest version of Waqas Automation Pro (v${currVer}). No new updates available right now.`, "✅");
+            }
         }
     } catch (e) {
         console.log("Update check skipped:", e.message);
         if (isManual) {
-            showAlert("Update Check Failed", `Could not connect to update server: ${e.message}`, "⚠️");
+            showAlert("Offline / Network Error", `Could not check for updates. Please check your internet connection. (${e.message})`, "⚠️");
         }
     }
 }
@@ -201,13 +226,14 @@ async function applyAppUpdate() {
     if (actionsDiv) actionsDiv.classList.add("hidden");
     if (progressDiv) progressDiv.classList.remove("hidden");
 
-    let progress = 15;
+    let progress = 10;
     const progressTimer = setInterval(() => {
-        if (progress < 85) {
-            progress += 10;
-            if (progressFill) progressFill.style.width = `${progress}%`;
+        if (progress < 90) {
+            progress += Math.floor(Math.random() * 8) + 4;
+            if (progressFill) progressFill.style.width = `${Math.min(90, progress)}%`;
+            if (progressText) progressText.innerHTML = `⏳ Downloading v${pendingUpdateData.version} (${Math.min(90, progress)}%)...<br><span style="color:#94a3b8; font-size:11px; font-weight:normal;">Verifying package integrity & preparing safe installation</span>`;
         }
-    }, 400);
+    }, 350);
 
     try {
         const res = await fetch(`${API_BASE}/system/apply-update`, {
@@ -215,7 +241,8 @@ async function applyAppUpdate() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 download_url: pendingUpdateData.download_url,
-                version: pendingUpdateData.version
+                version: pendingUpdateData.version,
+                sha256: pendingUpdateData.sha256 || ""
             })
         });
 
@@ -225,7 +252,7 @@ async function applyAppUpdate() {
         if (result.success) {
             if (progressFill) progressFill.style.width = "100%";
             if (progressText) {
-                progressText.innerHTML = "🎉 Update Installed Successfully!<br><span style='color:#a78bfa; font-size:12px;'>Restarting application in 3 seconds...</span>";
+                progressText.innerHTML = `🎉 <strong>Update to v${pendingUpdateData.version} Installed!</strong><br><span style='color:#a78bfa; font-size:12px;'>Relaunching application automatically in 3 seconds...</span>`;
             }
 
             setTimeout(() => {
@@ -241,7 +268,7 @@ async function applyAppUpdate() {
         clearInterval(progressTimer);
         if (actionsDiv) actionsDiv.classList.remove("hidden");
         if (progressDiv) progressDiv.classList.add("hidden");
-        showAlert("Update Error", `Network error applying update: ${err.message}`, "❌");
+        showAlert("Update Error", `Network error during update: ${err.message}`, "❌");
     }
 }
 
@@ -485,7 +512,7 @@ function applyRoleUI(role) {
     const headerTitle = document.getElementById("top-header-title");
     const headerSubtitle = document.getElementById("top-header-subtitle");
 
-    const appVer = (appState.stats && appState.stats.app_version) ? appState.stats.app_version : "2.0.7";
+    const appVer = (appState.stats && appState.stats.app_version) ? appState.stats.app_version : "2.1.5";
 
     if (isAdmin) {
         document.body.classList.add("admin-mode");

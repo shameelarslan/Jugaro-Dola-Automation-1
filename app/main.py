@@ -65,12 +65,9 @@ def main():
     except Exception:
         pass
 
-    try:
-        from app.core.updater import get_installed_version
-        _v = get_installed_version()
-    except Exception:
-        _v = "2.0.7"
-    logger.info(f"⚡ [BOOT CHECK] Waqas Automation Pro v{_v} DISK MODULE ACTIVE & EXECUTING!", category="SYSTEM")
+    from app.core.version import get_installed_version, APP_NAME
+    _v = get_installed_version()
+    logger.info(f"⚡ [BOOT CHECK] {APP_NAME} v{_v} DISK MODULE ACTIVE & EXECUTING!", category="SYSTEM")
     
     # ── Launch Sidecar Web/REST API Server on port 8765 ──────────────────────
     try:

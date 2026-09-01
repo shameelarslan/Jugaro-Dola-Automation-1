@@ -24,9 +24,9 @@ from app.core.config import AppConfig, DEFAULT_DOWNLOAD_DIR
 from app.core.database import db
 from app.core.logger import logger
 
+from app.core.version import get_installed_version, APP_VERSION
 from app.core.cloud_manager import cloud_manager
 from app.core.queue_manager import QueueManager
-from app.managers.prompt_manager import PromptManager
 from app.managers.viral_prompt_manager import viral_prompt_manager
 
 # Global Queue Manager instance
@@ -228,8 +228,7 @@ class SidecarAPIHandler(BaseHTTPRequestHandler):
                     "current_user": cloud_user,
                     "cloud_total_users": super_stats.get("total_users", 0),
                     "cloud_total_videos": super_stats.get("total_videos_all_time", 0),
-                    "cloud_today_videos": super_stats.get("today_videos", 0),
-                    "app_version": (lambda: (__import__("app.core.updater", fromlist=["get_installed_version"]).get_installed_version() if hasattr(sys, "modules") else "2.0.7"))(),
+                    "app_version": get_installed_version(),
                     "config": config.to_dict()
                 }
             })
@@ -651,42 +650,63 @@ class SidecarAPIHandler(BaseHTTPRequestHandler):
             self._send_error(e)
 
     def _handle_check_update(self):
-        """Checks Supabase for available updates for the current user."""
+        """Checks for available updates via AutoUpdater."""
         try:
-            from app.core.cloud_manager import cloud_manager
-            update_info = cloud_manager.check_for_update()
-            if update_info:
+            from app.core.updater import updater
+            user_email = (cloud_manager.current_user.get("email") if cloud_manager.current_user else "") or ""
+            user_role = (cloud_manager.current_user.get("role") if cloud_manager.current_user else "") or ""
+            is_available, update_info, err_msg = updater.check_for_updates(user_email=user_email, user_role=user_role)
+            curr_ver = get_installed_version()
+
+            if is_available and update_info:
                 self._send_json({
                     "success": True,
                     "update_available": True,
-                    "version": update_info["version"],
-                    "current_version": update_info["current_version"],
-                    "download_url": update_info["download_url"],
-                    "release_notes": update_info["release_notes"],
-                    "is_mandatory": update_info["is_mandatory"]
+                    "version": update_info.get("version"),
+                    "current_version": curr_ver,
+                    "title": update_info.get("title") or f"Waqas Automation Pro v{update_info.get('version')}",
+                    "download_url": update_info.get("download_url"),
+                    "release_notes": update_info.get("release_notes") or "Performance and security enhancements.",
+                    "is_mandatory": bool(update_info.get("is_mandatory", False)),
+                    "sha256": update_info.get("sha256", "")
                 })
             else:
-                self._send_json({"success": True, "update_available": False})
+                self._send_json({
+                    "success": True,
+                    "update_available": False,
+                    "current_version": curr_ver,
+                    "error": err_msg
+                })
         except Exception as e:
-            self._send_json({"success": True, "update_available": False, "error": str(e)})
+            self._send_json({
+                "success": True,
+                "update_available": False,
+                "current_version": get_installed_version(),
+                "error": str(e)
+            })
 
     def _handle_apply_update(self, data):
         """Downloads and applies the update patch package automatically."""
         try:
             download_url = (data.get("download_url") or "").strip()
             version_str = (data.get("version") or "").strip()
+            sha256 = (data.get("sha256") or "").strip()
             if not download_url:
                 return self._send_error("download_url is required")
 
             from app.core.updater import updater
-            success = updater.download_and_install_update(download_url, version_str=version_str)
+            success, msg = updater.download_and_install_update(
+                download_url,
+                version_str=version_str,
+                expected_sha256=sha256
+            )
             if success:
                 self._send_json({
                     "success": True,
-                    "message": f"Update to v{version_str} installed successfully!"
+                    "message": msg or f"Update to v{version_str} installed successfully!"
                 })
             else:
-                self._send_error("Failed to download or apply the update package.")
+                self._send_error(msg or "Failed to download or apply the update package.")
         except Exception as e:
             self._send_error(f"Error applying update: {e}")
 

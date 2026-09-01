@@ -422,13 +422,14 @@ class MainWindow(QMainWindow):
             QMessageBox.critical(self, "Error", f"Could not open User Profile: {e}")
 
     def _check_for_updates(self):
-        """Silently checks for updates from Supabase and shows prompt only if update is available."""
+        """Silently checks for updates from Cloud/GitHub and shows prompt only if update is available."""
         try:
             user_email = cloud_manager.current_user.get("email") if cloud_manager.current_user else None
-            has_update, rel_data = updater.check_for_updates(user_email=user_email)
+            user_role = cloud_manager.current_user.get("role") if cloud_manager.current_user else None
+            has_update, rel_data, err = updater.check_for_updates(user_email=user_email, user_role=user_role)
             if has_update and rel_data:
-                new_ver = rel_data.get("version", "2.0.6")
-                notes = rel_data.get("changelog", "New features and improvements.")
+                new_ver = rel_data.get("version", "")
+                notes = rel_data.get("release_notes") or rel_data.get("changelog", "New features and improvements.")
                 asset_url = rel_data.get("download_url", "")
                 dlg = UpdateDialog(new_ver, notes, asset_url, self)
                 dlg.exec()

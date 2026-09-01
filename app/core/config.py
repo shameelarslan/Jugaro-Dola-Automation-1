@@ -6,10 +6,10 @@ import os
 from pathlib import Path
 from dataclasses import dataclass, field
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
-DATA_DIR = BASE_DIR / "data"
-DATA_DIR.mkdir(parents=True, exist_ok=True)
+from app.core.version import get_base_dir, get_data_dir
 
+BASE_DIR = get_base_dir()
+DATA_DIR = get_data_dir()
 DB_PATH = DATA_DIR / "dola_automation.db"
 DEFAULT_DOWNLOAD_DIR = str(Path.home() / "Downloads" / "Dola_Videos")
 DEFAULT_EXTENSION_PATH = ""

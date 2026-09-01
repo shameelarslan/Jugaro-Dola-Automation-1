@@ -121,7 +121,7 @@ def upload_to_supabase(patch_zip: Path) -> str:
         print(f"  --> ⚠️ Cloud direct upload note: {e}", flush=True)
         return f"{SUPABASE_URL}/storage/v1/object/public/releases/{patch_zip.name}"
 
-def publish_admin_release(version_str: str, download_url: str, changelog: str = ""):
+def publish_admin_release(version_str: str, download_url: str, changelog: str = "", sha256_hash: str = ""):
     print(f"\n[3/3] 🚀 Publishing Admin-Only Release v{version_str} to Cloud Database...", flush=True)
     try:
         from supabase import create_client
@@ -130,22 +130,26 @@ def publish_admin_release(version_str: str, download_url: str, changelog: str = 
         if not changelog:
             changelog = f"• Official v{version_str} Admin Hotfix & Feature Upgrade\n• GitHub Release Deployment\n• Performance & Security Enhancements"
 
-        # Register release targeting only 'admin'
-        res = sb.table("app_releases").upsert({
+        payload = {
             "version": version_str,
             "download_url": download_url,
             "target_email": TARGET_AUDIENCE,
             "is_active": True,
             "changelog": changelog
-        }).execute()
+        }
+        if sha256_hash:
+            payload["sha256"] = sha256_hash
+
+        res = sb.table("app_releases").upsert(payload).execute()
 
         print("\n" + "=" * 76, flush=True)
         print(f"🎉 ADMIN-ONLY UPDATE v{version_str} IS NOW LIVE!", flush=True)
         print("=" * 76, flush=True)
         print(f"📌 Target Audience: ONLY Admin Users (target_email = 'admin')")
         print(f"🔗 Download URL: {download_url}")
+        if sha256_hash:
+            print(f"🔒 SHA-256: {sha256_hash}")
         print(f"⚡ When Admin users open the app or click 'Check Updates', they will receive this update immediately.")
-        print(f"🛡️ Regular/Free/Paid users will NOT see or receive this update.")
         print("=" * 76 + "\n", flush=True)
         return True
     except Exception as e:
@@ -158,7 +162,7 @@ def main():
     print("=" * 76)
 
     # Read current version
-    from app.core.updater import get_installed_version
+    from app.core.version import get_installed_version
     curr_ver = get_installed_version()
     print(f"Current Installed Version: v{curr_ver}")
 

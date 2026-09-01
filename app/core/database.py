@@ -13,9 +13,16 @@ from pathlib import Path
 from app.core.config import DB_PATH, DEFAULT_DOWNLOAD_DIR, AppConfig
 from app.core.logger import logger
 
+from app.core.migrations import MigrationManager
+
 class DatabaseManager:
     def __init__(self, db_path: str = str(DB_PATH)):
         self.db_path = db_path
+        # Execute automated schema migrations on startup
+        try:
+            MigrationManager(self.db_path).run_migrations()
+        except Exception as e:
+            logger.warning(f"Schema migration warning: {e}", category="DATABASE")
         self._init_db()
 
     def get_connection(self) -> sqlite3.Connection:
