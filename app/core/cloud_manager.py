@@ -692,11 +692,23 @@ class CloudManager:
     def check_for_update(self) -> Optional[Dict[str, Any]]:
         """Checks Supabase for available updates targeted at current user.
         Returns update info dict if update available, None otherwise."""
-        if not self.client or not self.current_user:
+        if not self.client:
             return None
         try:
-            user_email = (self.current_user.get("email") or "").strip().lower()
-            user_role = self.current_user.get("role", "")
+            user_email = ""
+            user_role = ""
+            if self.current_user:
+                user_email = (self.current_user.get("email") or "").strip().lower()
+                user_role = self.current_user.get("role", "")
+            elif SESSION_FILE.exists():
+                try:
+                    with open(SESSION_FILE, "r", encoding="utf-8-sig") as f:
+                        s_data = json.load(f)
+                        user_email = (s_data.get("email") or "").strip().lower()
+                        user_role = s_data.get("role", "")
+                except Exception:
+                    pass
+
             # Fetch latest active releases from app_releases table
             res = self.client.table("app_releases") \
                 .select("*") \

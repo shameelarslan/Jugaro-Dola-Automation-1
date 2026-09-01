@@ -653,11 +653,6 @@ class SidecarAPIHandler(BaseHTTPRequestHandler):
     def _handle_check_update(self):
         """Checks Supabase for available updates for the current user."""
         try:
-            import importlib
-            import app.core.cloud_manager
-            import app.core.updater
-            importlib.reload(app.core.cloud_manager)
-            importlib.reload(app.core.updater)
             from app.core.cloud_manager import cloud_manager
             update_info = cloud_manager.check_for_update()
             if update_info:
