@@ -14,6 +14,8 @@ import subprocess
 from pathlib import Path
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.insert(0, str(ROOT_DIR))
 ISS_SCRIPT = ROOT_DIR / "scripts" / "installer_config.iss"
 OUTPUT_DIR = ROOT_DIR / "installer_output"
 DIST_DIR = ROOT_DIR / "dist" / "WaqasAutomationPro"
